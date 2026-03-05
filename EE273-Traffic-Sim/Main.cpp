@@ -1,9 +1,14 @@
 
 
 #include <iostream>
+#include "SimulationEngine.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	SimulationEngine engine;
+	engine.run(5);
+	engine.step();
+	engine.reset();
+	engine.run(3);
 }
 

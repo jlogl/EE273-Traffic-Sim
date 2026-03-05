@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\EE273-Traffic-Sim.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:EE273-Traffic-Sim.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:SimulationEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:SimulationEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EE273-Traffic-Sim.cpp",
-              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\EE273-Traffic-Sim.cpp",
-              "RelativeDocumentMoniker": "EE273-Traffic-Sim.cpp",
-              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\EE273-Traffic-Sim.cpp",
-              "RelativeToolTip": "EE273-Traffic-Sim.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Main.cpp",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp",
+              "RelativeDocumentMoniker": "Main.cpp",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp",
+              "RelativeToolTip": "Main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-04T22:27:08.843Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SimulationEngine.cpp",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.cpp",
+              "RelativeDocumentMoniker": "SimulationEngine.cpp",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.cpp",
+              "RelativeToolTip": "SimulationEngine.cpp",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-05T12:20:05.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SimulationEngine.h",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.h",
+              "RelativeDocumentMoniker": "SimulationEngine.h",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.h",
+              "RelativeToolTip": "SimulationEngine.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-04T22:37:19.839Z",
               "EditorCaption": ""
             }
           ]
