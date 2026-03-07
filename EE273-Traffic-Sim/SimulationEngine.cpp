@@ -89,7 +89,7 @@ void SimulationEngine::save()
 		outFile << getCurrenttime() << std::endl;
 
 
-	
+		outFile.close();
 
 }
 void SimulationEngine::load(std::string filename) {
@@ -100,11 +100,11 @@ void SimulationEngine::load(std::string filename) {
 		return;
 	}
 	std::string line;
-	(getline(inFile, line));
+	(getline(inFile, line)); // Is not in a loop as we only want the first line to be used for the purpose of setting the time
 		setCurrenttime(stod(line));
 		setInitialtime(stod(line));
 
-
+		inFile.close();
 
 	}
 
