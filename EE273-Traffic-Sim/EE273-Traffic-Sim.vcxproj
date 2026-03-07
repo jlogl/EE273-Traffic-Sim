@@ -137,7 +137,6 @@
     <ClInclude Include="Bus.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="Lane.h" />
-    <ClInclude Include="Road.h" />
     <ClInclude Include="Roads.h" />
     <ClInclude Include="SimulationEngine.h" />
     <ClInclude Include="Vehicle.h" />

@@ -12,7 +12,16 @@ SimulationEngine::SimulationEngine()
 SimulationEngine::~SimulationEngine()
 {
 }
+double SimulationEngine::getCurrenttime() {
+	return current_time;
 
+}
+void SimulationEngine::setCurrenttime(double time) {
+	 current_time = time;
+};
+void SimulationEngine::setInitialtime(double time) {
+	initial_time = time;
+};
 void SimulationEngine:: run(int number_of_steps)
 {
 	std::cout << "Simulation running for "  <<number_of_steps<<" steps" << std::endl;
@@ -65,12 +74,38 @@ void SimulationEngine::reset()
 /*  This is the most work in progress part and will constantly need to be altered and reworked as the complexity of the simulation progresses */
 void SimulationEngine::save()
 {
+	std::string filename;
+	std::cout << "Please enter filename to save simulation to: " << std::endl;
+	std::cin >> filename;
 
+	
+	std::ofstream outFile(filename);
+	if (!outFile) {
+		std::cerr << "Error opening file:"
+			<< filename << "\n";
+		return;
+	}
+
+		outFile << getCurrenttime() << std::endl;
+
+
+	
 
 }
+void SimulationEngine::load(std::string filename) {
+	std::ifstream inFile(filename);
+	if (!inFile) {
+		std::cerr << "Error opening file:"
+			<< filename << "\n";
+		return;
+	}
+	std::string line;
+	(getline(inFile, line));
+		setCurrenttime(stod(line));
+		setInitialtime(stod(line));
 
-void SimulationEngine::load(std::string filenname)
-{
 
 
-}
+	}
+
+

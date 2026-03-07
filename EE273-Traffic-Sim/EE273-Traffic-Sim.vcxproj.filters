@@ -56,9 +56,6 @@
     <ClInclude Include="Bike.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Road.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Lane.h">
       <Filter>Source Files</Filter>
     </ClInclude>

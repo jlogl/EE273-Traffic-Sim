@@ -12,6 +12,9 @@ public:
 	void step();
 	void save();
 	void load(std::string filename);
+	double getCurrenttime();
+	void setCurrenttime(double time);
+	void setInitialtime(double time);
 
 private:
 	double timestep;
