@@ -1,5 +1,10 @@
 #pragma once
 #include <string>
+#include "Grids.h"
+#include "Roads.h"
+
+
+
 
 
 class SimulationEngine
@@ -15,7 +20,7 @@ public:
 	double getCurrenttime();
 	void setCurrenttime(double time);
 	void setInitialtime(double time);
-	int grid[10][10]{ 0 };
+	Roads* grid[10][10];
 private:
 	double timestep;
 	double current_time;
