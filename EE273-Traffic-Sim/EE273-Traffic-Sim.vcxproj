@@ -126,6 +126,7 @@
     <ClCompile Include="BIke.cpp" />
     <ClCompile Include="Bus.cpp" />
     <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Grids.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Lane.cpp" />
     <ClCompile Include="Roads.cpp" />

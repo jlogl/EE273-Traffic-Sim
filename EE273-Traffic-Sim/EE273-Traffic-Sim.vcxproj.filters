@@ -39,6 +39,9 @@
     <ClCompile Include="Roads.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Grids.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vehicle.h">

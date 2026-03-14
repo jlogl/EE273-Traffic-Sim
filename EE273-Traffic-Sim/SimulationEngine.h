@@ -18,10 +18,13 @@ public:
 	void save();
 	void load(std::string filename);
 	double getCurrenttime();
+	
 	void setCurrenttime(double time);
 	void setInitialtime(double time);
-	Roads* grid[10][10];
+
+	
 private:
+	
 	double timestep;
 	double current_time;
 	double initial_time;

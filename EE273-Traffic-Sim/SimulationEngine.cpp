@@ -8,6 +8,7 @@ SimulationEngine::SimulationEngine()
 	current_time = 0;
 	timestep = 1;
 	initial_time = 0;
+
 }
 SimulationEngine::~SimulationEngine()
 {
@@ -16,12 +17,14 @@ double SimulationEngine::getCurrenttime() {
 	return current_time;
 
 }
+
 void SimulationEngine::setCurrenttime(double time) {
 	 current_time = time;
 };
 void SimulationEngine::setInitialtime(double time) {
 	initial_time = time;
 };
+
 void SimulationEngine:: run(int number_of_steps)
 {
 	std::cout << "Simulation running for "  <<number_of_steps<<" steps" << std::endl;
