@@ -3,6 +3,7 @@
 #include "Grids.h"
 #include "SimulationEngine.h"
 #include <iostream>
+#include "Direction_enum.h"
 
 Grids::Grids() {
 	for (int i = 0; i < 10; i++) {
@@ -16,6 +17,12 @@ Grids::Grids() {
 
 }
 Grids::~Grids() {
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			delete Road_Grid[i][j];
+			delete Vehicle_Grid[i][j];
+		}
+	}
 	
 
 }
@@ -65,46 +72,55 @@ void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, i
 		std::cout << "This isn't a road " << std::endl;
 		return;
 	}
-	if (initial_x == final_x) {
-		if (initial_y < final_y) {
-			for (int i = initial_y; i <= final_y; i = i + 1) {
-				Roads* road_object= new Roads(initial_x, i, speed_limit);
 
-				setRoadsGrid(initial_x, i, road_object);
-			}
-		}
-		else {
-			for (int i = initial_y; i >= final_y; i = i - 1) {
-				Roads* road_object=new Roads(initial_x, i, speed_limit);
-
-				setRoadsGrid(initial_x, i, road_object);
-			}
-		}
+	if (number_of_lanes != 1 && number_of_lanes != 2) {
+		std::cout << "Invalid number of lanes" << std::endl;
+		return;
 
 	}
-	else {
-		if (initial_x < final_x) {
+	if (number_of_lanes == 1) { // creates a single lane road
 
-			for (int i = initial_x; i <= final_x; i = i + 1) {
+		if (initial_x == final_x) { // vertical road 
+			if (initial_y < final_y) { 
+				for (int i = initial_y; i <= final_y; i = i + 1) {
+					Roads* road_object = new Roads(initial_x, i, speed_limit,North);
 
-				Roads* road_object= new Roads(i, initial_y, speed_limit);
+					setRoadsGrid(initial_x, i, road_object);
+				}
+			}
+			else {
+				for (int i = initial_y; i >= final_y; i = i - 1) {
+					Roads* road_object = new Roads(initial_x, i, speed_limit,South);
 
-				setRoadsGrid(i, initial_y, road_object);
+					setRoadsGrid(initial_x, i, road_object);
+				}
 			}
 
 		}
-		else {
-			for (int i = initial_x; i >= final_x; i = i - 1) {
+		else {// horizontal road
+			if (initial_x < final_x) {
 
-				Roads* road_object= new Roads(i, initial_y, speed_limit);
+				for (int i = initial_x; i <= final_x; i = i + 1) {
 
-				setRoadsGrid(i, initial_y, road_object);
+					Roads* road_object = new Roads(i, initial_y, speed_limit,East);
+
+					setRoadsGrid(i, initial_y, road_object);
+				}
+
 			}
+			else {
+				for (int i = initial_x; i >= final_x; i = i - 1) {
 
+					Roads* road_object = new Roads(i, initial_y, speed_limit,West);
+
+					setRoadsGrid(i, initial_y, road_object);
+				}
+
+			}
 		}
 	}
+	
 
 
 
-
-}
+	}

@@ -15,6 +15,7 @@ public:
     Vehicle* getVehicleGrid(int x, int y);
     void setVehicleGrid(int x, int y, Vehicle* value);
     void CreateRoad( int initial_x, int initial_y, int final_x, int final_y, int speed_limit, int number_of_lanes);
+    void CreateVehicle();
     void PrintGrids();
 private:
    
