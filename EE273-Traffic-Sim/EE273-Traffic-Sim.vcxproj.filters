@@ -42,6 +42,12 @@
     <ClCompile Include="Grids.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OneLane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TwoLane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vehicle.h">
@@ -66,6 +72,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Direction_enum.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OneLane.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TwoLane.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
