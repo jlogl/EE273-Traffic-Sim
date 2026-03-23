@@ -1,5 +1,5 @@
 #pragma once
-#include "Grids.h"
+
 #include "Direction_enum.h"
 
 class Roads {
@@ -26,7 +26,7 @@ private:
 	int x_coordinate; //holds data on where the road is on the grid in x direction which is defined as left to right
 	int y_coordinate; //holds data on where the road is on the grid un y direction which is defined as down to up
 	int number_of_lanes; // may only be one or 2 to signify a one way or two way road
-	enum direction direction_of_road;
+	direction direction_of_road;// tells us what direction a car will travel on the road, means that direction isnt associated with speed
 
 };
 	

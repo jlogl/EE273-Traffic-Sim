@@ -68,5 +68,8 @@
     <ClInclude Include="Direction_enum.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Type_enum.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

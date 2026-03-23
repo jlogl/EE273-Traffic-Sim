@@ -1,9 +1,10 @@
 
 
 #include "Grids.h"
-#include "SimulationEngine.h"
-#include <iostream>
 #include "Direction_enum.h"
+
+#include <iostream>
+
 
 Grids::Grids() {
 	for (int i = 0; i < 10; i++) {
@@ -59,6 +60,26 @@ void Grids::PrintGrids() {
 
 
 	}
+		std::cout << std::endl;
+	}
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	for (int i = 0; i < 10; i = i + 1) {
+
+		for (int j = 0; j < 10; j = j + 1) {
+			if (Vehicle_Grid[i][j] == nullptr) {
+
+				std::cout << "0";
+			}
+			else {
+
+				std::cout << "1";
+			}
+
+
+		}
 		std::cout << std::endl;
 	}
 
@@ -124,3 +145,19 @@ void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, i
 
 
 	}
+
+
+void Grids::CreateVehicle(int x, int y, type type_of_vehicle) {
+
+	if (Road_Grid[x][y] == nullptr) {
+
+		std::cout << "No road at coordinate " << x << "," << y << std::endl;
+		return;
+	}
+	if (Vehicle_Grid[x][y] != nullptr) {
+		std::cout<<"Vehicle already exists at coordinate " << x << "," << y << std::endl;
+		return;
+
+	}
+
+}
