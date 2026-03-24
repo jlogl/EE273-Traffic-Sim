@@ -80,5 +80,13 @@
     <ClInclude Include="TwoLane.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Grids.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vehicle_diagram.cd" />
+    <None Include="Roads_diagram.cd" />
+    <None Include="SimEng_Grid_diagram.cd" />
   </ItemGroup>
 </Project>

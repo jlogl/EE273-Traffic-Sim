@@ -5,10 +5,10 @@
 #include "Grids.h"
 #include "Direction_enum.h"
 
-class OneLane : public Roads {
+class TwoLane : public Roads {
 
 public:
-	OneLane(int x, int y, int max_speed, direction Direction) {
+	TwoLane(int x, int y, int max_speed, direction Direction) {
 		x_coordinate = x;
 		y_coordinate = y;
 		speed_limit = max_speed;
@@ -24,7 +24,7 @@ public:
 			direction_b = East;
 		}
 	}
-	~OneLane() {}
+	~TwoLane() {}
 
 	int getSpeedLimit();
 	int getX();

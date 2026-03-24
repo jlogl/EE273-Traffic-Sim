@@ -140,12 +140,18 @@
     <ClInclude Include="Bus.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="Direction_enum.h" />
+    <ClInclude Include="Grids.h" />
     <ClInclude Include="Lane.h" />
     <ClInclude Include="OneLane.h" />
     <ClInclude Include="Roads.h" />
     <ClInclude Include="SimulationEngine.h" />
     <ClInclude Include="TwoLane.h" />
     <ClInclude Include="Vehicle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Roads_diagram.cd" />
+    <None Include="SimEng_Grid_diagram.cd" />
+    <None Include="Vehicle_diagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

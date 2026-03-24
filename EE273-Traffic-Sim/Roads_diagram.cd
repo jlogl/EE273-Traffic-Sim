@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Roads">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAhCAABAAAAAAAAAAAAAAYQACABAAAAAAGEAAAA=</HashCode>
+      <FileName>Roads.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwoLane" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAhAAABAQAAAAAAAAAAAAIQACIBAAAAAAHAAgAA=</HashCode>
+      <FileName>TwoLane.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OneLane" Collapsed="true">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAApAAABAAAAAAAAAAAAIAIQACIBAAAAAAGEAAAA=</HashCode>
+      <FileName>OneLane.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
