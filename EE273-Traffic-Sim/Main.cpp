@@ -19,9 +19,14 @@ int main()
 	Grids Grid;
 	Grid.CreateRoad(2,2,2,4,10,1);
 	Grid.CreateRoad(6, 4, 7, 4, 20, 1);
-		Grid.PrintGrids();
+	Grid.CreateVehicle(2,3,car);
 		Roads* test = Grid.getRoadsGrid(2, 2);
 		std::cout << test->getSpeedLimit() << std::endl;
+	Grid.CreateVehicle(1,2,car);
+Grid.PrintGrids();
+
+	Vehicle * test_v=Grid.getVehicleGrid(2,3);
+	std::cout<<test_v->getVehicleType();
 
 
 }

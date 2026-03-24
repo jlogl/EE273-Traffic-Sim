@@ -1,10 +1,14 @@
 
 
-#include "Grids.h"
+#include"Grids.h"
 #include "Direction_enum.h"
 
 #include <iostream>
 
+#include "Vehicle.h"
+#include "Car.h"
+#include "Bike.h"
+#include "Bus.h"
 
 Grids::Grids() {
 	for (int i = 0; i < 10; i++) {
@@ -45,7 +49,6 @@ void Grids::setVehicleGrid(int x, int y, Vehicle* value) {
 /* these getters and setters are used to interact with a single cell in each grid*/
 
 void Grids::PrintGrids() {
-
 	for (int i=0; i < 10; i = i + 1) {
 
 		for (int j = 0; j < 10; j = j + 1) {
@@ -57,11 +60,11 @@ void Grids::PrintGrids() {
 
 				std::cout << "1";
 			}
+		}
+		std::cout<<std::endl;
 
 
-	}
-		std::cout << std::endl;
-	}
+		}
 
 	std::cout << std::endl;
 	std::cout << std::endl;
@@ -82,6 +85,7 @@ void Grids::PrintGrids() {
 		}
 		std::cout << std::endl;
 	}
+
 
 }
 void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, int speed_limit, int number_of_lanes) {
@@ -147,7 +151,7 @@ void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, i
 	}
 
 
-void Grids::CreateVehicle(int x, int y, type type_of_vehicle) {
+void Grids::CreateVehicle(int x, int y,type type_of_vehicle) {
 
 	if (Road_Grid[x][y] == nullptr) {
 
@@ -158,6 +162,28 @@ void Grids::CreateVehicle(int x, int y, type type_of_vehicle) {
 		std::cout<<"Vehicle already exists at coordinate " << x << "," << y << std::endl;
 		return;
 
+	}
+
+	//Vehicle* v = new Vehicle(x,y);
+
+	switch (type_of_vehicle) {
+
+		case car: {
+			Vehicle* car_object = new Car(x,y);
+			setVehicleGrid(x,y,car_object);
+			break;
+		}
+		case bus: {
+			Vehicle*bus_object = new Bus(x,y);
+			setVehicleGrid(x,y,bus_object);
+			break;
+		}
+		case bike: {
+				Vehicle* bike_object = new Bike(x,y);
+			setVehicleGrid(x,y,bike_object);
+			break;
+
+		}
 	}
 
 }

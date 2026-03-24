@@ -1,2 +1,2 @@
 #pragma once
-enum type{Car,Bus,Bike,None};
+enum type{car,bus,bike,none};
