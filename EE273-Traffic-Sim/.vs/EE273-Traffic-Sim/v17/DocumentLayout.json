@@ -3,44 +3,48 @@
   "WorkspaceRootPath": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Grids.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Vehicle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Grids.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Vehicle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Grids.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Roads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Grids.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Car.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Car.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Direction_enum.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Direction_enum.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Roads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:SimulationEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:SimulationEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:SimulationEngine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,20 +54,78 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
               "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp",
               "RelativeToolTip": "Main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-04T22:27:08.843Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Grids.cpp",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.cpp",
+              "RelativeDocumentMoniker": "Grids.cpp",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.cpp",
+              "RelativeToolTip": "Grids.cpp",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAABIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-10T23:30:40.913Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Car.cpp",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Car.cpp",
+              "RelativeDocumentMoniker": "Car.cpp",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Car.cpp",
+              "RelativeToolTip": "Car.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-30T17:24:55.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Vehicle.cpp",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.cpp",
+              "RelativeDocumentMoniker": "Vehicle.cpp",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.cpp",
+              "RelativeToolTip": "Vehicle.cpp",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAADIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-07T13:25:41.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Grids.h",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h",
+              "RelativeDocumentMoniker": "Grids.h",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h",
+              "RelativeToolTip": "Grids.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-10T23:16:17.819Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -79,20 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Grids.h",
-              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h",
-              "RelativeDocumentMoniker": "Grids.h",
-              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h",
-              "RelativeToolTip": "Grids.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-10T23:16:17.819Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Roads.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h",
               "RelativeDocumentMoniker": "Roads.h",
@@ -104,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Roads.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.cpp",
               "RelativeDocumentMoniker": "Roads.cpp",
@@ -116,43 +165,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Grids.cpp",
-              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.cpp",
-              "RelativeDocumentMoniker": "Grids.cpp",
-              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.cpp",
-              "RelativeToolTip": "Grids.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-10T23:30:40.913Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Vehicle.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.h",
               "RelativeDocumentMoniker": "Vehicle.h",
               "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.h",
               "RelativeToolTip": "Vehicle.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-07T13:25:41.661Z"
+              "WhenOpened": "2026-03-07T13:25:41.661Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Vehicle.cpp",
-              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.cpp",
-              "RelativeDocumentMoniker": "Vehicle.cpp",
-              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.cpp",
-              "RelativeToolTip": "Vehicle.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAC3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-07T13:25:41.03Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SimulationEngine.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.h",
               "RelativeDocumentMoniker": "SimulationEngine.h",
@@ -164,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "SimulationEngine.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.cpp",
               "RelativeDocumentMoniker": "SimulationEngine.cpp",

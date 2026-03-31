@@ -4,8 +4,9 @@
 #include "Roads.h"
 #include "Vehicle.h"
 
+
+class Vehicle;
 class Roads;
-class Vehcile;
 class Grids {
 public:
     Grids();
@@ -15,7 +16,7 @@ public:
     Vehicle* getVehicleGrid(int x, int y);
     void setVehicleGrid(int x, int y, Vehicle* value);
     void CreateRoad( int initial_x, int initial_y, int final_x, int final_y, int speed_limit, int number_of_lanes);
-    void CreateVehicle();
+    void CreateVehicle(int x ,int y,type type_of_vehicle );
     void PrintGrids();
 private:
    

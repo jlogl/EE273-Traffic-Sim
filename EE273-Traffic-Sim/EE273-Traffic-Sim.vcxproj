@@ -144,6 +144,7 @@
     <ClInclude Include="OneLane.h" />
     <ClInclude Include="Roads.h" />
     <ClInclude Include="SimulationEngine.h" />
+    <ClInclude Include="Type_enum.h" />
     <ClInclude Include="TwoLane.h" />
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>

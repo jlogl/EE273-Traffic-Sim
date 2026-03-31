@@ -1,5 +1,5 @@
 #pragma once
-#include "Grids.h"
+
 #include "Direction_enum.h"
 #include "Vehicle.h"
 
@@ -23,7 +23,7 @@ public:
 
 
 private:
-	int speed_limit; // Wont be measured in m/s, will be squares/tick so speeds will be low number like 1 or 2
+	int speed_limit; // Won't be measured in m/s, will be squares/tick so speeds will be low number like 1 or 2
 	int x_coordinate; //holds data on where the road is on the grid in x direction which is defined as left to right
 	int y_coordinate; //holds data on where the road is on the grid un y direction which is defined as down to up
 	int number_of_lanes; // may only be one or 2 to signify a one way or two way road
