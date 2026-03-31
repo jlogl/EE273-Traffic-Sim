@@ -129,8 +129,10 @@
     <ClCompile Include="Grids.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Lane.cpp" />
+    <ClCompile Include="OneLane.cpp" />
     <ClCompile Include="Roads.cpp" />
     <ClCompile Include="SimulationEngine.cpp" />
+    <ClCompile Include="TwoLane.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,9 +141,11 @@
     <ClInclude Include="Car.h" />
     <ClInclude Include="Direction_enum.h" />
     <ClInclude Include="Lane.h" />
+    <ClInclude Include="OneLane.h" />
     <ClInclude Include="Roads.h" />
     <ClInclude Include="SimulationEngine.h" />
     <ClInclude Include="Type_enum.h" />
+    <ClInclude Include="TwoLane.h" />
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
