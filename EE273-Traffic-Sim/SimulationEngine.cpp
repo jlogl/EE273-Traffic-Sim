@@ -44,6 +44,7 @@ void SimulationEngine:: run(int number_of_steps)
 		// namespace allows us to interact with this thread of code, found on C++ forum.
 		count += 1;
 
+
 	}
 	std::cout << "Simulation complete" << std::endl; // These cout's are just for testing, i am unsure if we need to set the communication outside the engine
 	return;

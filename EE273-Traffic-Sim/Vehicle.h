@@ -1,7 +1,7 @@
 #pragma once
 #include "Direction_enum.h"
 #include "Type_enum.h"
-#include "grids.h"
+class Grids;
 class Vehicle {
 public:
 	Vehicle(int x, int y);

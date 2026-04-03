@@ -164,25 +164,32 @@ void Grids::CreateVehicle(int x, int y,type type_of_vehicle) {
 
 	}
 
-	//Vehicle* v = new Vehicle(x,y);
+	Vehicle* v;
 
 	switch (type_of_vehicle) {
 
 		case car: {
-			Vehicle* car_object = new Car(x,y);
-			setVehicleGrid(x,y,car_object);
+			v = new Car(x,y);
+			setVehicleGrid(x,y,v);
+			vehicle_on_grid.push_back(v);
 			break;
 		}
 		case bus: {
-			Vehicle*bus_object = new Bus(x,y);
-			setVehicleGrid(x,y,bus_object);
+			v = new Bus(x,y);
+			setVehicleGrid(x,y,v);
+			vehicle_on_grid.push_back(v);
 			break;
 		}
 		case bike: {
-				Vehicle* bike_object = new Bike(x,y);
-			setVehicleGrid(x,y,bike_object);
+			v = new Bike(x,y);
+			setVehicleGrid(x,y,v);
+			vehicle_on_grid.push_back(v);
 			break;
 
+		}
+		case none: {
+			delete v;
+			break;
 		}
 	}
 
