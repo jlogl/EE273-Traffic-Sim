@@ -45,50 +45,68 @@ Vehicle* Grids::getVehicleGrid(int x, int y) {
 void Grids::setVehicleGrid(int x, int y, Vehicle* value) {
 	Vehicle_Grid[x][y] = value;
 };
+std::vector<Vehicle*>& Grids::getVehicles() {
+	return vehicle_on_grid;
+}
 
 /* these getters and setters are used to interact with a single cell in each grid*/
 
 void Grids::PrintGrids() {
-	for (int i=0; i < 10; i = i + 1) {
+	for (int i = Grids::grid_size - 1; i >= 0; i = i - 1) { // overall layout may not make sense but layout inverts y axis and makes x actually equal x in terms of x,y order 
 
-		for (int j = 0; j < 10; j = j + 1) {
-			if (Road_Grid[i][j] == nullptr) {
+		for (int j = 0; j <= Grids::grid_size - 1; j = j + 1) {
+			if (Road_Grid[j][i] == nullptr) {
 
-				std::cout << "0" ;
-			}
-			else{
-
-				std::cout << "1";
-			}
-		}
-		std::cout<<std::endl;
-
-
-		}
-
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	for (int i = 0; i < 10; i = i + 1) {
-
-		for (int j = 0; j < 10; j = j + 1) {
-			if (Vehicle_Grid[i][j] == nullptr) {
-
-				std::cout << "0";
+				std::cout << "0 ";
 			}
 			else {
+				std::cout << "1 ";
 
-				std::cout << "1";
 			}
-
 
 		}
 		std::cout << std::endl;
+
+
 	}
 
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	for (int i = Grids::grid_size - 1; i >= 0; i = i - 1) {
 
+		for (int j = 0; j <= Grids::grid_size - 1; j = j + 1) {
+			if (Vehicle_Grid[j][i] == nullptr) {
+
+				std::cout << "0 ";
+			}
+			else {
+
+				if (this->getVehicleGrid(j, i)->getVehicleType() == car) {
+
+					std::cout << "C ";
+				}
+				if (this->getVehicleGrid(j, i)->getVehicleType() == bus) {
+
+					std::cout << "B ";
+				}
+				if (this->getVehicleGrid(j, i)->getVehicleType() == bike) {
+
+					std::cout << "A ";
+
+
+
+				}
+
+
+			}
+			
+		}
+		std::cout << std::endl;
+
+	}
 }
-void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, int speed_limit, int number_of_lanes) {
+void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, int speed_limit, int number_of_lanes) {// number of lanes is useless rn will be used at later date so keeping it 
 	if (initial_x != final_x && initial_y != final_y) {
 		std::cout << "Diagonal road not supported" << std::endl;
 		return;
@@ -105,7 +123,7 @@ void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, i
 	}
 	if (number_of_lanes == 1) { // creates a single lane road
 
-		if (initial_x == final_x) { // vertical road 
+		if (initial_x == final_x) { 
 			if (initial_y < final_y) { 
 				for (int i = initial_y; i <= final_y; i = i + 1) {
 					Roads* road_object = new Roads(initial_x, i, speed_limit,North);
@@ -122,7 +140,7 @@ void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, i
 			}
 
 		}
-		else {// horizontal road
+		else {
 			if (initial_x < final_x) {
 
 				for (int i = initial_x; i <= final_x; i = i + 1) {
@@ -165,32 +183,33 @@ void Grids::CreateVehicle(int x, int y,type type_of_vehicle) {
 	}
 
 	Vehicle* v;
-
+	
 	switch (type_of_vehicle) {
 
 		case car: {
 			v = new Car(x,y);
 			setVehicleGrid(x,y,v);
+			v->setVehicleDirection(*this);
 			vehicle_on_grid.push_back(v);
+			
 			break;
 		}
 		case bus: {
 			v = new Bus(x,y);
 			setVehicleGrid(x,y,v);
+			v->setVehicleDirection(*this);
 			vehicle_on_grid.push_back(v);
 			break;
 		}
 		case bike: {
 			v = new Bike(x,y);
 			setVehicleGrid(x,y,v);
+			v->setVehicleDirection(*this);
 			vehicle_on_grid.push_back(v);
 			break;
 
 		}
-		case none: {
-			delete v;
-			break;
-		}
+		
 	}
 
 }

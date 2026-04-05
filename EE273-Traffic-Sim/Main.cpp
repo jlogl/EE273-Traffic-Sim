@@ -8,25 +8,28 @@
 int main()
 {
 
-	SimulationEngine engine;
+
 	
-	/*engine.run(5);
-	engine.step();
-
-	engine.reset();
-	engine.load("save.txt");
-	engine.run(3);*/
+	
 	Grids Grid;
-	Grid.CreateRoad(2,2,2,9,10,1);
-	Grid.CreateRoad(6, 4, 7, 4, 20, 1);
-	Grid.CreateVehicle(2,3,car);
-		Roads* test = Grid.getRoadsGrid(2, 2);
-		std::cout << test->getSpeedLimit() << std::endl;
-	Grid.CreateVehicle(1,2,car);
-    Grid.PrintGrids();
+	SimulationEngine* engine = new SimulationEngine(&Grid);
+	Grid.CreateRoad(2, 1, 2, 19, 10, 1);
 
-	Vehicle * test_v=Grid.getVehicleGrid(2,3);
-	std::cout<<test_v->getVehicleType();
+	
+	
+	
+	Grid.CreateVehicle(2, 7, bus);
+	Grid.CreateVehicle(2, 1, car);
+	//Grid.CreateVehicle(6, 1, bike);
+	Grid.PrintGrids();
+	std::vector<Vehicle*>& v = Grid.getVehicles();
+	
+
+	engine->run(7);
+	
+	
+   
+
 
 
 

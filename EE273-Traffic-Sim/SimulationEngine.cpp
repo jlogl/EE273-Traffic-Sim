@@ -3,8 +3,10 @@
 #include <chrono>
 #include <thread>
 #include <fstream>
-SimulationEngine::SimulationEngine()
+#include "Grids.h"
+SimulationEngine::SimulationEngine(Grids* grid)
 {
+	Grid = grid; // had to add to simulation in order for engine to have acsess to the grid, allowing for the vehicle vector to be used to iterate
 	current_time = 0;
 	timestep = 1;
 	initial_time = 0;
@@ -13,7 +15,7 @@ SimulationEngine::SimulationEngine()
 SimulationEngine::~SimulationEngine()
 {
 }
-double SimulationEngine::getCurrenttime() {
+double SimulationEngine::getCurrentTime() {
 	return current_time;
 
 }
@@ -27,26 +29,42 @@ void SimulationEngine::setInitialtime(double time) {
 
 void SimulationEngine:: run(int number_of_steps)
 {
-	std::cout << "Simulation running for "  <<number_of_steps<<" steps" << std::endl;
+	
 	if (number_of_steps <= 0) {
 		std::cout << "Invalid Inputs defined" << std::endl; // The Simulation should always have a Positive number of steps, this prevents their being zero or negative steps
 		return;
 	}
+	//std::cout << "Simulation running for " << number_of_steps << " steps" << std::endl;
 
 	int count = 1;
-	while (count<=number_of_steps) {
+	do {
 		// update simulation station each timestep, i think this should be a function defined in the classes for each type of object like car or road
 		// maybe create a object class at top of hierarchy of all the other classes, this would allow us to iterate over a array of objects which is every entity in simulation
 	
 		current_time += timestep;
 		std::cout << "Current time: " << current_time << std::endl;
+		std::vector<Vehicle*>& v = Grid->getVehicles();
+
+		int size = v.size();
+		for (Vehicle* i:v) {
+			i->UpdateSpeed(*Grid);
+			
+		}
+		for (Vehicle* i :v) {
+			i->UpdateMovement(*Grid);
+
+		}
+		
+		Grid->PrintGrids(); // WILL NEED TO BE JOB OF UI, JUST TEMPORARY TO SHOW IT WORKS
+
+		
 		std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // simulate time delay for each timestep, the chrono library allows for the program to interact with real world time and the this_thread 
 		// namespace allows us to interact with this thread of code, found on C++ forum.
-		count += 1;
+		count=count+1;
 
 
-	}
-	std::cout << "Simulation complete" << std::endl; // These cout's are just for testing, i am unsure if we need to set the communication outside the engine
+	} while (count <= number_of_steps);
+	//std::cout << "Simulation complete" << std::endl; // These cout's are just for testing, i am unsure if we need to set the communication outside the engine
 	return;
 }
 
@@ -57,21 +75,27 @@ void SimulationEngine::step()
 	// update simulation station each timestep, i think this should be a function defined in the classes for each type of object like car or road
 	// maybe create a object class at top of hierarchy of all the other classes, this would allow us to iterate over a array of objects which is every entity in simulation
 
-	current_time += timestep;
-	std::cout << "Current time: " << current_time << std::endl;
-	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-	std::cout << "step complete" << std::endl;
+	//current_time += timestep;
+	//std::cout << "Current time: " << current_time << std::endl;
+	//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	//std::cout << "step complete" << std::endl;
+	SimulationEngine::run(1);
 
 }
 
 void SimulationEngine::reset()
 {
    //same as the update function but revert back to initial conditions, unsure if this means we need to keep a log of initial conditions for each of the objects 
-
+	std::vector<Vehicle*>& v = Grid->getVehicles();
 	current_time = initial_time;
 	
 	std::cout << "reset complete" << std::endl;
 	std::cout <<"Current time: " << current_time << std::endl;
+	for (Vehicle* i : v) {
+
+		i->ResetVehicle();
+	}
+	
 }
 
 
@@ -81,7 +105,7 @@ void SimulationEngine::save()
 	std::string filename;
 	std::cout << "Please enter filename to save simulation to: " << std::endl;
 	std::cin >> filename;
-
+	std::vector<Vehicle*>& v = Grid->getVehicles();
 	
 	std::ofstream outFile(filename);
 	if (!outFile) {
@@ -90,8 +114,11 @@ void SimulationEngine::save()
 		return;
 	}
 
-		outFile << getCurrenttime() << std::endl;
-
+		outFile << getCurrentTime() << std::endl;
+		for (Vehicle* i : v) {
+			outFile << i->getX() << "," << i->getY() << "," << i->getVehicleType() << std::endl;
+		}
+		
 
 		outFile.close();
 

@@ -2,9 +2,9 @@
 
 Bus::Bus(int x,int y):Vehicle( x , y){
 
-	max_speed = 4;
+	max_speed = 3;
 	acceleration = 1;
-	deceleration = 2; // These values are purely hypothetical, unsure what model we using so just put values as placeeholders
+	deceleration = 1; // These values are purely hypothetical, unsure what model we using so just put values as placeeholders
 	Type = type::bus;
 
 }

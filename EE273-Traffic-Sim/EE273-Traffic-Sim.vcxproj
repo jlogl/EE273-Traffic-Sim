@@ -124,7 +124,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BIke.cpp" />
-    <ClCompile Include="Bus.cpp" />
+    <ClCompile Include="Bus.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Grids.cpp" />
     <ClCompile Include="Main.cpp" />

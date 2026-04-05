@@ -2,6 +2,11 @@
 #include <iostream>
 #include "Roads.h"
 
+
+
+Roads::~Roads() {
+
+}
 int Roads::getSpeedLimit() {
 
 	return speed_limit;
@@ -16,10 +21,8 @@ int Roads::getY() {
 
 	return y_coordinate;
 }
-int Roads::getNumberOfLanes() {
 
-	return number_of_lanes;
-}
+
 
 direction Roads::getDirection() {
 

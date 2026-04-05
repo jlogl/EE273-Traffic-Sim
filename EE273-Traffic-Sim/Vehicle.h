@@ -6,10 +6,20 @@ class Vehicle {
 public:
 	Vehicle(int x, int y);
 	~Vehicle();
-	virtual void UpdateVehicle(Grids* grid);
-	virtual void ResetVehicle();
+	//void UpdateVehicle(Grids& grid);
+	void UpdateSpeed(Grids& grid);
+	void UpdateMovement(Grids& grid);
+	void ResetVehicle();
 	type getVehicleType();
-
+	bool isStoppingDistanceSafe(Grids& grid);
+	direction getVehicleDirection();
+	void setVehicleDirection(Grids& grid);
+	int getStoppingDistance(); // not virtual since every vehicle will use it unchaneged, however its protected since only used inside class
+	int getCurrentSpeed();
+	int getX();
+	int getY();
+	void setX(int x);
+	void setY(int y);
 protected:
 	int max_speed{}; // will be defined by type 
 	int current_speed;
@@ -20,8 +30,8 @@ protected:
 	int const speed_initial;
 	int acceleration{}; // needed to model the movement of the vehicle
 	int deceleration{}; // needed to model the movement of the vehicle
-	direction Direction{}; // tells us what way the car should move, will get from road pointer which vehicle is on
+	direction Direction; // tells us what way the car should move, will get from road pointer which vehicle is on
 	type Type{ none }; // allows us to know what vehicle type a object is
-	int getStoppingDistance(); // not virtual since every vehicle will use it unchaneged, however its protected since only used inside class
-	bool isStoppingDistanceSafe(Grids* grid);
+	
+
 };
