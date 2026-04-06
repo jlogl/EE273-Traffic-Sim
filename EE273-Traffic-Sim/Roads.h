@@ -6,12 +6,7 @@
 class Roads {
 
 public:
-	Roads(int x , int y ,int max_speed,direction Direction ) {
-		x_coordinate = x;
-		y_coordinate = y;
-		speed_limit = max_speed;
-		direction_of_road = Direction;
-	}
+	Roads(int x, int y, int max_speed, direction Direction);
 	~Roads();
 	
 	int getSpeedLimit();
@@ -19,7 +14,7 @@ public:
 	int getY();
 
 	direction getDirection();
-
+	void setDirection(direction D);// DO NOT CALL THIS FUNCTION IN MAIN 
 
 private:
 	int speed_limit; // Won't be measured in m/s, will be squares/tick so speeds will be low number like 1 or 2

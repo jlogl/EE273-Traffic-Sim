@@ -1,6 +1,6 @@
 #include "Bus.h"
 
-Bus::Bus(int x,int y):Vehicle( x , y){
+Bus::Bus(int x,int y):Vehicle( x , y){ // ensures that the position is correct
 
 	max_speed = 3;
 	acceleration = 1;

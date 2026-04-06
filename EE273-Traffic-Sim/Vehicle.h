@@ -6,14 +6,14 @@ class Vehicle {
 public:
 	Vehicle(int x, int y);
 	~Vehicle();
-	//void UpdateVehicle(Grids& grid);
+	
 	void UpdateSpeed(Grids& grid);
 	void UpdateMovement(Grids& grid);
 	void ResetVehicle();
 	type getVehicleType();
 	bool isStoppingDistanceSafe(Grids& grid);
 	direction getVehicleDirection();
-	void setVehicleDirection(Grids& grid);
+	void setVehicleDirection(Grids& grid, bool A_or_B);
 	int getStoppingDistance(); // not virtual since every vehicle will use it unchaneged, however its protected since only used inside class
 	int getCurrentSpeed();
 	int getX();
@@ -32,6 +32,5 @@ protected:
 	int deceleration{}; // needed to model the movement of the vehicle
 	direction Direction; // tells us what way the car should move, will get from road pointer which vehicle is on
 	type Type{ none }; // allows us to know what vehicle type a object is
-	
 
 };

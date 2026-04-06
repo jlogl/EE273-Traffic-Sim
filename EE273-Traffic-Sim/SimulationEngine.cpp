@@ -132,8 +132,8 @@ void SimulationEngine::load(std::string filename) {
 	}
 	std::string line;
 	(getline(inFile, line)); // Is not in a loop as we only want the first line to be used for the purpose of setting the time
-		setCurrenttime(stod(line));
-		setInitialtime(stod(line));
+		setCurrenttime(stoi(line));
+		setInitialtime(stoi(line));
 
 		inFile.close();
 

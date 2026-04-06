@@ -15,10 +15,6 @@ Vehicle::~Vehicle() {};
 void Vehicle::UpdateSpeed(Grids& grid) {
 	bool safety = isStoppingDistanceSafe(grid);
 	
-	std::cout << "Vehicle pre speed changes " << x << "," << y
-		<< " speed=" << current_speed
-		<< " SD=" << getStoppingDistance()
-		<< " safe=" <<safety << std::endl;
 	if (safety) {
 		if (current_speed < max_speed) {
 			current_speed = current_speed + acceleration;
@@ -44,24 +40,24 @@ void Vehicle::UpdateMovement(Grids& grid) {
 
 
 	case(North):
-		grid.setVehicleGrid(x, y, nullptr);// sets the previous location of car to null since car is no longer there
+		grid.setVehicleGrid(x, y, nullptr,1);// sets the previous location of car to null since car is no longer there
 		y = y + current_speed; // updates y coordinate
-		grid.setVehicleGrid(x, y, this);// updates THIS instance of Vehicles position
+		grid.setVehicleGrid(x, y, this,1);// updates THIS instance of Vehicles position
 		break;
 	case (East):
-		grid.setVehicleGrid(x, y, nullptr);
+		grid.setVehicleGrid(x, y, nullptr,1);
 		x = x + current_speed;
-		grid.setVehicleGrid(x, y, this);
+		grid.setVehicleGrid(x, y, this,1);
 		break;
 	case(South):
-		grid.setVehicleGrid(x, y, nullptr);
+		grid.setVehicleGrid(x, y, nullptr,0);
 		y = y - current_speed;
-		grid.setVehicleGrid(x, y, this);
+		grid.setVehicleGrid(x, y, this,0);
 		break;
 	case(West):
-		grid.setVehicleGrid(x, y, nullptr);
+		grid.setVehicleGrid(x, y, nullptr,0);
 		x = x - current_speed;
-		grid.setVehicleGrid(x, y, this);
+		grid.setVehicleGrid(x, y, this,0);
 		break;
 	}
 
@@ -79,10 +75,15 @@ direction Vehicle::getVehicleDirection() {
 	return Direction;
 }
 
-void Vehicle::setVehicleDirection(Grids& grid) {
-	Roads* R = grid.getRoadsGrid(x, y);
-	Direction=R->getDirection();
-	
+void Vehicle::setVehicleDirection(Grids& grid, bool A_or_B) {
+	if (A_or_B) {
+		Roads* R = grid.getRoadsGrid(x, y).RoadA;
+		Direction = R->getDirection();
+	}
+	else {
+		Roads* R = grid.getRoadsGrid(x, y).RoadB;
+		Direction = R->getDirection();
+	}
 };
 
 int Vehicle::getStoppingDistance() {
@@ -118,7 +119,7 @@ void Vehicle::setY(int y) {
 bool Vehicle::isStoppingDistanceSafe(Grids& grid) {
 	int StoppingDistance = getStoppingDistance();
 	switch (Direction) {
-	case(North): {
+	case(North): { // due to always having 2 lanes, and the way they are assigned, we know if a car is going north or east it is A and if its south or west its B
 		for (int i = y+1; i <= y + StoppingDistance; i = i + 1) {
 			std::cout << "Check At " << x << " " << i << std::endl;
 			if (i < 0 || i>Grids::grid_size - 1) {
@@ -126,19 +127,19 @@ bool Vehicle::isStoppingDistanceSafe(Grids& grid) {
 				return false; // checks if vehicle remains in sim boundray, had idea if the vehicle is going to leave sim range, let it and just delete it
 			}
 
-			if (grid.getRoadsGrid(x, i) == nullptr) {
+			if (grid.getRoadsGrid(x, i).RoadA == nullptr) {
 				std::cout << "No Road at " << x << " " << i << "ERROR ERROR ERROR ERROR ERROR " << std::endl;
 				return false; // checks if their is road the whole path 
 			}
 
-			if (grid.getVehicleGrid(x, i) != nullptr) {
+			if (grid.getVehicleGrid(x, i).VehicleA  != nullptr) {
 				std::cout << "Vehicle at " << x << " " << i << "ERROR ERROR ERROR ERROR ERROR " << std::endl;
 				return false; // checks if vehicle is already on path
 			}
 			// will need to add signals but cant at moment cuz we havent done that yet
 			std::cout << "Succesful check at " << x << " " << i << std::endl;
 		}
-		std::cout << "SAFE at " << x << " " << y << "SAFE SAFE SAFE SAFE SAFE " << std::endl;
+		std::cout << "SAFE at " << x << " " << y << " SAFE SAFE SAFE SAFE SAFE " << std::endl;
 		return true;
 		break;
 
@@ -152,12 +153,12 @@ bool Vehicle::isStoppingDistanceSafe(Grids& grid) {
 				return false; // checks if vehicle remains in sim boundray
 			}
 
-			if (grid.getRoadsGrid(i, y) == nullptr) {
+			if (grid.getRoadsGrid(i, y).RoadA == nullptr) {
 				
 				return false; // checks if their is road the whole path 
 			}
 
-			if (grid.getVehicleGrid(i, y) != nullptr) {
+			if (grid.getVehicleGrid(i, y).VehicleA != nullptr) {
 				
 				return false; // checks if vehicle is already on path
 			}
@@ -170,18 +171,23 @@ bool Vehicle::isStoppingDistanceSafe(Grids& grid) {
 		for (int i = y-1; i >= y - StoppingDistance; i = i - 1) {
 			std::cout << "Check At " << x << " " << i << std::endl;
 			if (i < 0 || i>Grids::grid_size - 1) {
+				std::cout << "OOB at " << x << " " << i << "ERROR ERROR ERROR ERROR ERROR " << std::endl;
 				return false; // checks if vehicle remains in sim boundray
 			}
 
-			if (grid.getRoadsGrid(x, i) == nullptr) {
+			if (grid.getRoadsGrid(x, i).RoadB == nullptr) {
+				std::cout << "No Road at " << x << " " << i << "ERROR ERROR ERROR ERROR ERROR " << std::endl;
 				return false; // checks if their is road the whole path 
 			}
 
-			if (grid.getVehicleGrid(x, i) != nullptr) {
+			if (grid.getVehicleGrid(x, i).VehicleB != nullptr) {
+				std::cout << "Vehicle at " << x << " " << i << "ERROR ERROR ERROR ERROR ERROR " << std::endl;
 				return false; // checks if vehicle is already on path
 			}
+			std::cout << "Succesful check at " << x << " " << i << std::endl;
 			// will need to add signals but cant at moment cuz we havent done that yet
 		}
+		std::cout << "SAFE at " << x << " " << y << " SAFE SAFE SAFE SAFE SAFE " << std::endl;
 		return true;
 		break;
 	}
@@ -192,11 +198,11 @@ bool Vehicle::isStoppingDistanceSafe(Grids& grid) {
 				return false; // checks if vehicle remains in sim boundray
 			}
 
-			if (grid.getRoadsGrid(i, y) == nullptr) {
+			if (grid.getRoadsGrid(i, y).RoadB == nullptr) {
 				return false; // checks if their is road the whole path 
 			}
 
-			if (grid.getVehicleGrid(i, y) != nullptr) {
+			if (grid.getVehicleGrid(i, y).VehicleB != nullptr) {
 				return false; // checks if vehicle is already on path
 			}
 			// will need to add signals but cant at moment cuz we havent done that yet
