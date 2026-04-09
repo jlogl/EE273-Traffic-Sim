@@ -1,10 +1,10 @@
 #pragma once
 #include <string>
-#include "Grids.h"
 
 
 
 
+class Grids;
 
 class SimulationEngine
 {
@@ -16,10 +16,10 @@ public:
 	void step();
 	void save();
 	void load(std::string filename);
-	double getCurrentTime();
-	
-	void setCurrenttime(double time);
-	void setInitialtime(double time);
+	int getCurrentTime();
+	int getInitialTime();
+	void setCurrentTime(int time);
+	void setInitialTime(int time);
 
 	
 private:

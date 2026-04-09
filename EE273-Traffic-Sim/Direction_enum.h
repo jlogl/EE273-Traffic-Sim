@@ -1,4 +1,4 @@
 #pragma once
 
 
-enum direction{North,East,South,West};
+enum direction{None,North,East,South,West};

@@ -1,11 +1,14 @@
 
 #include <iostream>
 #include "Roads.h"
+#include "Grids.h"
+Roads::Roads() {};
 Roads::Roads(int x, int y, int max_speed, direction Direction) {
 	x_coordinate = x;
 	y_coordinate = y;
 	speed_limit = max_speed;
 	direction_of_road = Direction;
+	IsRoad = true;
 }
 
 Roads::~Roads() {
@@ -35,5 +38,6 @@ direction Roads::getDirection() {
 
 	return direction_of_road;
 }
-
-
+bool Roads::isRoad() {
+	return IsRoad;
+}
