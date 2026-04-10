@@ -24,7 +24,7 @@ public:
 	
 private:
 	Grids* Grid;
-	double timestep;
-	double current_time;
-	double initial_time;
+	int timestep;
+	int current_time;
+	int initial_time;
 };

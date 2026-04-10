@@ -6,5 +6,6 @@ public:
 	CrossJunction(int x, int y, Grids& grid);
 	~CrossJunction();
 	void UpdateJunction(Grids& grid) override;
+
 };
 

@@ -77,10 +77,10 @@ void Junction::setType(Grids& grid) {
 		case(2): {
 
 			if (UpCheck && DownCheck) {
-				Type = unassigned;
+				Type = roads;
 			}
 			else if (LeftCheck && RightCheck) {
-				Type = unassigned;
+				Type = roads;
 			}
 			else {
 				Type = corner;
@@ -100,3 +100,19 @@ void Junction::setType(Grids& grid) {
 	return;
 }
 void Junction::UpdateJunction(Grids& grid) {};// doesnt need to do anything as is always overridden, but needs defenition
+void Junction::SetJunctionPointers(Grids& grid) {
+
+	 UpApproach = grid.getVehicleGrid(x_coordinate, y_coordinate + 1).VehicleB;
+	 UpLeave = grid.getVehicleGrid(x_coordinate, y_coordinate + 1).VehicleA;
+
+	 LeftApproach = grid.getVehicleGrid(x_coordinate - 1, y_coordinate).VehicleA;
+	 LeftLeave = grid.getVehicleGrid(x_coordinate - 1, y_coordinate).VehicleB;
+
+	 DownApproach = grid.getVehicleGrid(x_coordinate, y_coordinate - 1).VehicleA;
+	 DownLeave = grid.getVehicleGrid(x_coordinate, y_coordinate - 1).VehicleB;
+
+	 RightApproach = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleB;
+	 RightLeave = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleA;
+
+
+}

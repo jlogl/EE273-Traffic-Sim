@@ -36,6 +36,8 @@ public:
     void CreateVehicle(int x ,int y,type type_of_vehicle,bool A_or_B );
     void CreateJunction(int x, int y, junction type_of_junction);
     void PrintGrids(SimulationEngine& engine);
+    void DeleteRoad(int initial_x, int initial_y, int final_x, int final_y);
+    void DeleteVehicle(int x, int y, bool AorB);
     std::vector<Vehicle*>& getVehicles(); // allows us to provide a refernce of the vector of vehicle pointers to simulation engine
     std::vector<Junction*>& getJunctions(); // same as vehicles but for the junctions
     std::vector<std::tuple<int, int, int, int, int>>& getRoads();

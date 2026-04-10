@@ -37,28 +37,34 @@ int main()
 	Grid.CreateVehicle(5, 4, bus, 0);*/
 	
 	// Cross test
-	//Grid.CreateRoad(5, 1, 5, 7, 10);
+	/*Grid.CreateRoad(5, 1, 5, 7, 10);
 	//Grid.CreateRoad(2, 4, 8, 4, 10);
 	//Grid.CreateVehicle(3, 4, car, 1);
-	//Grid.CreateVehicle(7, 4, bus, 1);
-	//Grid.PrintGrids(*engine);
-
-	//engine->save();
-	//
-
-	//
-
-	//
-	//std::vector<Junction*>& J = Grid.getJunctions();
-	//int size = J.size();
-	//std::cout << size << std::endl;
-	//for (Junction* i : J) {
-
-	//	std::cout << i->getX() << " " << i->getY() << " " << i->getJunctionType() << std::endl;
-	//}
+	//Grid.CreateVehicle(7, 4, bus, 1);*/
 	
-	engine->load("save.txt");
+	Grid.CreateRoad(2, 3, 2, 7, 5);
+	Grid.CreateRoad(2, 7, 2, 9, 5);
+	//Grid.CreateRoad(2, 5, 5, 5,5);
+	
+    
+	
 	Grid.PrintGrids(*engine);
+
+	//
+
+	//
+
+	//
+	std::vector<Junction*>& J = Grid.getJunctions();
+	int size = J.size();
+	std::cout << size << std::endl;
+	for (Junction* i : J) {
+
+		std::cout << i->getX() << " " << i->getY() << " " << i->getJunctionType() << std::endl;
+	}
+	
+	//engine->load("save.txt");
+	//Grid.PrintGrids(*engine);
 
 
 	

@@ -51,6 +51,12 @@ void SimulationEngine:: run(int number_of_steps)
 		current_time += timestep;
 		std::vector<Vehicle*>& v = Grid->getVehicles();
 		std::vector<Junction*>& j = Grid->getJunctions();
+
+		for (Junction* i : j) {
+			i->SetJunctionPointers(*Grid);
+
+
+		}
 		for (Junction* i : j) {
 
 			i->UpdateJunction(*Grid);
@@ -112,7 +118,7 @@ void SimulationEngine::reset()
 }
 
 
-/*  This is the most work in progress part and will constantly need to be altered and reworked as the complexity of the simulation progresses */
+
 void SimulationEngine::save()
 {
 	std::string filename;

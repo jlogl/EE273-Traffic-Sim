@@ -10,18 +10,7 @@ CrossJunction::~CrossJunction() {
 };
 
 void CrossJunction::UpdateJunction(Grids& grid) {
-	
-	Vehicle* UpApproach = grid.getVehicleGrid(x_coordinate, y_coordinate + 1).VehicleB;
-	Vehicle* UpLeave = grid.getVehicleGrid(x_coordinate, y_coordinate + 1).VehicleA;
 
-	Vehicle* LeftApproach = grid.getVehicleGrid(x_coordinate - 1, y_coordinate).VehicleA;
-	Vehicle* LeftLeave = grid.getVehicleGrid(x_coordinate - 1, y_coordinate).VehicleB;
-
-	Vehicle* DownApproach = grid.getVehicleGrid(x_coordinate, y_coordinate - 1).VehicleA;
-	Vehicle* DownLeave = grid.getVehicleGrid(x_coordinate, y_coordinate - 1).VehicleB;
-
-	Vehicle* RightApproach = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleB;
-	Vehicle* RightLeave = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleA;
 
 	if (UpApproach != nullptr && RightLeave == nullptr && LeftApproach == nullptr) {
 		grid.setVehicleGrid(x_coordinate, y_coordinate + 1, nullptr, 0);

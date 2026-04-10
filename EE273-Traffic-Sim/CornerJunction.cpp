@@ -9,19 +9,16 @@ CornerJunction::~CornerJunction() {};
 
 void CornerJunction::UpdateJunction(Grids& grid) {
 	if (UpCheck && LeftCheck) {
-		Vehicle* LeftApproach= grid.getVehicleGrid(x_coordinate-1,y_coordinate).VehicleA;
-		Vehicle* LeftLeave = grid.getVehicleGrid(x_coordinate - 1, y_coordinate).VehicleB;
-		Vehicle* UpApproach= grid.getVehicleGrid(x_coordinate,y_coordinate+1).VehicleB;
-		Vehicle* UpLeave = grid.getVehicleGrid(x_coordinate, y_coordinate + 1).VehicleA;
+	
 
 
 		if (LeftApproach != nullptr && UpLeave == nullptr) {
 			grid.setVehicleGrid(x_coordinate - 1, y_coordinate, nullptr, 1);
-			LeftApproach->setCurrentSpeed(0);
-			LeftApproach->setX(x_coordinate); // need this as unlike a turn, the coordinates of the vehicle is changing during this process, not just the lane
-			LeftApproach->setY(y_coordinate+1);
-			LeftApproach->setVehicleDirection(grid, 1); // without this the vehicles direction doesnt update from going <-> to /\ and \/ and it gets stuck looking right
-			grid.setVehicleGrid(x_coordinate, y_coordinate+1, LeftApproach, 1);
+			Junction::LeftApproach->setCurrentSpeed(0);
+			Junction::LeftApproach->setX(x_coordinate); // need this as unlike a turn, the coordinates of the vehicle is changing during this process, not just the lane
+			Junction::LeftApproach->setY(y_coordinate+1);
+			Junction::LeftApproach->setVehicleDirection(grid, 1); // without this the vehicles direction doesnt update from going <-> to /\ and \/ and it gets stuck looking right
+			grid.setVehicleGrid(x_coordinate, y_coordinate+1, Junction::LeftApproach, 1);
 			
 		}
 
@@ -36,10 +33,7 @@ void CornerJunction::UpdateJunction(Grids& grid) {
 		}
 	}
 	if (UpCheck && RightCheck) {
-		Vehicle* RightApproach = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleB;
-		Vehicle* RightLeave = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleA;
-		Vehicle * UpApproach = grid.getVehicleGrid(x_coordinate, y_coordinate + 1).VehicleB;
-		Vehicle* UpLeave = grid.getVehicleGrid(x_coordinate, y_coordinate + 1).VehicleA;
+
 		if (RightApproach != nullptr && UpLeave == nullptr) {
 			grid.setVehicleGrid(x_coordinate + 1, y_coordinate, nullptr, 0);
 			RightApproach->setCurrentSpeed(0);
@@ -58,10 +52,7 @@ void CornerJunction::UpdateJunction(Grids& grid) {
 		}
 	}
 	if (DownCheck && LeftCheck) {
-		Vehicle* LeftApproach = grid.getVehicleGrid(x_coordinate - 1, y_coordinate).VehicleA;
-		Vehicle* LeftLeave = grid.getVehicleGrid(x_coordinate - 1, y_coordinate).VehicleB;
-		Vehicle* DownApproach = grid.getVehicleGrid(x_coordinate, y_coordinate - 1).VehicleA;
-		Vehicle* DownLeave = grid.getVehicleGrid(x_coordinate, y_coordinate - 1).VehicleB;
+
 		if (LeftApproach != nullptr && DownLeave == nullptr) {
 			grid.setVehicleGrid(x_coordinate - 1, y_coordinate, nullptr, 1);
 			LeftApproach->setCurrentSpeed(0);
@@ -82,10 +73,7 @@ void CornerJunction::UpdateJunction(Grids& grid) {
 		}
 	}
 	if (DownCheck && RightCheck) {
-		Vehicle* RightApproach = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleB;
-		Vehicle* RightLeave = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleA;
-		Vehicle* DownApproach = grid.getVehicleGrid(x_coordinate, y_coordinate - 1).VehicleA;
-		Vehicle* DownLeave = grid.getVehicleGrid(x_coordinate, y_coordinate - 1).VehicleB;
+
 		if (RightApproach != nullptr && DownLeave == nullptr) {
 			grid.setVehicleGrid(x_coordinate + 1, y_coordinate, nullptr, 0);
 			RightApproach->setCurrentSpeed(0);
