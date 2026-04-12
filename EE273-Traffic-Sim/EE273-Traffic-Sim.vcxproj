@@ -133,6 +133,7 @@
     <ClCompile Include="Roads.cpp" />
     <ClCompile Include="SimulationEngine.cpp" />
     <ClCompile Include="TwoLane.cpp" />
+    <ClCompile Include="ui.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +147,7 @@
     <ClInclude Include="Roads.h" />
     <ClInclude Include="SimulationEngine.h" />
     <ClInclude Include="TwoLane.h" />
+    <ClInclude Include="ui.h" />
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <ItemGroup>
