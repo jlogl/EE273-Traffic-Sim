@@ -1,7 +1,7 @@
 #include"Junction.h"
 #include "Grids.h"
 
-Junction::Junction(int x,int y,Grids& grid) {
+Junction::Junction(int x,int y,Grids& grid){
 	x_coordinate = x;
 	y_coordinate = y;
 	IsRoad = false;
@@ -16,19 +16,22 @@ junction Junction::getJunctionType() {
 }
 void Junction::setType(Grids& grid) {
 	int count = 0;
-	if (grid.getRoadsGrid(x_coordinate, y_coordinate + 1).RoadA != nullptr) {
-		if (grid.getRoadsGrid(x_coordinate, y_coordinate + 1).RoadA->isRoad()) {
-			if (grid.getRoadsGrid(x_coordinate, y_coordinate + 1).RoadA->getDirection() == North) {
-				UpCheck = true;
-				count = count + 1;
+	if(y_coordinate + 1 >=0 && y_coordinate + 1 <=Grids::grid_size-1){
+		if (grid.getRoadsGrid(x_coordinate, y_coordinate + 1).RoadA != nullptr) {
+			if (grid.getRoadsGrid(x_coordinate, y_coordinate + 1).RoadA->isRoad()) {
+				if (grid.getRoadsGrid(x_coordinate, y_coordinate + 1).RoadA->getDirection() == North) {
+					UpCheck = true;
+					count = count + 1;
+				}
+
+
 			}
-			
-		
 		}
 	
 			
 		
 	}
+	if (y_coordinate + 1 >= 0 && y_coordinate - 1 <= Grids::grid_size - 1) {
 	if (grid.getRoadsGrid(x_coordinate, y_coordinate - 1).RoadB != nullptr) {
 		if (grid.getRoadsGrid(x_coordinate, y_coordinate - 1).RoadB->isRoad()) {
 			if (grid.getRoadsGrid(x_coordinate, y_coordinate - 1).RoadB->getDirection() == South) {
@@ -36,31 +39,34 @@ void Junction::setType(Grids& grid) {
 				count = count + 1;
 			}
 
-
+		}
 		}
 	
 	}
-	if (grid.getRoadsGrid(x_coordinate + 1, y_coordinate).RoadA != nullptr) {
-		if (grid.getRoadsGrid(x_coordinate+1, y_coordinate).RoadA->isRoad()) {
-			if (grid.getRoadsGrid(x_coordinate+1, y_coordinate ).RoadA->getDirection() == East) {
-				RightCheck = true;
-				count = count + 1;
+	if (x_coordinate + 1 >= 0 && x_coordinate + 1 <= Grids::grid_size - 1) {
+		if (grid.getRoadsGrid(x_coordinate + 1, y_coordinate).RoadA != nullptr) {
+			if (grid.getRoadsGrid(x_coordinate + 1, y_coordinate).RoadA->isRoad()) {
+				if (grid.getRoadsGrid(x_coordinate + 1, y_coordinate).RoadA->getDirection() == East) {
+					RightCheck = true;
+					count = count + 1;
+				}
+
+
 			}
-
-
 		}
 		
 
 	}
+	if (x_coordinate - 1 >= 0 && x_coordinate - 1 <= Grids::grid_size - 1) {
+		if (grid.getRoadsGrid(x_coordinate - 1, y_coordinate).RoadB != nullptr) {
+			if (grid.getRoadsGrid(x_coordinate - 1, y_coordinate).RoadB->isRoad()) {
+				if (grid.getRoadsGrid(x_coordinate - 1, y_coordinate).RoadB->getDirection() == West) {
+					LeftCheck = true;
+					count = count + 1;
+				}
 
-	if (grid.getRoadsGrid(x_coordinate - 1, y_coordinate).RoadB != nullptr) {
-		if (grid.getRoadsGrid(x_coordinate - 1, y_coordinate).RoadB->isRoad()) {
-			if (grid.getRoadsGrid(x_coordinate-1, y_coordinate).RoadB->getDirection() == West) {
-				LeftCheck = true;
-				count = count + 1;
+
 			}
-
-
 		}
 		
 
@@ -115,4 +121,17 @@ void Junction::SetJunctionPointers(Grids& grid) {
 	 RightLeave = grid.getVehicleGrid(x_coordinate + 1, y_coordinate).VehicleA;
 
 
+}
+
+std::vector<bool> Junction::Checks(){
+	std::vector<bool> check;
+	check.push_back(UpCheck);
+	check.push_back(LeftCheck);
+	check.push_back(DownCheck);
+	check.push_back(RightCheck);
+	return check;
+}
+int Junction::getUses() {
+
+	return totalUses;
 }

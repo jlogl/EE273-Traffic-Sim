@@ -14,6 +14,7 @@
     <ClCompile Include="TJunction.cpp" />
     <ClCompile Include="CrossJunction.cpp" />
     <ClCompile Include="Turn.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bike.h" />
@@ -30,5 +31,6 @@
     <ClInclude Include="TJunction.h" />
     <ClInclude Include="CrossJunction.h" />
     <ClInclude Include="Turn.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
 </Project>

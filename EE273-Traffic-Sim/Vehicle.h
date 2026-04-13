@@ -8,7 +8,7 @@ class Vehicle {
 public:
 	Vehicle(int x, int y);
 	~Vehicle();
-	
+	bool SafetyOverride(Grids& grid, SimulationEngine& engine);
 	void UpdateSpeed(Grids& grid,SimulationEngine& engine);
 	void UpdateMovement(Grids& grid);
 	void ResetVehicle(Grids& grid);
@@ -23,6 +23,9 @@ public:
 	int getY();
 	int getInitialX();
 	int getInitialY();
+	int getDistance();
+	void addDistance();
+	int getAverageSpeed(SimulationEngine& engine);
 	void setX(int x);
 	void setY(int y);
 	
@@ -39,5 +42,5 @@ protected:
 	int deceleration{}; // needed to model the movement of the vehicle
 	direction Direction; // tells us what way the car should move, will get from road pointer which vehicle is on
 	type Type{ none }; // allows us to know what vehicle type a object is
-
+	int distance = 0;
 };

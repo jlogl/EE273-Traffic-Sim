@@ -125,171 +125,7 @@ std::vector<std::tuple<int, int, int, int, int>>& Grids::getRoads() {
 //the above getters provide refrences as we dont want them to be changed only accsesed
 
 
-void Grids::PrintGrids(SimulationEngine& engine) {
-	std::cout << "Simulation time : " << engine.getCurrentTime() << std::endl;
-	std::cout << "/\\" << std::endl << "||" << std::endl << " Y" << std::endl;
-	for (int i = Grids::grid_size - 1; i >= 0; i = i - 1) { // overall layout may not make sense but layout inverts y axis and makes x actually equal x in terms of x,y order 
-		 
-			std::stringstream ss;
-			if (i < 10)
-				ss << "0" << i << "|";
-			else
-				ss << i << "|";
-			for (int j = 0; j <= Grids::grid_size - 1; j = j + 1) {
 
-
-				if (Road_Grid[j][i].RoadA == nullptr) {
-					ss << " 0";
-				}
-				else {
-					if (Road_Grid[j][i].RoadA->isRoad()) {
-						ss << " RR ";
-					}
-					else {
-						ss << " JN ";
-					}
-				}
-				if (Road_Grid[j][i].RoadB == nullptr) {
-					ss << "0 ";
-				}
-				
-				
-			}
-				
-				
-			
-
-			std::string result = ss.str();
-			std::cout << result << std::endl;
-		
-		
-
-
-	}
-
-	
-	for (int i = 0; i < Grids::grid_size; i = i + 1) {
-		if (i == 0) {
-
-			std::cout << "   ";
-		}
-		
-		std::cout << "----";
-
-	}
-	std::cout << std::endl;
-
-
-	for (int i = 0; i < Grids::grid_size; i = i + 1) {
-		if (i == 0) {
-
-			std::cout << "   ";
-		}
-		
-		if (i < 10) {
-
-			std::cout << " 0" << i <<  " ";
-		}
-		else {
-
-			std::cout << " " << i << " ";
-
-		}
-
-	}
-	 
-	std::cout << "X =>"<< std::endl<<std::endl;
-	
-	for (int i = Grids::grid_size - 1; i >= 0; i = i - 1) {
-		std::stringstream ss; 
-		if (i < 10) // allows for label of y-axis, would need to scale if we ever set the grid size above 100x100 but i cant see that being needed
-			ss << "0" << i << "|";
-		else
-			ss << i << "|";
-		for (int j = 0; j <= Grids::grid_size - 1; j = j + 1) {
-			
-
-				if (Vehicle_Grid[j][i].VehicleA == nullptr) {
-
-					ss << " 0";
-				}
-				else {
-					if (Vehicle_Grid[j][i].VehicleA->getVehicleType() == car) {
-
-						ss << " C";
-					}
-
-					if (Vehicle_Grid[j][i].VehicleA->getVehicleType() == bus) {
-
-						ss << " B";
-					}
-					if (Vehicle_Grid[j][i].VehicleA->getVehicleType() == bike) {
-
-						ss << " A";
-					}
-				}
-			
-			
-
-			if (Vehicle_Grid[j][i].VehicleB == nullptr) {
-				ss << "0 ";
-			}
-			else {
-				if (Vehicle_Grid[j][i].VehicleB->getVehicleType() == car) {
-
-					ss << "C ";
-				}
-
-				if (Vehicle_Grid[j][i].VehicleB->getVehicleType() == bus) {
-
-					ss << "B ";
-				}
-				if (Vehicle_Grid[j][i].VehicleB->getVehicleType() == bike) {
-
-					ss << "A ";
-				}
-
-
-			}
-			
-		}
-		
-		std::string result = ss.str();
-		std::cout << result << std::endl;
-		
-	}
-	for (int i = 0; i < Grids::grid_size; i = i + 1) {
-		if (i == 0) {
-
-			std::cout << "   ";
-		}
-
-		std::cout << "----";
-
-	}
-	std::cout << std::endl;
-
-
-	for (int i = 0; i < Grids::grid_size; i = i + 1) { // loop to label x-axis so that it scales when grid size changes
-		if (i == 0) {
-
-			std::cout << "   ";
-		}
-
-		if (i < 10) {
-
-			std::cout << " 0" << i << " ";
-		}
-		else {
-
-			std::cout << " " << i << " ";
-
-		}
-
-	}
-	std::cout << std::endl;
-	
-}
 void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, int speed_limit) {
 	if (initial_x != final_x && initial_y != final_y) {
 		std::cout << "Diagonal road not supported" << std::endl;
@@ -391,52 +227,59 @@ void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, i
 	}
 	
 	for (std::pair<int, int> i : junctionsVector) {
-	
+		if (i.first + 1 > 0 && i.first + 1 < Grids::grid_size) {
 			if (getRoadsGrid(i.first + 1, i.second).RoadA != nullptr) {
 				if (!getRoadsGrid(i.first + 1, i.second).RoadA->isRoad()) {
 					std::cout << "Invalid Junction Placement at " << i.first << "," << i.second << " please leave a gap between junctions" << std::endl;
 					std::cout << "If your attempting to extend a road please start at the roads endpoint" << std::endl;
 					return;
-					
+
 				}
 			}
+		}
+		if (i.first - 1 > 0 && i.first - 1 < Grids::grid_size) {
 			if (getRoadsGrid(i.first - 1, i.second).RoadA != nullptr) {
 				if (!getRoadsGrid(i.first - 1, i.second).RoadA->isRoad()) {
 					std::cout << "Invalid Junction Placement at " << i.first << "," << i.second << " please leave a gap between junctions" << std::endl;
 					std::cout << "If your attempting to extend a road please start at the roads endpoint" << std::endl;
 					return;
-					
+
 				}
 			}
+		}
+		if (i.second + 1 > 0 && i.second + 1 < Grids::grid_size) {
 			if (getRoadsGrid(i.first, i.second + 1).RoadA != nullptr) {
 				if (!getRoadsGrid(i.first, i.second + 1).RoadA->isRoad()) {
 					std::cout << "Invalid Junction Placement at " << i.first << "," << i.second << " please leave a gap between junctions" << std::endl;
 					std::cout << "If your attempting to extend a road please start at the roads endpoint" << std::endl;
 					return;
-				
+
 				}
 			}
-			if (getRoadsGrid(i.first, i.second + 1).RoadA != nullptr) {
-				if (!getRoadsGrid(i.first, i.second + 1).RoadA->isRoad()) {
-					std::cout << "Invalid Junction Placement at " <<i.first<<","<<i.second<< " please leave a gap between junctions" << std::endl;
+		}
+		if (i.second -1  > 0 && i.second - 1 < Grids::grid_size) {
+			if (getRoadsGrid(i.first, i.second - 1).RoadA != nullptr) {
+				if (!getRoadsGrid(i.first, i.second - 1).RoadA->isRoad()) {
+					std::cout << "Invalid Junction Placement at " << i.first << "," << i.second << " please leave a gap between junctions" << std::endl;
 					std::cout << "If your attempting to extend a road please start at the roads endpoint" << std::endl;
 					return;
-					
+
 				}
-			}	 
+			}
+		}
 	}
 	// all checks to validate road have been made meaning its possible to add the inputs to vector to be used for load function
 	RoadsParameters = std::make_tuple(initial_x, initial_y, final_x, final_y, speed_limit);
 	this->RoadsInputs.push_back(RoadsParameters);
 	for (std::tuple<int, int, int, direction> i : roadsVector) {
-		std::cout << "Road X: " << std::get<0>(i) << " Road Y: " << std::get<1>(i) << std::endl;
+		
 		Roads* R = new Roads(std::get<0>(i), std::get<1>(i), std::get<2>(i), std::get<3>(i));
 		this->setRoadsGrid(std::get<0>(i), std::get<1>(i), R);
 
 
 	}
 	for (std::pair<int, int> i : junctionsVector) {
-			std::cout <<"Junction X: " << i.first <<" Junction Y: " <<i.second << std::endl;
+			
 			Junction* J = new Junction(i.first, i.second, *this);
 			J->setType(*this);
 			junction Type = J->getJunctionType();
@@ -494,7 +337,7 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 	}
 
 	for (std::pair<int, int> i : RoadPoints) {
-		std::cout << "Road delete at " << i.first << " " << i.second<<std::endl;
+		
 		delete Road_Grid[i.first][i.second].RoadA;
 		delete Road_Grid[i.first][i.second].RoadB;
 		setRoadsGrid(i.first, i.second, nullptr);
@@ -509,12 +352,12 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 			}
 		}
 		setRoadsGrid(i.first, i.second, nullptr);
-		std::cout << "Junction delete at " << i.first << " " << i.second << std::endl;
+		
 		delete Road_Grid[i.first][i.second].RoadA; // since we make Junctions with new, need to manually delete
 	}
 	
 	for (std::pair<int, int> i : JunctionPoints) {
-		std::cout << "Junction creation check at " << i.first <<" " << i.second << std::endl;
+	
 		Junction* J = new Junction(i.first, i.second, *this);
 		J->setType(*this);
 		junction Type = J->getJunctionType();

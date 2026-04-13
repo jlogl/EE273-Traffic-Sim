@@ -138,6 +138,7 @@
     <ClCompile Include="SimulationEngine.cpp" />
     <ClCompile Include="TJunction.cpp" />
     <ClCompile Include="Turn.cpp" />
+    <ClCompile Include="UI.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="TJunction.h" />
     <ClInclude Include="Turn.h" />
     <ClInclude Include="Type_enum.h" />
+    <ClInclude Include="UI.h" />
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
