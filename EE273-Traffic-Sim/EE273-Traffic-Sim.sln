@@ -1,9 +1,52 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EE273-Traffic-Sim", "EE273-Traffic-Sim.vcxproj", "{DAE23993-5D66-4741-AA14-70D42C0D8F8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vehicles", "Vehicles", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		BIke.cpp = BIke.cpp
+		Bike.h = Bike.h
+		Bus.cpp = Bus.cpp
+		Bus.h = Bus.h
+		Car.cpp = Car.cpp
+		Car.h = Car.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Junctions", "Junctions", "{F9A6E3BE-3B15-47B1-A0A0-D4CA25B6327A}"
+	ProjectSection(SolutionItems) = preProject
+		CornerJunction.cpp = CornerJunction.cpp
+		CornerJunction.h = CornerJunction.h
+		CrossJunction.cpp = CrossJunction.cpp
+		CrossJunction.h = CrossJunction.h
+		Junction.cpp = Junction.cpp
+		Junction.h = Junction.h
+		TJunction.cpp = TJunction.cpp
+		TJunction.h = TJunction.h
+		Turn.cpp = Turn.cpp
+		Turn.h = Turn.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main", "Main", "{9A46E2C0-5855-4AFF-B1AF-7425A2ADB5BF}"
+	ProjectSection(SolutionItems) = preProject
+		Grids.cpp = Grids.cpp
+		Grids.h = Grids.h
+		Main.cpp = Main.cpp
+		Roads.cpp = Roads.cpp
+		Roads.h = Roads.h
+		SimulationEngine.cpp = SimulationEngine.cpp
+		SimulationEngine.h = SimulationEngine.h
+		Vehicle.cpp = Vehicle.cpp
+		Vehicle.h = Vehicle.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enum's", "Enum's", "{2F54EFCA-7303-422D-A0E3-3527D8B8CDF0}"
+	ProjectSection(SolutionItems) = preProject
+		Direction_enum.h = Direction_enum.h
+		Type_enum.h = Type_enum.h
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

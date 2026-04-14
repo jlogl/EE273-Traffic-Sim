@@ -6,31 +6,29 @@
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="Grids.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Lane.cpp" />
-    <ClCompile Include="OneLane.cpp" />
     <ClCompile Include="Roads.cpp" />
     <ClCompile Include="SimulationEngine.cpp" />
-    <ClCompile Include="TwoLane.cpp" />
     <ClCompile Include="Vehicle.cpp" />
-    <ClCompile Include="ui.cpp" />
+    <ClCompile Include="Junction.cpp" />
+    <ClCompile Include="CornerJunction.cpp" />
+    <ClCompile Include="TJunction.cpp" />
+    <ClCompile Include="CrossJunction.cpp" />
+    <ClCompile Include="Turn.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bike.h" />
     <ClInclude Include="Bus.h" />
     <ClInclude Include="Car.h" />
     <ClInclude Include="Direction_enum.h" />
-    <ClInclude Include="Grids.h" />
-    <ClInclude Include="Lane.h" />
-    <ClInclude Include="OneLane.h" />
     <ClInclude Include="Roads.h" />
     <ClInclude Include="SimulationEngine.h" />
-    <ClInclude Include="TwoLane.h" />
-    <ClInclude Include="ui.h" />
+    <ClInclude Include="Type_enum.h" />
     <ClInclude Include="Vehicle.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Roads_diagram.cd" />
-    <None Include="SimEng_Grid_diagram.cd" />
-    <None Include="Vehicle_diagram.cd" />
+    <ClInclude Include="Grids.h" />
+    <ClInclude Include="Junction.h" />
+    <ClInclude Include="CornerJunction.h" />
+    <ClInclude Include="TJunction.h" />
+    <ClInclude Include="CrossJunction.h" />
+    <ClInclude Include="Turn.h" />
   </ItemGroup>
 </Project>

@@ -1,30 +1,29 @@
 #pragma once
 #include <string>
-#include "Grids.h"
-#include "Roads.h"
 
 
 
 
+class Grids;
 
 class SimulationEngine
 {
 public:
-	SimulationEngine();
+	SimulationEngine(Grids* grid);
 	~SimulationEngine();
 	void run(int number_of_steps);
 	void reset();
 	void step();
 	void save();
 	void load(std::string filename);
-	double getCurrenttime();
-	
-	void setCurrenttime(double time);
-	void setInitialtime(double time);
+	int getCurrentTime();
+	int getInitialTime();
+	void setCurrentTime(int time);
+	void setInitialTime(int time);
 
 	
 private:
-	
+	Grids* Grid;
 	double timestep;
 	double current_time;
 	double initial_time;
