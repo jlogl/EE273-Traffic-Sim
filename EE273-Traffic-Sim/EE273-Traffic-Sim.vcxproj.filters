@@ -14,6 +14,7 @@
     <ClCompile Include="TJunction.cpp" />
     <ClCompile Include="CrossJunction.cpp" />
     <ClCompile Include="Turn.cpp" />
+    <ClCompile Include="ui.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bike.h" />
@@ -30,5 +31,14 @@
     <ClInclude Include="TJunction.h" />
     <ClInclude Include="CrossJunction.h" />
     <ClInclude Include="Turn.h" />
+    <ClInclude Include="ui.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="save.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Roads_diagram.cd" />
+    <None Include="SimEng_Grid_diagram.cd" />
+    <None Include="Vehicle_diagram.cd" />
   </ItemGroup>
 </Project>

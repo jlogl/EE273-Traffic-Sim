@@ -122,7 +122,7 @@ void SimulationEngine::save()
 	std::vector<std::tuple<int, int, int, int, int>>& R=Grid->getRoads();
 	std::ofstream outFile(filename);
 	if (!outFile) {
-		std::cerr << "Error opening file:" 
+		std::cerr << "Error opening file:"
 			<< filename << "\n";
 		return;
 	}

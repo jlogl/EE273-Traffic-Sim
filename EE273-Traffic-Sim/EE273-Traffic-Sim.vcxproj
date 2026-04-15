@@ -138,6 +138,7 @@
     <ClCompile Include="SimulationEngine.cpp" />
     <ClCompile Include="TJunction.cpp" />
     <ClCompile Include="Turn.cpp" />
+    <ClCompile Include="ui.cpp" />
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,7 +155,16 @@
     <ClInclude Include="TJunction.h" />
     <ClInclude Include="Turn.h" />
     <ClInclude Include="Type_enum.h" />
+    <ClInclude Include="ui.h" />
     <ClInclude Include="Vehicle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="save.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Roads_diagram.cd" />
+    <None Include="SimEng_Grid_diagram.cd" />
+    <None Include="Vehicle_diagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

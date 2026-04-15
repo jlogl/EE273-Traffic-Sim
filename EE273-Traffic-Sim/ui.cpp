@@ -3,22 +3,23 @@
 #include <tuple>
 #include "ui.h"
 
+
 using namespace std;
 
 int top_lvl() {
 	cout << "\033[2J\033[1;1H"; // clear the screen
 	cout << "Please select one of the options below (enter the number):" << endl
-		<< "1\tSet grid size" << endl	// opens grid menu, then gives options for other menus
-		<< "2\tConfigure road layout" << endl	// opens only if the grid has been set;
+		<< "1\tConfigure road layout" << endl	// opens only if the grid has been set;
 												// intersection menu opens automatically if 2 or more roads share the same grid space
-		<< "3\tManage signals" << endl	// opens only if at least one road has been created
-		<< "4\tManage vehicles"	<< endl	// opens only if at least one road has been created
-		<< "5\tLoad simulation..." << endl
-		<< "6\tSave simulation..." << endl
+		<< "2\tManage signals" << endl	// opens only if at least one road has been created
+		<< "3\tManage vehicles"	<< endl	// opens only if at least one road has been created
+		<< "4\tLoad simulation..." << endl
+		<< "5\tSave simulation..." << endl
 		<< "0\tExit program" << endl
 		<< "\nEnter Action: ";
-	return(ui_get_int_in_range(0, 6));
+	return(ui_get_int_in_range(0, 5));
 }
+/*
 pair<int, int> ui_grid() {
 	int r, c;
 	cout << "\033[2J\033[1;1H"; // clear the screen
@@ -29,12 +30,13 @@ pair<int, int> ui_grid() {
 
 	return{ r,c };
 }
+*/
 int ui_roads() {
 	cout << "\033[2J\033[1;1H"; // clear the screen
 	cout << "Please select one of the options below (enter the number):" << endl
 		<< "1\tPlace new road..." << endl
-		<< "2\tModify road..." << endl
-		<< "3\tRemove road..." << endl
+		<< "2\tRemove road..." << endl
+		<< "3\tModify road..." << endl		// not sure if possible with current implementation
 		<< "0\tMain menu" << endl
 		<< "\nEnter Action: ";
 	return(ui_get_int_in_range(0, 3));
@@ -43,8 +45,8 @@ int ui_signals() {
 	cout << "\033[2J\033[1;1H"; // clear the screen
 	cout << "Please select one of the options below (enter the number):" << endl
 		<< "1\tPlace new signal..." << endl
-		<< "2\tModify signal..." << endl
-		<< "3\tRemove signal..." << endl
+		<< "2\tRemove signal..." << endl
+		<< "3\tModify signal..." << endl		// not sure if possible with current implementation
 		<< "0\tMain menu" << endl
 		<< "\nEnter Action: ";
 	return(ui_get_int_in_range(0, 3));
@@ -53,13 +55,13 @@ int ui_vehicles() {
 	cout << "\033[2J\033[1;1H"; // clear the screen
 	cout << "Please select one of the options below (enter the number):" << endl
 		<< "1\tCreate new vehicle..." << endl
-		<< "2\tModify vehicle..." << endl
-		<< "3\tRemove vehicle..." << endl
+		<< "2\tRemove vehicle..." << endl
+		<< "3\tModify vehicle..." << endl		// not sure if possible with current implementation
 		<< "0\tMain menu" << endl
 		<< "\nEnter Action: ";
 	return(ui_get_int_in_range(0, 3));
 }
-int type_road() {
+int type_road() {	// (possibly redundant)
 	cout << "\033[2J\033[1;1H"; // clear the screen
 	cout << "Please specify the type of road from the options below (enter the number):" << endl
 		<< "1\tOne lane (one way)" << endl		// traffic in one direction only, no more than one vehicle present at any time
@@ -68,18 +70,31 @@ int type_road() {
 		<< "\nEnter Action: ";
 	return(ui_get_int_in_range(0, 2));
 }
-int type_intersection() {
+void ui_junction(Junction& j) {
 	cout << "\033[2J\033[1;1H"; // clear the screen
-	cout << "An intersection has been created with another road!" << endl
-		<< "Please specify the type of intersection from the options below(enter the number) :" << endl
-		<< "1\tCrossroads" << endl					// 
-		<< "2\tRoundabout" << endl					// give way to the right
-		<< "3\tSliproads" << endl					// dont have to worry about collisions
-		<< "\nEnter Action: ";
-	return(ui_get_int_in_range(1, 3));
+	cout << "A ";
+
+	switch (j.getJunctionType()) {
+	case turn:
+		cout << "turn ";
+		break;
+	case corner:
+		cout << "corner ";
+		break;
+	case t:
+		cout << "t-";
+		break;
+	case cross:
+		cout << "crossroad ";
+		break;
+	}
+
+	cout << "junction has been created with another road!" << endl;
+	return;
 }
 int type_vehicle() {
 	cout << "\033[2J\033[1;1H"; // clear the screen
+
 	cout << "Please specify the type of vehicle from the options below (enter the number):" << endl
 		<< "1\tCar" << endl
 		<< "2\tBus" << endl
@@ -89,18 +104,65 @@ int type_vehicle() {
 	return(ui_get_int_in_range(0, 3));
 }
 
+pair<int, int> start_road() {
+	int x = 0, y = 0;
+	cout << "\033[2J\033[1;1H"; // clear the screen
 
-void ui_skip_to_number() {
-	if (cin.fail()) {
-		cin.clear();
-		for (char ch; cin >> ch;) {
-			if (('0' <= ch && ch <= '9') || ch == '-') {
-				cin.unget();
-				return;
-			}
-		}
-		cout << "The stream is at eof or bad\n";
-	}
+	cout << "Enter the starting x position: ";
+	x = ui_get_int_in_range(0, Grids::grid_size);
+
+	cout << "Enter the starting y position: ";
+	y = ui_get_int_in_range(0, Grids::grid_size);
+
+	return make_pair(x, y);
+}
+pair<int, int> end_road(pair<int, int> startPos) {
+	int x = 0, y = 0;
+	cout << "\033[2J\033[1;1H"; // clear the screen
+
+	do {
+		cout << "The end position must lie on either the same row or the same column as the start position so that the road is horizontal or vertical.\n\n"
+			 << "Enter the ending x position: ";
+		x = ui_get_int_in_range(0, Grids::grid_size);
+
+		cout << "Enter the ending y position: ";
+		y = ui_get_int_in_range(0, Grids::grid_size);
+	} while ( !(startPos.first == x || startPos.second == y) );
+
+	return make_pair(x, y);
+}
+pair<int, int> ui_get_pos() {
+	int x = 0, y = 0;
+	cout << "\033[2J\033[1;1H"; // clear the screen
+
+	cout << "Enter the x component: ";
+	x = ui_get_int_in_range(0, Grids::grid_size);
+
+	cout << "Enter the y component: ";
+	y = ui_get_int_in_range(0, Grids::grid_size);
+
+	return make_pair(x, y);
+}
+int ui_get_speed_lmt() {
+	ui_print("Enter the speed limit: ");
+	
+	return(ui_get_int_in_range(0, 10));			// 10 IS AN EXAMPLE HERE
+}
+
+void ui_print(string message) {
+	cout << message;
+}
+
+void ui_notify(string message) {
+	char a;		// arbritary character, gets deallocated before it can be used
+
+	cout << "\033[2J\033[1;1H"; // clear the screen
+
+	cout << "----------------------------------------" << endl
+		<< message << endl
+		<< "----------------------------------------" << endl << endl
+		<< "Enter any character to continue..." << endl;
+	cin >> a;
 }
 
 int ui_get_int() {
@@ -123,5 +185,18 @@ int ui_get_int_in_range(int low, int high) {
 		}
 		cout << "Sorry the number is not between " << low << " and "
 			<< high << "; Try again...\n";
+	}
+}
+
+void ui_skip_to_number() {
+	if (cin.fail()) {
+		cin.clear();
+		for (char ch; cin >> ch;) {
+			if (('0' <= ch && ch <= '9') || ch == '-') {
+				cin.unget();
+				return;
+			}
+		}
+		cout << "The stream is at eof or bad\n";
 	}
 }

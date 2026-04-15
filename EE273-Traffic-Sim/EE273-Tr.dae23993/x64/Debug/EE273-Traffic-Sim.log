@@ -1,4 +1,5 @@
-﻿  SimulationEngine.cpp
-C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\SimulationEngine.cpp(22,9): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\SimulationEngine.cpp(26,9): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-  EE273-Traffic-Sim.vcxproj -> C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe
+﻿  Main.cpp
+  ui.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\ui.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+  EE273-Traffic-Sim.vcxproj -> C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe
