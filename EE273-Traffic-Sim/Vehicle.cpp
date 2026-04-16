@@ -143,13 +143,16 @@ void Vehicle::UpdateMovement(Grids& grid) {
 }
 
 void Vehicle::ResetVehicle(Grids& grid) {
-	
+	this->resetDistance();
+	bool InitialLane = (getInitialVehicleDirection() == North || getInitialVehicleDirection() == East);
+	bool CurrentLane = (getVehicleDirection() == North || getVehicleDirection() == East);
+	grid.setVehicleGrid(x, y, nullptr, CurrentLane);
 	this->setX(x_initial);
 	this->setY(y_initial);
 	this->setCurrentSpeed(speed_initial);
-	bool lane = (getVehicleDirection() == North || getVehicleDirection() == East);
-	grid.setVehicleGrid(x, y, nullptr, lane);
-	grid.setVehicleGrid(x, y,this,lane);
+	this->setVehicleDirection(grid, InitialLane);
+	grid.setVehicleGrid(x, y,this, InitialLane);
+
 };
 
 type Vehicle::getVehicleType() {
@@ -159,15 +162,33 @@ direction Vehicle::getVehicleDirection() {
 
 	return Direction;
 }
+direction Vehicle::getInitialVehicleDirection() {
+	
+	return InitialDirection;
+}
 
-void Vehicle::setVehicleDirection(Grids& grid, bool A_or_B) {
-	if (A_or_B) {
+
+
+void Vehicle::setVehicleDirection(Grids& grid, bool AorB) {
+	
+	if (AorB) {
 		Roads* R = grid.getRoadsGrid(x, y).RoadA;
 		Direction = R->getDirection();
 	}
 	else {
 		Roads* R = grid.getRoadsGrid(x, y).RoadB;
 		Direction = R->getDirection();
+	}
+};
+void Vehicle::setInitialVehicleDirection(Grids& grid, bool AorB) {
+
+	if (AorB) {
+		Roads* R = grid.getRoadsGrid(x, y).RoadA;
+		InitialDirection = R->getDirection();
+	}
+	else {
+		Roads* R = grid.getRoadsGrid(x, y).RoadB;
+		InitialDirection = R->getDirection();
 	}
 };
 
@@ -214,6 +235,10 @@ int Vehicle::getDistance() {
 }
 void Vehicle::addDistance() {
 	distance = distance + 1;
+}
+void Vehicle::resetDistance() {
+
+	distance = 0;
 }
 int Vehicle::getAverageSpeed(SimulationEngine& engine) {
 	if (engine.getCurrentTime() - engine.getInitialTime() == 0) {

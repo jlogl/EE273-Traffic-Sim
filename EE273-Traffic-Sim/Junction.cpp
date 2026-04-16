@@ -135,3 +135,7 @@ int Junction::getUses() {
 
 	return totalUses;
 }
+void Junction::resetUses() {
+
+	totalUses = 0;
+}

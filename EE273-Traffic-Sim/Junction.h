@@ -16,6 +16,7 @@ public:
 	void setType(Grids& grid);
 	std::vector<bool> Checks(); // used to let the exact type and orientation of the junction be accessed
 	int getUses();
+	void resetUses();
 protected:
 	bool UpCheck= false;
 	bool LeftCheck = false;

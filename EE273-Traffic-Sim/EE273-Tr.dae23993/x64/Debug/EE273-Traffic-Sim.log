@@ -1,2 +1,30 @@
-﻿  Main.cpp
+﻿  BIke.cpp
+  Bus.cpp
+  Car.cpp
+  CornerJunction.cpp
+  CrossJunction.cpp
+  Grids.cpp
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(347,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(461,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(537,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(550,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(573,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(598,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(624,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Main.cpp
+  SimulationEngine.cpp
+  TJunction.cpp
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\TJunction.cpp(16,17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Turn.cpp
+  UI.cpp
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1072,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1088,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Vehicle.cpp
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Vehicle.cpp(200,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\Vehicle.cpp(372,1): warning C4715: 'Vehicle::isStoppingDistanceSafe': not all control paths return a value
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(912,1): warning C4715: 'ui_Direction': not all control paths return a value
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(890,1): warning C4715: 'ui_Direction': not all control paths return a value
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(868,1): warning C4715: 'ui_Junction': not all control paths return a value
+C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(845,1): warning C4715: 'ui_Type': not all control paths return a value
   EE273-Traffic-Sim.vcxproj -> C:\University_C_Drive\Year_2_EE273_Project\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe

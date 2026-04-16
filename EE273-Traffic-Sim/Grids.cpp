@@ -377,7 +377,7 @@ void Grids::CreateVehicle(int x, int y,type type_of_vehicle,bool A_or_B) {
 
 		if (Road_Grid[x][y].RoadA == nullptr) {
 
-			std::cout << "No road at coordinate " << x << "," << y << std::endl;
+			std::cout << "No lane at coordinate " << x << "," << y << std::endl;
 			return;
 		}
 		if (Vehicle_Grid[x][y].VehicleA != nullptr) {

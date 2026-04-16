@@ -14,8 +14,10 @@ public:
 	void ResetVehicle(Grids& grid);
 	type getVehicleType();
 	bool isStoppingDistanceSafe(Grids& grid);
+	direction getInitialVehicleDirection();
+	void setInitialVehicleDirection(Grids& grid, bool AorB);
 	direction getVehicleDirection();
-	void setVehicleDirection(Grids& grid, bool A_or_B);// allowed A_or_B since the lane variable is defined using this fucntion
+	void setVehicleDirection(Grids& grid, bool AorB);// allowed AorB since the road variable is defined using this fucntion
 	int getStoppingDistance(); // not virtual since every vehicle will use it unchaneged, however its protected since only used inside class
 	int getCurrentSpeed();
 	void setCurrentSpeed(int speed);
@@ -25,6 +27,7 @@ public:
 	int getInitialY();
 	int getDistance();
 	void addDistance();
+	void resetDistance();
 	int getAverageSpeed(SimulationEngine& engine);
 	void setX(int x);
 	void setY(int y);
@@ -40,6 +43,7 @@ protected:
 	int const speed_initial; // is always zero
 	int acceleration{}; // needed to model the movement of the vehicle
 	int deceleration{}; // needed to model the movement of the vehicle
+	direction InitialDirection; // tells us which way car was moving when initilalised
 	direction Direction; // tells us what way the car should move, will get from road pointer which vehicle is on
 	type Type{ none }; // allows us to know what vehicle type a object is
 	int distance = 0;

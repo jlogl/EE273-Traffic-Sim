@@ -75,13 +75,20 @@ void SimulationEngine::reset()
 {
    //same as the update function but revert back to initial conditions, unsure if this means we need to keep a log of initial conditions for each of the objects 
 	std::vector<Vehicle*>& v = Grid->getVehicles();
+	std::vector<Junction*>& j = Grid->getJunctions();
 	current_time = initial_time;
 	
 
 	for (Vehicle* i : v) {
 
 		i->ResetVehicle(*Grid);
+		
 	}
+	for (Junction* i : j) {
+
+		i->resetUses();
+	}
+	
 	
 	
 }
