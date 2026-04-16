@@ -135,6 +135,7 @@
     <ClCompile Include="Junction.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Roads.cpp" />
+    <ClCompile Include="Signal.cpp" />
     <ClCompile Include="SimulationEngine.cpp" />
     <ClCompile Include="TJunction.cpp" />
     <ClCompile Include="Turn.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Grids.h" />
     <ClInclude Include="Junction.h" />
     <ClInclude Include="Roads.h" />
+    <ClInclude Include="Signal.h" />
     <ClInclude Include="SimulationEngine.h" />
     <ClInclude Include="TJunction.h" />
     <ClInclude Include="Turn.h" />

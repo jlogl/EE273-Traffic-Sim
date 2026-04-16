@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Direction_enum.h"
+#include "Signal.h"
 
 class Roads {
 
@@ -21,6 +22,7 @@ protected:
 	int x_coordinate; //holds data on where the road is on the grid in x direction which is defined as left to right
 	int y_coordinate; //holds data on where the road is on the grid un y direction which is defined as down to up
 	bool IsRoad=1;
+	Signal signal;		// traffic signal which exists within the road; encapsulation
 private:
 	enum direction direction_of_road=None;
 	int speed_limit; // Won't be measured in m/s, will be squares/tick so speeds will be low number like 1 or 2
