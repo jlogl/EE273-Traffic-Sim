@@ -18,8 +18,10 @@ int main()
 	SimulationEngine* engine = new SimulationEngine(&Grid);
 
 	// global variable declarations
-	pair<int, int> ui_st, ui_end;		// start and end points for a new road, entered by user
+	pair<int, int> ui_coord1, ui_coord2;		// start and end points for a new road, entered by user
 	int ui_speedLmt;					// speed limit of a new road, entered by user
+	type ui_type;						// type of vehicle
+	bool ui_lane;						// A or B, used for creating a vehicle
 
 
 	// Square test
@@ -80,15 +82,22 @@ int main()
 		case 1:						// ROADS
 			switch (ui_roads()) {
 			case 1:						// CREATE
-				ui_st = start_road();
-				ui_end = end_road(ui_st);
+				ui_coord1 = start_road();
+				ui_coord2 = end_road(ui_coord1);
 				ui_speedLmt = ui_get_speed_lmt();
 
-				Grid.CreateRoad(ui_st.first, ui_st.second, ui_end.first, ui_end.second, ui_speedLmt);
+				Grid.CreateRoad(ui_coord1.first, ui_coord1.second, ui_coord2.first, ui_coord2.second, ui_speedLmt);
 
+				ui_print("Road successfully created");
+
+				break;
 
 			case 2:						// DELETE
-				
+				// show options of roads
+				// which road to delete? (1 to n, 0 to cancel)
+				// are you sure? (y or n)
+
+				// delete road
 			case 3:						// edit road (NOT IMPLEMENTED YET)
 				ui_print("unfinished\n");
 			}
@@ -108,7 +117,15 @@ int main()
 		case 3:						// VEHICLES
 			switch (ui_vehicles()) {
 			case 1:						// CREATE
-				
+				ui_type = type_vehicle();
+				ui_coord1 = ui_get_pos();
+
+				cout << "Will the vehicle use lane A?" << endl;
+				ui_lane = ui_get_bool();
+
+				Grid.CreateVehicle(ui_coord1.first, ui_coord1.second, ui_type, ui_lane);
+
+				break;
 			case 2:						// DELETE
 				
 			case 3:						// edit vehicle (NOT IMPLEMENTED YET)

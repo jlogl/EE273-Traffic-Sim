@@ -1,3 +1,3 @@
 #pragma once
-enum type{car,bus,bike,none};
+enum type{none,car,bus,bike};
 enum junction{unassigned,turn,corner, t, cross}; 

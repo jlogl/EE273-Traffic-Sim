@@ -61,6 +61,7 @@ int ui_vehicles() {
 		<< "\nEnter Action: ";
 	return(ui_get_int_in_range(0, 3));
 }
+/*
 int type_road() {	// (possibly redundant)
 	cout << "\033[2J\033[1;1H"; // clear the screen
 	cout << "Please specify the type of road from the options below (enter the number):" << endl
@@ -69,7 +70,7 @@ int type_road() {	// (possibly redundant)
 		<< "0\tGo back" << endl					// return to road options
 		<< "\nEnter Action: ";
 	return(ui_get_int_in_range(0, 2));
-}
+*/
 void ui_junction(Junction& j) {
 	cout << "\033[2J\033[1;1H"; // clear the screen
 	cout << "A ";
@@ -92,7 +93,7 @@ void ui_junction(Junction& j) {
 	cout << "junction has been created with another road!" << endl;
 	return;
 }
-int type_vehicle() {
+type type_vehicle() {
 	cout << "\033[2J\033[1;1H"; // clear the screen
 
 	cout << "Please specify the type of vehicle from the options below (enter the number):" << endl
@@ -101,11 +102,15 @@ int type_vehicle() {
 		<< "3\tBike" << endl
 		<< "0\tGo back" << endl
 		<< "\nEnter Action: ";
-	return(ui_get_int_in_range(0, 3));
+
+	return type(ui_get_int_in_range(0, 3));
 }
 
 pair<int, int> start_road() {
 	int x = 0, y = 0;
+
+	cout << "The end position must lie on either the same row or the same column as the start position so that the road is horizontal or vertical.\n\n";
+
 	cout << "\033[2J\033[1;1H"; // clear the screen
 
 	cout << "Enter the starting x position: ";
@@ -118,11 +123,9 @@ pair<int, int> start_road() {
 }
 pair<int, int> end_road(pair<int, int> startPos) {
 	int x = 0, y = 0;
-	cout << "\033[2J\033[1;1H"; // clear the screen
 
 	do {
-		cout << "The end position must lie on either the same row or the same column as the start position so that the road is horizontal or vertical.\n\n"
-			 << "Enter the ending x position: ";
+		cout << "Enter the ending x position: ";
 		x = ui_get_int_in_range(0, Grids::grid_size);
 
 		cout << "Enter the ending y position: ";
@@ -144,15 +147,20 @@ pair<int, int> ui_get_pos() {
 	return make_pair(x, y);
 }
 int ui_get_speed_lmt() {
-	ui_print("Enter the speed limit: ");
+	cout << "Enter the speed limit: ";
 	
 	return(ui_get_int_in_range(0, 10));			// 10 IS AN EXAMPLE HERE
 }
 
 void ui_print(string message) {
-	cout << message;
+	char a;		// arbritary character, gets deallocated before it can be used
+
+	cout << message << endl
+		<< "Enter any character to continue... ";
+	cin >> a;
 }
 
+/*
 void ui_notify(string message) {
 	char a;		// arbritary character, gets deallocated before it can be used
 
@@ -164,6 +172,7 @@ void ui_notify(string message) {
 		<< "Enter any character to continue..." << endl;
 	cin >> a;
 }
+*/
 
 int ui_get_int() {
 	int number;
@@ -185,6 +194,25 @@ int ui_get_int_in_range(int low, int high) {
 		}
 		cout << "Sorry the number is not between " << low << " and "
 			<< high << "; Try again...\n";
+	}
+}
+char ui_get_char() {
+	char c;
+	if (cin >> c) {
+		return c;
+	}
+	cout << "Sorry that was not a character\n";
+}
+bool ui_get_bool() {
+	while (true) {
+		char ans = ui_get_char();
+		if (ans == 'y' || ans == 'Y') {
+			return 1;
+		}
+		else if (ans == 'n' || ans == 'N') {
+			return 0;
+		}
+		cout << "Sorry that response is invalid; Try again...\n";
 	}
 }
 
