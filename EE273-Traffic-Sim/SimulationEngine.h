@@ -11,11 +11,11 @@ class SimulationEngine
 public:
 	SimulationEngine(Grids* grid);
 	~SimulationEngine();
-	void run(int number_of_steps);
+
 	void reset();
 	void step();
-	void save();
-	void load(std::string filename);
+	bool save(std::string filename);
+	bool load(std::string filename);
 	int getCurrentTime();
 	int getInitialTime();
 	void setCurrentTime(int time);
@@ -24,7 +24,7 @@ public:
 	
 private:
 	Grids* Grid;
-	double timestep;
-	double current_time;
-	double initial_time;
+	int timestep;
+	int current_time;
+	int initial_time;
 };

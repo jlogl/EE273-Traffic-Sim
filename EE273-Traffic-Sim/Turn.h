@@ -5,6 +5,7 @@ class Turn :public Junction
 	Turn(int x,int y,Grids& grid);
 	~Turn();
 	void UpdateJunction(Grids& grid) override;
+	
 };
 
 

@@ -23,7 +23,7 @@ struct Vehicle_Grid_Slot {
 
 class Grids {
 public:
-    static const int grid_size = 20; /*this is used to change the size of the grid by editing a single number, static means that no matter how many grid object's there are,
+    static const int grid_size = 10; /*this is used to change the size of the grid by editing a single number, static means that no matter how many grid object's there are,
      they will all share the same variable, is in public so that it may be used in other header files to change the range of loops for example. To use in other files we use
      Grids namespace. Found due to error when implementing constant idea and found info on GFG*/
     Grids();
@@ -35,7 +35,9 @@ public:
     void CreateRoad( int initial_x, int initial_y, int final_x, int final_y, int speed_limit);
     void CreateVehicle(int x ,int y,type type_of_vehicle,bool A_or_B );
     void CreateJunction(int x, int y, junction type_of_junction);
-    void PrintGrids(SimulationEngine& engine);
+    //void PrintGrids(SimulationEngine& engine);
+    void DeleteRoad(int initial_x, int initial_y, int final_x, int final_y);
+    void DeleteVehicle(int x, int y, bool AorB);
     std::vector<Vehicle*>& getVehicles(); // allows us to provide a refernce of the vector of vehicle pointers to simulation engine
     std::vector<Junction*>& getJunctions(); // same as vehicles but for the junctions
     std::vector<std::tuple<int, int, int, int, int>>& getRoads();
