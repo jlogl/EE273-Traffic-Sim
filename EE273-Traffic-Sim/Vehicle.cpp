@@ -64,6 +64,10 @@ bool Vehicle::SafetyOverride(Grids& grid, SimulationEngine& engine) {
 		}
 		break;
 	}
+		case(None): {
+        break;
+
+	}
 
 	}
 	return false;

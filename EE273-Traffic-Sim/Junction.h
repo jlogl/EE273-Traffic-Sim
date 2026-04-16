@@ -14,7 +14,7 @@ public:
 	 void SetJunctionPointers(Grids& grid);
 	virtual void UpdateJunction(Grids& grid); // made virtual as each junction has its own version
 	void setType(Grids& grid);
-	std::vector<bool> Checks(); // used to make the UI easier to make
+	std::vector<bool> Checks(); // used to let the exact type and orientation of the junction be accessed
 	int getUses();
 protected:
 	bool UpCheck= false;

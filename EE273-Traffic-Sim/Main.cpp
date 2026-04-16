@@ -16,7 +16,7 @@ int main()
 	SetDesigns(GridDesigns);
 	bool GridDisplay=true,DataDisplay=true;
 	
-	
+
 	while (true) {
 		SimPrint(Grid, *Engine, GridDesigns, GridDisplay, DataDisplay);
 		int choice = PrintUI();
@@ -24,8 +24,8 @@ int main()
 		switch (choice) {
 		case(0): { // Exit simulation, similar approach as Lab 7 Ex2
 			std::cout << "Exited";
+			delete Engine;
 			return 0;
-			break;
 
 		}
 		case(1): {//Create Road
@@ -50,7 +50,7 @@ int main()
 						break;
 					}
 					else {
-						std::cout << "Invaild input please try again, ";
+						std::cout << "Invalid input please try again, ";
 					}
 				
 					}
@@ -70,7 +70,7 @@ int main()
 						break;
 					}
 					else {
-						std::cout << "Invaild input please try again, ";
+						std::cout << "Invalid input please try again, ";
 					}
 				}
 				if (direction == "East") {
@@ -107,7 +107,7 @@ int main()
 				break;
 		}	
 		case(3): {//Run Simulation
-			int steps = ui_ask_question("How Many steps would you like the simulation to take?", 100, 1); // 100 steps isnt significant however i feel like thats a fair limit  
+			int steps = ui_ask_question("How Many steps would you like the simulation to take?", 100, 1); // 100 steps isn't significant however i feel like that is a fair limit
 			for (int i = 1; i <= steps; i = i + 1) {
 				Engine->step();
 				SimPrint(Grid, *Engine, GridDesigns, GridDisplay, DataDisplay);
@@ -154,12 +154,6 @@ int main()
 		}
 		ui_pause();
 	}
-	
-
-
-
-	
-	delete Engine;
 }
 
 

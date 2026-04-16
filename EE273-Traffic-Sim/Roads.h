@@ -8,11 +8,9 @@ public:
 	Roads();
 	Roads(int x, int y, int max_speed, direction Direction);
 	~Roads();
-	
-	int getSpeedLimit();
+	int getSpeedLimit(); //cannot be used with a Junction due to them not inheriting the speed limit variable
 	int getX();
 	int getY();
-
 	direction getDirection();
 	void setDirection(direction D);// DO NOT CALL THIS FUNCTION IN MAIN 
 	bool isRoad();

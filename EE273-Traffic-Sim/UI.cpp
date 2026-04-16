@@ -997,9 +997,10 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 			std::cout << "Enter a number between " << min << " and " << max <<" (Inclusive)" << std::endl;
 			std::cin >> number;
 
-			if (number >=min && number <=max) {
-				return number;
-			}
+				if (number >=min && number <=max) {
+					return number;
+				}
+
 
 			std::cout << "Invalid input, Please ";
 		}
@@ -1064,10 +1065,14 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		std::vector<Vehicle*> VofV = Grid.getVehicles();
 		std::cout << "Please choose A Vehicle from below to delete :" << std::endl;
 		for (int i = 1; i <= VofV.size(); i = i + 1) {
-			std::cout << i << ". Vehicle Position: " << VofV[i - 1]->getX() << "," << VofV[i - 1]->getY() << " Vehicle Type: " << ui_Type(VofV[i - 1]) << "Vehicle Direction: " << ui_Direction(VofV[i - 1]);
+			std::cout << i << ". Vehicle Position: " << VofV[i - 1]->getX() << "," << VofV[i - 1]->getY() << " Vehicle Type: " << ui_Type(VofV[i - 1]) << " Vehicle Direction: " << ui_Direction(VofV[i - 1])<<std::endl;
 		}
+		std::cout<<"0. Return"<<std::endl;
 		
-		int choice = ui_get_int_in_range(VofV.size(), 1);
+		int choice = ui_get_int_in_range(VofV.size(), 0);
+		if (choice==0) {
+			return;
+		}
 		bool AorB = VofV[choice - 1]->getVehicleDirection() == North || VofV[choice - 1]->getVehicleDirection() == East;
 		Grid.DeleteVehicle(VofV[choice - 1]->getX(), VofV[choice - 1]->getY(), AorB);
 	}
@@ -1077,11 +1082,16 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		std::tuple<int, int, int, int, int> road;
 		for (int i = 1; i <= VofR.size(); i = i + 1) {
 			road = VofR[i - 1];
-			std::cout << i << ". Road Starting Point: " << std::get<1>(road) << "," << std::get<2>(road) << " End point: " << std::get<3>(road) << "," << std::get<4>(road)<<std::endl;
+			std::cout << i << ". Road Starting Point: " << std::get<0>(road) << "," << std::get<1>(road) << " End point: " << std::get<2>(road) << "," << std::get<3>(road)<<std::endl;
 		}
-		int choice = ui_get_int_in_range(VofR.size(), 1);
+		std::cout<<"0. Return"<<std::endl;
+		int choice = ui_get_int_in_range(VofR.size(), 0);
+		if (choice==0) {
+			return;
+		}
 		road = VofR[choice - 1];
-		Grid.DeleteRoad(std::get<1>(road), std::get<2>(road), std::get<3>(road), std::get<4>(road));
+		std::cout<<"Delete"<<std::endl;
+		Grid.DeleteRoad(std::get<0>(road), std::get<1>(road), std::get<2>(road), std::get<3>(road));
 	}
 	void ui_save(SimulationEngine& Engine) {
 
