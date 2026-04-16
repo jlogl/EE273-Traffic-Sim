@@ -32,7 +32,7 @@ public:
     void setRoadsGrid(int x, int y, Roads* value);
     Vehicle_Grid_Slot getVehicleGrid(int x, int y);
     void setVehicleGrid(int x, int y, Vehicle* value,bool AorB); // a or b is to tell which lane we need to use, true means A and false means B
-    void CreateRoad( int initial_x, int initial_y, int final_x, int final_y, int speed_limit);
+    void CreateRoad ( int initial_x, int initial_y, int final_x, int final_y, int speed_limit);
     void CreateVehicle(int x ,int y,type type_of_vehicle,bool A_or_B );
     void CreateJunction(int x, int y, junction type_of_junction);
     //void PrintGrids(SimulationEngine& engine);
@@ -47,5 +47,4 @@ private:
     std::vector<Junction*> junction_on_grid;
     Roads_Grid_Slot Road_Grid[grid_size][grid_size];
     Vehicle_Grid_Slot Vehicle_Grid[grid_size][grid_size];
-  
 };

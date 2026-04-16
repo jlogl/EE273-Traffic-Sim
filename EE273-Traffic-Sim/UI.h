@@ -24,10 +24,11 @@ class Roads;
 	std::string ui_Direction(Vehicle* v);
 	std::string ui_Direction(Roads* R);
 	int ui_ask_question(std::string question, int max, int min);// Taken from Lab 7 Ex2
-	bool ui_is_road_vertical_or_horizontal(int x, int y, Grids& grid); 
+	bool ui_is_road_vertical_or_horizontal(int x, int y, Grids& grid);
 	void SimPrint(Grids& Grid, SimulationEngine& Engine, std::vector<std::vector<std::string>> designs, bool enable1, bool enable2);
 	std::pair<int, int> ui_ask_question(std::string question1, std::string question2, int max, int min);// returns two data points rather than one, makes more sense for coordinates
 	std::string ui_get_string(std::string question);// Taken from Lab 7 Ex2
+	int ui_get_int();								// Taken from Lab 7 Ex2
 	void ui_delete_Vehicle(Grids& grid);
 	void ui_delete_Road(Grids& grid);
 	void ui_save(SimulationEngine& Engine);
@@ -37,6 +38,7 @@ class Roads;
 
 	//Pushback written to make setting all of the designs a quicker process, input the vector you want to feed 5 strings into and order you want them fed in
 	
+	void ui_skip_to_number();
 	int ui_get_int_in_range(int max, int min);// very similar to function from lab 7 ex2 however doesnt make use of a get int fucntion
 	
 

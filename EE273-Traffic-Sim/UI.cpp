@@ -10,6 +10,8 @@
 #include <sstream>
 #include <iostream>
 #include <tuple>
+#include <cstdio>
+#include <limits>
 
 
 
@@ -990,18 +992,43 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		}
 	}
 
+	int ui_get_int() {
+		int number;
+		while (true) {
+			if (std::cin >> number) {
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				return number;
+			}
+			std::cout << "Invalid input, Please try again.\n";
+			ui_skip_to_number();
+		}
+	}
+	void ui_skip_to_number() {
+		if (std::cin.fail()) {
+			std::cin.clear();
+			for (char ch; std::cin >> ch;) {
+				if (('0' <= ch && ch <= '9') || ch == '-') {
+					std::cin.unget();
+					return;
+				}
+			}
+			std::cout << "The stream is at eof or bad"
+				<< "\n";
+		}
+	}
+
 	int ui_get_int_in_range(int max, int min) {
 
 		while (true) {
 			int number;
 			std::cout << "Enter a number between " << min << " and " << max <<" (Inclusive)" << std::endl;
-			std::cin >> number;
+			number = ui_get_int();
 
 			if (number >=min && number <=max) {
 				return number;
 			}
 
-			std::cout << "Invalid input, Please ";
+			std::cout << "Invalid input, Please try again.\n";
 		}
 	}
 	int PrintUI() {
