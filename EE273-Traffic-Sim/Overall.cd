@@ -45,7 +45,7 @@
   <Class Name="Grids">
     <Position X="17.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ggSoAAAAAAAAAQBAYQQAAAAIAgAAAAAgCAAAAAAgQwA=</HashCode>
+      <HashCode>ggSoAAAAAAAAAQBAYQQAAAAIAgAABAAgCAACAAAgQwA=</HashCode>
       <FileName>Grids.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -82,6 +82,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAACAAAAADAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Turn.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Signal">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgIAAAAAAAAgAAgCAAAQAAAAAAIAAAgCgAAAAAABAAA=</HashCode>
+      <FileName>Signal.h</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

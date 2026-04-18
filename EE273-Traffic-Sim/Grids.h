@@ -6,13 +6,15 @@
 #include <tuple>
 #include "Direction_enum.h"
 #include "Type_enum.h"
+#include "Signal.h"
 class Vehicle;
 class Roads;
 class Junction;
 class SimulationEngine;
 struct Roads_Grid_Slot {
-    Roads* RoadA = nullptr;
-    Roads* RoadB = nullptr;
+    Roads* RoadA = nullptr;         // lane going either up or right
+    Roads* RoadB = nullptr;         // lane going either down or left; opposite to A
+    Signal* signal = nullptr;       // pointer to signal on this slot
 
 };
 struct Vehicle_Grid_Slot {
@@ -33,6 +35,7 @@ public:
     Vehicle_Grid_Slot getVehicleGrid(int x, int y);
     void setVehicleGrid(int x, int y, Vehicle* value,bool AorB); // a or b is to tell which lane we need to use, true means A and false means B
     void CreateRoad ( int initial_x, int initial_y, int final_x, int final_y, int speed_limit);
+    void CreateSignal(int x, int y, std::vector<bool> sequence);
     void CreateVehicle(int x ,int y,type type_of_vehicle,bool A_or_B );
     void CreateJunction(int x, int y, junction type_of_junction);
     //void PrintGrids(SimulationEngine& engine);
@@ -43,6 +46,7 @@ public:
     std::vector<std::tuple<int, int, int, int, int>>& getRoads();
 private:
     std::vector<std::tuple<int, int, int, int, int>> RoadsInputs;
+    std::vector<Signal*> signal_on_grid;
     std::vector<Vehicle*> vehicle_on_grid;
     std::vector<Junction*> junction_on_grid;
     Roads_Grid_Slot Road_Grid[grid_size][grid_size];

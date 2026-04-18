@@ -1,8 +1,7 @@
-﻿  UI.cpp
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1097,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1109,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(870,1): warning C4715: 'ui_Junction': not all control paths return a value
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(892,1): warning C4715: 'ui_Direction': not all control paths return a value
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(847,1): warning C4715: 'ui_Type': not all control paths return a value
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(914,1): warning C4715: 'ui_Direction': not all control paths return a value
+﻿  Main.cpp
+  Roads.cpp
+  Vehicle.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Vehicle.cpp(175,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Vehicle.cpp(343,1): warning C4715: 'Vehicle::isStoppingDistanceSafe': not all control paths return a value
   EE273-Traffic-Sim.vcxproj -> C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe

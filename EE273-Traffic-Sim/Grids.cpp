@@ -367,6 +367,21 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 
 }
 
+void Grids::CreateSignal(int x, int y, std::vector<bool> sequence) {
+	
+	Signal* s = new Signal(sequence);		// instantiate the signal with the specified sequence
+
+	this->Road_Grid[x][y].signal = s;		// assign signal pointer at the grid space to point to the new signal
+	this->signal_on_grid.push_back(s);		// push back pointer to the new signal on to the vector
+
+	//to test; remove before submisssion
+	/*
+	std::cout << "Signal successfully created" << std::endl;
+	char c;
+	std::cin >> c;
+	*/
+}
+
 void Grids::CreateVehicle(int x, int y,type type_of_vehicle,bool A_or_B) {
 		
 	if (this->getRoadsGrid(x, y).RoadA != nullptr && !(this->getRoadsGrid(x, y).RoadA->isRoad())) {

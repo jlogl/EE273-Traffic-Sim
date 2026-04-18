@@ -1,43 +1,28 @@
 #include "Signal.h"
+#include <iostream>
 
+Signal::Signal(std::vector<bool> seq) {
+	this->go = 0;
+	this->sequence = seq;
+	this->period = seq.size();
+	this->seqTime = 0;
 
-Signal::Signal() {
-	this->go = 1;
-	this->onPeriod = 0;
-	this->offPeriod = 0;
-	this->cycleTime = 0;
-}
-Signal::Signal(int g, int r) {
-	this->go = 0;
-	this->onPeriod = g;
-	this->offPeriod = r;
-	this->cycleTime = 0;
-}
-Signal::Signal(int g, int r, int offset) {
-	this->go = 0;
-	this->onPeriod = g;
-	this->offPeriod = r;
-	this->cycleTime = offset;
+	//to test; remove before submisssion
+	std::cout << "Signal successfully created" << std::endl;
+	char c;
+	std::cin >> c;
 }
 Signal::~Signal() {
 
 }
 
-bool Signal::getLight() {
-	return this->go;
+void Signal::setGo() {
+	this->go = sequence.front()+seqTime;
 }
-void Signal::forceSignal(bool s) {
-	this->go = s;
+void Signal::nextStep() {
+	this->seqTime++;
 }
-int Signal::getOnTime() {
-	return this->onPeriod;
-}
-int Signal::getOffTime() {
-	return this->offPeriod;
-}
-int Signal::getCycleTime() {
-	return this->cycleTime;
-}
-void Signal::setCycleTime(int t) {
-	this->cycleTime = t;
+
+bool Signal::isGreen() {
+	return(this->go);
 }

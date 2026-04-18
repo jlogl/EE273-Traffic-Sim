@@ -1035,18 +1035,19 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		std::cout << "Traffic system simulation opertaions: " << std::endl
 			<< "1. Create Road... " << std::endl
 			<< "2. Create Vehicle... " << std::endl
-			<< "3. Run Simulation..." << std::endl
-			<< "4. Step Simulation..." << std::endl
-			<< "5. Reset Simulation to Initial State..." << std::endl
-			<< "6. Delete Vehicle ... " << std::endl
-			<< "7. Delete Road..." << std::endl
-			<< "8. Save Current Simulation State..." << std::endl
-			<< "9. Load Simulation State..." << std::endl
-			<< "10. Hide/Show Grid ..." << std::endl
-			<< "11. Hide/Show Data..." << std::endl
+			<< "3. Create Traffic Signal..." << std::endl
+			<< "4. Run Simulation..." << std::endl
+			<< "5. Step Simulation..." << std::endl
+			<< "6. Reset Simulation to Initial State..." << std::endl
+			<< "7. Delete Vehicle ... " << std::endl
+			<< "8. Delete Road..." << std::endl
+			<< "9. Save Current Simulation State..." << std::endl
+			<< "10. Load Simulation State..." << std::endl
+			<< "11. Hide/Show Grid ..." << std::endl
+			<< "12. Hide/Show Data..." << std::endl
 			<< "0. Exit..." << std::endl;
 
-		return ui_get_int_in_range(11, 0);
+		return ui_get_int_in_range(12, 0);
 
 	}
 	int ui_ask_question(std::string question, int max, int min) {
