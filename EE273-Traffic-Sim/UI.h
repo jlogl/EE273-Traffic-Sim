@@ -37,8 +37,6 @@ class Roads;
 
 	//Pushback written to make setting all of the designs a quicker process, input the vector you want to feed 5 strings into and order you want them fed in
 	
-	int ui_get_int_in_range(int max, int min);// very similar to function from lab 7 ex2 however doesnt make use of a get int fucntion
-	
-
-
-	
+	int ui_get_int_in_range(int max, int min); // taken from lab 7 ex2
+	void ui_skip_to_number();// taken from lab 7 ex2
+	int ui_get_int();// taken from lab 7 ex2

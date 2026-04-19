@@ -18,7 +18,7 @@ public:
 	void setInitialVehicleDirection(Grids& grid, bool AorB);
 	direction getVehicleDirection();
 	void setVehicleDirection(Grids& grid, bool AorB);// allowed AorB since the road variable is defined using this fucntion
-	int getStoppingDistance(); // not virtual since every vehicle will use it unchaneged, however its protected since only used inside class
+	int getStoppingDistance(); // not virtual since every vehicle will use it unchaneged
 	int getCurrentSpeed();
 	void setCurrentSpeed(int speed);
 	int getX();
@@ -28,7 +28,8 @@ public:
 	int getDistance();
 	void addDistance();
 	void resetDistance();
-	int getAverageSpeed(SimulationEngine& engine);
+	void setInitialDistance(int i);
+	double getAverageSpeed(SimulationEngine& engine);
 	void setX(int x);
 	void setY(int y);
 	
@@ -46,5 +47,6 @@ protected:
 	direction InitialDirection; // tells us which way car was moving when initilalised
 	direction Direction; // tells us what way the car should move, will get from road pointer which vehicle is on
 	type Type{ none }; // allows us to know what vehicle type a object is
-	int distance = 0;
+	int distance = 0; // keeps track of total distance travelled in real time and therefore allows us to calculate a vehicles average speed
+	int initialDistance = 0; // used so that when reset is called from a load of a simulation, the vehicles distance isnt set to 0
 };

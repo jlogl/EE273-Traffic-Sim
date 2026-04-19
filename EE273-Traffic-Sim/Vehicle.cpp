@@ -238,15 +238,18 @@ void Vehicle::addDistance() {
 }
 void Vehicle::resetDistance() {
 
-	distance = 0;
+	distance = initialDistance;
 }
-int Vehicle::getAverageSpeed(SimulationEngine& engine) {
+double Vehicle::getAverageSpeed(SimulationEngine& engine) {
 	if (engine.getCurrentTime() - engine.getInitialTime() == 0) {
 		return 0;
 	}
 	return distance / (engine.getCurrentTime() - engine.getInitialTime());
 }
+void Vehicle::setInitialDistance(int i) {
 
+	initialDistance = i; // used inside of load function to retain data oof vehicle 
+}
 
 
 bool Vehicle::isStoppingDistanceSafe(Grids& grid) {

@@ -63,7 +63,7 @@ void SimulationEngine::step()
 	}
 	
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // simulate time delay for each timestep, the chrono library allows for the program to interact with real world time and the this_thread 
+	std::this_thread::sleep_for(std::chrono::milliseconds(3000)); // simulate time delay for each timestep, the chrono library allows for the program to interact with real world time and the this_thread 
 	// namespace allows us to interact with this thread of code, found on C++ forum.
 	
 
@@ -141,7 +141,7 @@ bool SimulationEngine::save(std::string filename)
 				break;
 			}
 		}
-		outFile << "V," << i->getX() << "," << i->getY() << "," << i->getVehicleType() <<"," << AorB << std::endl;
+		outFile << "V," << i->getX() << "," << i->getY() << "," << i->getVehicleType() <<"," << AorB << i->getDistance()<< std::endl;
 			
 			
 	}
@@ -213,6 +213,7 @@ bool SimulationEngine::load(std::string filename) {
 					data.push_back(number); // could use array since number of elements is known but this is more convienent
 				}
 				count++;
+				std::cout << count << std::endl;
 			}
 
 			type t;
@@ -237,6 +238,15 @@ bool SimulationEngine::load(std::string filename) {
 				}
 			}
 				Grid->CreateVehicle(data[0], data[1], t, data[3]);
+			
+				if (data[3] == 1) {
+					Grid->getVehicleGrid(data[0], data[1]).VehicleA->setInitialDistance(data[4]);
+					Grid->getVehicleGrid(data[0], data[1]).VehicleA->resetDistance();
+				}
+				else {
+					Grid->getVehicleGrid(data[0], data[1]).VehicleB->setInitialDistance(data[4]);
+					Grid->getVehicleGrid(data[0], data[1]).VehicleB->resetDistance();
+				}
 				break;
 		}
 

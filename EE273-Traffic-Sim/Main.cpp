@@ -151,6 +151,7 @@ int main()
 			std::cout << "Toggle Complete" << std::endl;
 			break;
 		}
+			/*	case(12);*/
 		}
 		ui_pause();
 	}

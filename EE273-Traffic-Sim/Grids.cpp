@@ -126,6 +126,7 @@ std::vector<std::tuple<int, int, int, int, int>>& Grids::getRoads() {
 
 
 
+
 void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, int speed_limit) {
 	if (initial_x != final_x && initial_y != final_y) {
 		std::cout << "Diagonal road not supported" << std::endl;
@@ -343,7 +344,6 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 		setRoadsGrid(i.first, i.second, nullptr);
 	}
 	for (std::pair<int, int> i : JunctionPoints) {
-		std::cout << i.first << "," << i.second << std::endl;
 		int size = junction_on_grid.size();
 		for (int j = size - 1; j >= 0; j = j - 1) { // we begin at end of vector so if something is removed it doesnt mess with future indexing - Class Test 2
 			if ( i.first == junction_on_grid[j]->getX() && i.second == junction_on_grid[j]->getY()) {
@@ -399,7 +399,7 @@ void Grids::CreateVehicle(int x, int y,type type_of_vehicle,bool A_or_B) {
 	else {
 		if (Road_Grid[x][y].RoadB == nullptr) {
 
-			std::cout << "No lane at coordinate " << x << "," << y << std::endl;
+			std::cout << "No Road at coordinate " << x << "," << y << std::endl;
 			return;
 		}
 		if (Vehicle_Grid[x][y].VehicleB != nullptr) {
@@ -523,15 +523,19 @@ void Grids::CreateJunction(int x, int y, junction type_of_junction) {
 	
 	case(roads): { // only happens when extending a road replaces a turn with a road.
 		int SL;
-		if (this->getRoadsGrid(x - 1, y).RoadA != nullptr ) { // create A new horizontal road slot
-		SL = this->getRoadsGrid(x - 1, y).RoadA->getSpeedLimit();	
-		Roads* R = new Roads(x, y, SL, East);
-		setRoadsGrid(x, y, R);
+		if(x-1>0 && x-1<grid_size-1){
+			if (this->getRoadsGrid(x - 1, y).RoadA != nullptr) { // create A new horizontal road slot
+				SL = this->getRoadsGrid(x - 1, y).RoadA->getSpeedLimit();
+				Roads* R = new Roads(x, y, SL, East);
+				setRoadsGrid(x, y, R);
+			}
 		}
 		else { // means a new vertical road slot
-			SL = this->getRoadsGrid(x, y - 1).RoadA->getSpeedLimit();
-			Roads* R = new Roads(x, y, SL, North);
-			setRoadsGrid(x, y, R);
+			if (y - 1 > 0 && y - 1 < grid_size - 1) {
+				SL = this->getRoadsGrid(x, y - 1).RoadA->getSpeedLimit();
+				Roads* R = new Roads(x, y, SL, North);
+				setRoadsGrid(x, y, R);
+			}
 		}
 		//remove coordinate of jucntion from vector, as its now a Road
 		int size = junction_on_grid.size();

@@ -364,10 +364,10 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 	if (ON) {
 		for (int i = 0; i < Grids::grid_size; i = i + 1) { // each row in grid.
 			for (int j = 0; j < Grids::grid_size; j = j + 1) {//each column in grid
-				bool pushed = false;
+			
 				if (grid.getRoadsGrid(j, i).RoadA == nullptr) {
 					gridValues.push_back(0); // if no road is on grid, then the slot is empty
-					pushed = true;
+					
 
 				}
 				else {
@@ -375,24 +375,24 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 						if (grid.getRoadsGrid(j, i).RoadA->getDirection() == North) { //vertical road
 							if (grid.getVehicleGrid(j, i).VehicleA == nullptr && grid.getVehicleGrid(j, i).VehicleB == nullptr) {
 								gridValues.push_back(17); // is a vertical road with nothing on it
-								pushed = true;
+								
 							}
 							if (grid.getVehicleGrid(j, i).VehicleA != nullptr && grid.getVehicleGrid(j, i).VehicleB == nullptr) { //Vehicle in North Lane
 								type vType = grid.getVehicleGrid(j, i).VehicleA->getVehicleType();
 								switch (vType) {
 								case(car): {
 									gridValues.push_back(18);
-									pushed = true;
+									
 									break;
 								}
 								case(bus): {
 									gridValues.push_back(20);
-									pushed = true;
+									
 									break;
 								}
 								case(bike): {
 									gridValues.push_back(22);
-									pushed = true;
+									
 									break;
 								}
 								}
@@ -402,17 +402,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								switch (vType) {
 								case(car): {
 									gridValues.push_back(19);
-									pushed = true;
+									
 									break;
 								}
 								case(bus): {
 									gridValues.push_back(21);
-									pushed = true;
+									
 									break;
 								}
 								case(bike): {
 									gridValues.push_back(22);
-									pushed = true;
+									
 									break;
 								}
 								}
@@ -427,17 +427,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 									switch (vTypeB) {
 									case(car): {
 										gridValues.push_back(24);
-										pushed = true;
+										
 										break;
 									}
 									case(bus): {
 										gridValues.push_back(25);
-										pushed = true;
+										
 										break;
 									}
 									case(bike): {
 										gridValues.push_back(26);
-										pushed = true;
+										
 										break;
 									}
 									}
@@ -447,17 +447,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 									switch (vTypeB) {
 									case(car): {
 										gridValues.push_back(27);
-										pushed = true;
+										
 										break;
 									}
 									case(bus): {
 										gridValues.push_back(28);
-										pushed = true;
+										
 										break;
 									}
 									case(bike): {
 										gridValues.push_back(29);
-										pushed = true;
+										
 										break;
 									}
 									}
@@ -467,17 +467,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 									switch (vTypeB) {
 									case(car): {
 										gridValues.push_back(30);
-										pushed = true;
+										
 										break;
 									}
 									case(bus): {
 										gridValues.push_back(31);
-										pushed = true;
+										
 										break;
 									}
 									case(bike): {
 										gridValues.push_back(32);
-										pushed = true;
+										
 										break;
 									}
 									}
@@ -496,17 +496,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								switch (vType) {
 								case(car): {
 									gridValues.push_back(2);
-									pushed = true;
+									
 									break;
 								}
 								case(bus): {
 									gridValues.push_back(4);
-									pushed = true;
+									
 									break;
 								}
 								case(bike): {
 									gridValues.push_back(6);
-									pushed = true;
+									
 									break;
 								}
 								}
@@ -516,17 +516,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								switch (vType) {
 								case(car): {
 									gridValues.push_back(3);
-									pushed = true;
+									
 									break;
 								}
 								case(bus): {
 									gridValues.push_back(5);
-									pushed = true;
+									
 									break;
 								}
 								case(bike): {
 									gridValues.push_back(7);
-									pushed = true;
+									
 									break;
 								}
 								}
@@ -541,17 +541,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 									switch (vTypeB) {
 									case(car): {
 										gridValues.push_back(8);
-										pushed = true;
+										
 										break;
 									}
 									case(bus): {
 										gridValues.push_back(9);
-										pushed = true;
+										
 										break;
 									}
 									case(bike): {
 										gridValues.push_back(10);
-										pushed = true;
+										
 										break;
 									}
 									}
@@ -561,17 +561,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 									switch (vTypeB) {
 									case(car): {
 										gridValues.push_back(11);
-										pushed = true;
+										
 										break;
 									}
 									case(bus): {
 										gridValues.push_back(12);
-										pushed = true;
+										
 										break;
 									}
 									case(bike): {
 										gridValues.push_back(13);
-										pushed = true;
+										
 										break;
 									}
 									}
@@ -581,17 +581,17 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 									switch (vTypeB) {
 									case(car): {
 										gridValues.push_back(14);
-										pushed = true;
+										
 										break;
 									}
 									case(bus): {
 										gridValues.push_back(15);
-										pushed = true;
+										
 										break;
 									}
 									case(bike): {
 										gridValues.push_back(16);
-										pushed = true;
+										
 										break;
 									}
 									}
@@ -614,95 +614,95 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 
 						case(unassigned): {
 							gridValues.push_back(0);
-							pushed = true;
+							
 
 						}
 						case(turn): {
-							if (CheckValues[0] && !CheckValues[1] && !CheckValues[2] && !CheckValues[3] && !pushed) {
+							if (CheckValues[0] && !CheckValues[1] && !CheckValues[2] && !CheckValues[3] ) {
 
 								gridValues.push_back(33);
-								pushed = true;
+								
 								break;
 
 							}
-							if (!CheckValues[0] && !CheckValues[1] && CheckValues[2] && !CheckValues[3] && !pushed) {
+							if (!CheckValues[0] && !CheckValues[1] && CheckValues[2] && !CheckValues[3] ) {
 
 								gridValues.push_back(34);
-								pushed = true;
+								
 								break;
 							}
-							if (!CheckValues[0] && CheckValues[1] && !CheckValues[2] && !CheckValues[3] && !pushed) {
+							if (!CheckValues[0] && CheckValues[1] && !CheckValues[2] && !CheckValues[3] ) {
 
 								gridValues.push_back(35);
-								pushed = true;
+								
 								break;
 							}
-							if (!CheckValues[0] && !CheckValues[1] && !CheckValues[2] && CheckValues[3] && !pushed) {
+							if (!CheckValues[0] && !CheckValues[1] && !CheckValues[2] && CheckValues[3] ) {
 
 								gridValues.push_back(36);
-								pushed = true;
+								
 								break;
 							}
 						}
 						case(corner): {
-							if (CheckValues[0] && CheckValues[1] && !CheckValues[2] && !CheckValues[3] && !pushed) {
+							if (CheckValues[0] && CheckValues[1] && !CheckValues[2] && !CheckValues[3] ) {
 
 								gridValues.push_back(37);
-								pushed = true;
+								
 								break;
 							}
-							if (CheckValues[0] && !CheckValues[1] && !CheckValues[2] && CheckValues[3] && !pushed) {
+							if (CheckValues[0] && !CheckValues[1] && !CheckValues[2] && CheckValues[3] ) {
 
 								gridValues.push_back(38);
-								pushed = true;
+								
 								break;
 							}
-							if (!CheckValues[0] && CheckValues[1] && CheckValues[2] && !CheckValues[3] && !pushed) {
+							if (!CheckValues[0] && CheckValues[1] && CheckValues[2] && !CheckValues[3] ) {
 
 								gridValues.push_back(39);
-								pushed = true;
+								
 								break;
 							}
-							if (!CheckValues[0] && !CheckValues[1] && CheckValues[2] && CheckValues[3] && !pushed) {
+							if (!CheckValues[0] && !CheckValues[1] && CheckValues[2] && CheckValues[3] ) {
 
 								gridValues.push_back(40);
-								pushed = true;
+								
 								break;
 							}
 
 						}
 						case(t): {
-							if (CheckValues[0] && CheckValues[1] && CheckValues[2] && !CheckValues[3] && !pushed) {
+							if (CheckValues[0] && CheckValues[1] && CheckValues[2] && !CheckValues[3] ) {
 
 								gridValues.push_back(41);
-								pushed = true;
+								
 								break;
 
 							}
-							if (CheckValues[0] && CheckValues[1] && !CheckValues[2] && CheckValues[3] && !pushed) {
+							if (CheckValues[0] && CheckValues[1] && !CheckValues[2] && CheckValues[3] ) {
 
 								gridValues.push_back(42);
-								pushed = true;
+								
 								break;
 							}
-							if (CheckValues[0] && !CheckValues[1] && CheckValues[2] && CheckValues[3] && !pushed) {
+							if (CheckValues[0] && !CheckValues[1] && CheckValues[2] && CheckValues[3] ) {
 
 								gridValues.push_back(43);
-								pushed = true;
+								
 								break;
 							}
-							if (!CheckValues[0] && CheckValues[1] && CheckValues[2] && CheckValues[3] && !pushed) {
+							if (!CheckValues[0] && CheckValues[1] && CheckValues[2] && CheckValues[3] ) {
 
 								gridValues.push_back(44);
-								pushed = true;
+								
 								break;
 							}
 						}
 
 						case(cross): {
-							if (CheckValues[0] && CheckValues[1] && CheckValues[2] && CheckValues[3] && !pushed) {
+							if (CheckValues[0] && CheckValues[1] && CheckValues[2] && CheckValues[3] ) {
 								gridValues.push_back(45);
-								pushed = true;
+								
 								break;
 
 							}
@@ -991,19 +991,15 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 	}
 
 	int ui_get_int_in_range(int max, int min) {
-
 		while (true) {
-			int number;
-			std::cout << "Enter a number between " << min << " and " << max <<" (Inclusive)" << std::endl;
-			std::cin >> number;
-
-				if (number >=min && number <=max) {
-					return number;
-				}
-
-
-			std::cout << "Invalid input, Please ";
+			int number = ui_get_int();
+			if (min <= number && number <= max) {
+				return number;
+			}
+			std::cout << "Sorry the number is not between " << min << " and "
+				<< max << "; Try again...\n";
 		}
+		
 	}
 	int PrintUI() {
 		std::cout << "Traffic system simulation opertaions: " << std::endl
@@ -1090,7 +1086,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 			return;
 		}
 		road = VofR[choice - 1];
-		std::cout<<"Delete"<<std::endl;
+		
 		Grid.DeleteRoad(std::get<0>(road), std::get<1>(road), std::get<2>(road), std::get<3>(road));
 	}
 	void ui_save(SimulationEngine& Engine) {
@@ -1108,7 +1104,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		std::cout << "Please enter filename to load simulation from: " << std::endl;
 		std::cin >> filename;
 		if (!Engine.load(filename)) {
-			std::cout << "Error opening file, loadincomplete" << std::endl;
+			std::cout << "Error opening file, load incomplete" << std::endl;
 			return;
 		}
 
@@ -1116,8 +1112,31 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 	
 	void ui_pause() {
 			std::cout << "Press Enter to continue...";
-			std::cin.get();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}
 
+	void ui_skip_to_number() {
+		if (std::cin.fail()) {
+			std::cin.clear();
+			for (char ch; std::cin >> ch;) {
+				if (('0' <= ch && ch <= '9') || ch == '-') {
+					std::cin.unget();
+					return;
+				}
+			}
+			std::cout << "The stream is at eof or bad"
+				<< "\n";
+		}
+	}
+	int ui_get_int() {
+		int number;
+		while (true) {
+			if (std::cin >> number) {
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears stream of characters, 
+				return number;
+			}
+			std::cout << "Sorry that was not a number\n";
+			ui_skip_to_number();
+		}
+	}
 	

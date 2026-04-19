@@ -17,6 +17,7 @@ public:
 	std::vector<bool> Checks(); // used to let the exact type and orientation of the junction be accessed
 	int getUses();
 	void resetUses();
+	
 protected:
 	bool UpCheck= false;
 	bool LeftCheck = false;
@@ -24,6 +25,7 @@ protected:
 	bool RightCheck = false;
 	
 	int totalUses=0;
+	
 	junction Type;
 	
 	Vehicle* UpApproach =nullptr;
