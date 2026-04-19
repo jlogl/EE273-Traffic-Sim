@@ -11,24 +11,8 @@
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Grids.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Signal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Signal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Signal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Signal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Direction_enum.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Direction_enum.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Junction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Junction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Roads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -39,8 +23,24 @@
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Grids.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Roads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Signal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Signal.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Signal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Signal.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Junction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Direction_enum.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Direction_enum.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Junction.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Overall.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
@@ -86,13 +86,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "Grids.h",
               "DocumentMoniker": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h",
               "RelativeDocumentMoniker": "Grids.h",
               "ToolTip": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h",
               "RelativeToolTip": "Grids.h",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-06T12:37:45.486Z",
               "IsPinned": true,
@@ -106,7 +106,7 @@
               "RelativeDocumentMoniker": "Grids.cpp",
               "ToolTip": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.cpp",
               "RelativeToolTip": "Grids.cpp",
-              "ViewState": "AgIAAG8BAAAAAAAAAAAAAH4BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALsAAAAAAAAAAAAAAHUBAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-12T19:21:29.159Z",
               "IsPinned": true,
@@ -114,13 +114,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "Roads.h",
               "DocumentMoniker": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h",
               "RelativeDocumentMoniker": "Roads.h",
               "ToolTip": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h",
               "RelativeToolTip": "Roads.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-04-04T16:08:21.976Z",
               "IsPinned": true,
@@ -128,13 +128,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "Roads.cpp",
               "DocumentMoniker": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.cpp",
               "RelativeDocumentMoniker": "Roads.cpp",
               "ToolTip": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.cpp",
               "RelativeToolTip": "Roads.cpp",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-04T16:08:21.479Z",
               "IsPinned": true,
@@ -148,7 +148,7 @@
               "RelativeDocumentMoniker": "Main.cpp",
               "ToolTip": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp",
               "RelativeToolTip": "Main.cpp",
-              "ViewState": "AgIAAN4AAAAAAAAAAAAlwOgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAIQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-04-18T13:42:28.63Z",
               "IsPinned": true,
@@ -156,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Direction_enum.h",
               "DocumentMoniker": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Direction_enum.h",
               "RelativeDocumentMoniker": "Direction_enum.h",
@@ -164,25 +164,23 @@
               "RelativeToolTip": "Direction_enum.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-18T16:58:23.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-18T16:58:23.303Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Junction.h",
               "DocumentMoniker": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.h",
               "RelativeDocumentMoniker": "Junction.h",
               "ToolTip": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.h",
               "RelativeToolTip": "Junction.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-17T15:32:14.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T15:32:14.761Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Junction.cpp",
               "DocumentMoniker": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.cpp",
               "RelativeDocumentMoniker": "Junction.cpp",
@@ -190,8 +188,7 @@
               "RelativeToolTip": "Junction.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-17T16:18:15.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T16:18:15.192Z"
             },
             {
               "$type": "Document",
@@ -202,12 +199,11 @@
               "ToolTip": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Overall.cd",
               "RelativeToolTip": "Overall.cd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2026-04-17T10:22:05.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T10:22:05.384Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Signal.h",
               "DocumentMoniker": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Signal.h",
               "RelativeDocumentMoniker": "Signal.h",
@@ -220,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Signal.cpp",
               "DocumentMoniker": "C:\\Users\\jrlou\\OneDrive\\Documents\\GitHub\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Signal.cpp",
               "RelativeDocumentMoniker": "Signal.cpp",
@@ -241,8 +237,7 @@
               "RelativeToolTip": "UI.cpp",
               "ViewState": "AgIAAFcBAAAAAAAAAAAAAA4EAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-12T00:53:55.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-12T00:53:55.842Z"
             },
             {
               "$type": "Document",
@@ -266,8 +261,7 @@
               "RelativeToolTip": "SimulationEngine.h",
               "ViewState": "AgIAAAoAAAAAAAAAAAD4vxkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-12T22:10:38.411Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-12T22:10:38.411Z"
             },
             {
               "$type": "Document",
@@ -279,8 +273,7 @@
               "RelativeToolTip": "SimulationEngine.cpp",
               "ViewState": "AgIAAFUAAAAAAAAAAAAAwFIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-12T19:38:58.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-12T19:38:58.867Z"
             },
             {
               "$type": "Document",
@@ -292,8 +285,7 @@
               "RelativeToolTip": "TJunction.cpp",
               "ViewState": "AgIAAN4AAAAAAAAAAAAAAOcAAAB0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-13T19:36:21.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:36:21.451Z"
             },
             {
               "$type": "Document",
@@ -305,8 +297,7 @@
               "RelativeToolTip": "CrossJunction.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-04-13T19:02:56.779Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T19:02:56.779Z"
             },
             {
               "$type": "Document",

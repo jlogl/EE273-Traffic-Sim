@@ -24,7 +24,6 @@ protected:
 	int x_coordinate; //holds data on where the road is on the grid in x direction which is defined as left to right
 	int y_coordinate; //holds data on where the road is on the grid un y direction which is defined as down to up
 	bool IsRoad=1;
-	std::vector<Signal*> signals;
 
 private:
 	enum direction direction_of_road=None;

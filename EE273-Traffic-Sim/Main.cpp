@@ -115,18 +115,20 @@ int main()
 			std::pair<int, int> p;
 			std::vector<bool> seqVector;
 			int seqLength = 0;
-			//Roads* rpntr;
-			//Junction* jpntr;
 			junction jt = unassigned;
+			int qnty = 1;
 	
 			// x and y input validation
 			while (true) {
 
-				p = ui_ask_question("What X coordinate would you like to place a Signal at? Note that it must be on a road or junction, except dead ends. ", "What Y coordinate would you like to place a Signal at? ", Grids::grid_size - 1, 0);
+				p = ui_ask_question("What X coordinate would you like to place a Signal at? Note that it must be on a road or junction which isn't a turn. ", "What Y coordinate would you like to place a Signal at? ", Grids::grid_size - 1, 0);
 
 				// get junction type, if space is a junction
 				for (int n = 0; n < Grid.getJunctions().size(); n++) {
-					if (p.first == (Grid.getJunctions().front() + n)->getX() && p.second == (Grid.getJunctions().front() + n)->getY()) {		// if the current slot is a junction
+					if (p.first == (Grid.getJunctions().front() + n)->getX() && p.second == (Grid.getJunctions().front() + n)->getY()) {
+						
+						// DOESNT WORK!!! DONT KNOW WHY!!!
+
 						jt = (Grid.getJunctions().front() + n)->getJunctionType();
 						break;
 					}
@@ -135,51 +137,49 @@ int main()
 				}
 
 				// show error if there is a turn or no road at all
-				if (Grid.getRoadsGrid(p.first, p.second).RoadA == nullptr || t == turn) {
+				if (Grid.getRoadsGrid(p.first, p.second).RoadA == nullptr || jt == turn) {
 
-					std::cout << "No road at this location, please try again, ";
+					std::cout << "No valid road/junction at this location, please try again, ";
 				}
 				else {
-
 					break;
 				}
 
 			}
 
-			seqLength = ui_ask_question("How long will the sequence of signals be? (min. 2, max. 24) ", 24, 2);
-
 			switch (jt) {
 
-			case(roads):		// there is a road
+			case(roads):
 			case(corner):
+				qnty = 1;
+				break;
 
-				for (int n = 0; n < seqLength; n++) {
+			case(t):
+				qnty = 3;
+				break;
 
-					std::cout << "Enter the colour at step " << n + 1;
+			case(cross):
+				qnty = 4;
+				break;
+			}
+
+			if (! Grid.getRoadsGrid(p.first, p.second).signals.empty()) {	// if the grid space already has signals on it
+
+				// remove all elements of the vector so that they are overwritten by the new signal(s)
+				Grid.getRoadsGrid(p.first, p.second).signals.clear();
+			}
+
+			for (int n = 0; n < qnty; n++) {
+				seqLength = ui_ask_question("How long will the light sequence be? (min. 2, max. 24) ", 24, 2);
+				for (int m = 0; m < seqLength; m++) {
+
+					std::cout << "Enter the light at step " << m + 1;
 					seqVector.push_back(bool(ui_ask_question(" in the sequence (0 for red, 1 for green): ", 1, 0)));
-
 				}
 
 				Grid.CreateSignal(p.first, p.second, seqVector);
-
-				break;
-
-			//case(t):
-			//case(cross):
 			}
 
-
-			/*
-			if (Grid.getRoadsGrid(p.first, p.second).RoadA->isRoad() ) {		// if the current slot is a road
-				// create one signal
-			}
-			else {															// if the current slot is a junction
-				//switch (type of junction at this square)
-				//turn: error message, do nothing, break
-				//t junction: make 3 junctions
-				//cross junction: make 4
-			}
-			*/
 
 			break;
 		}

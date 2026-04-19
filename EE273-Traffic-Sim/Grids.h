@@ -14,7 +14,7 @@ class SimulationEngine;
 struct Roads_Grid_Slot {
     Roads* RoadA = nullptr;         // lane going either up or right
     Roads* RoadB = nullptr;         // lane going either down or left; opposite to A
-    Signal* signal = nullptr;       // pointer to signal on this slot
+    std::vector<Signal*> signals;   // pointer to signal on this slot
 
 };
 struct Vehicle_Grid_Slot {

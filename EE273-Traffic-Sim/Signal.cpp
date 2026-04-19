@@ -9,8 +9,6 @@ Signal::Signal(std::vector<bool> seq) {
 
 	//to test; remove before submisssion
 	std::cout << "Signal successfully created" << std::endl;
-	char c;
-	std::cin >> c;
 }
 Signal::~Signal() {
 

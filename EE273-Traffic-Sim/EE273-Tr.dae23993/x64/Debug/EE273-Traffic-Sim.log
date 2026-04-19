@@ -1,7 +1,2 @@
 ﻿  Main.cpp
-  Roads.cpp
-  Vehicle.cpp
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Vehicle.cpp(175,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Vehicle.cpp(343,1): warning C4715: 'Vehicle::isStoppingDistanceSafe': not all control paths return a value
   EE273-Traffic-Sim.vcxproj -> C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe

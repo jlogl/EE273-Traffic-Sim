@@ -371,7 +371,8 @@ void Grids::CreateSignal(int x, int y, std::vector<bool> sequence) {
 	
 	Signal* s = new Signal(sequence);		// instantiate the signal with the specified sequence
 
-	this->Road_Grid[x][y].signal = s;		// assign signal pointer at the grid space to point to the new signal
+	this->Road_Grid[x][y].signals.push_back(s);		// push back the pointer if the vector is empty
+	
 	this->signal_on_grid.push_back(s);		// push back pointer to the new signal on to the vector
 
 	//to test; remove before submisssion
