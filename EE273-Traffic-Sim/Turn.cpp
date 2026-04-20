@@ -15,7 +15,7 @@ void Turn::UpdateJunction(Grids& grid) {
 
 		if (UpApproach != nullptr && UpLeave == nullptr) {
 			grid.setVehicleGrid(x_coordinate, y_coordinate+1, nullptr, 0);
-			UpApproach->setVehicleDirection(grid, 1); // manually change vehicle direction as it is tied to road but is only set when created as until now vehicles havent changed direction
+			UpApproach->setVehicleDirection( 1); // manually change vehicle direction as it is tied to road but is only set when created as until now vehicles havent changed direction
 			UpApproach->setCurrentSpeed(0);
 			UpApproach->addDistance();
 			grid.setVehicleGrid(x_coordinate, y_coordinate+1, UpApproach, 1);
@@ -30,7 +30,7 @@ void Turn::UpdateJunction(Grids& grid) {
 
 		if (DownApproach != nullptr && DownLeave == nullptr) {
 			grid.setVehicleGrid(x_coordinate, y_coordinate-1, nullptr, 1);
-			DownApproach->setVehicleDirection(grid, 0);
+			DownApproach->setVehicleDirection( 0);
 			DownApproach->setCurrentSpeed(0);
 			DownApproach->addDistance();
 			grid.setVehicleGrid(x_coordinate, y_coordinate-1, DownApproach, 0);
@@ -44,7 +44,7 @@ void Turn::UpdateJunction(Grids& grid) {
 
 		if (RightApproach != nullptr && RightLeave == nullptr) {
 			grid.setVehicleGrid(x_coordinate + 1, y_coordinate , nullptr, 0);
-			RightApproach->setVehicleDirection(grid, 1);
+			RightApproach->setVehicleDirection(1);
 			RightApproach->setCurrentSpeed(0);
 			RightApproach->addDistance();
 			grid.setVehicleGrid(x_coordinate + 1, y_coordinate , RightApproach, 1);
@@ -58,7 +58,7 @@ void Turn::UpdateJunction(Grids& grid) {
 
 		if (LeftApproach != nullptr and LeftLeave == nullptr) {
 			grid.setVehicleGrid(x_coordinate - 1, y_coordinate , nullptr, 1);
-			LeftApproach->setVehicleDirection(grid, 0);
+			LeftApproach->setVehicleDirection( 0);
 			LeftApproach->setCurrentSpeed(0);
 			LeftApproach->addDistance();
 			grid.setVehicleGrid(x_coordinate - 1, y_coordinate , LeftApproach, 0);

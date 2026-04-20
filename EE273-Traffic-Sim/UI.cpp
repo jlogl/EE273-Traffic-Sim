@@ -35,7 +35,7 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string B2 = "  X  ";
 	
 
-	// blank design #1
+	// blank design #0
 	Pushback(v, B1, B1, B2, B1, B1);
 
 
@@ -47,52 +47,52 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string H5 = " Bus ";
 	std::string H6 = "Bike ";
 
-	//empty road H #2
+	//empty road H #1
 	Pushback(v, H1, H2, H1, H3, H1);
 
-	// car A road H #3 
+	// car A road H #2 
 	Pushback(v, H1, H4, H1, H3, H1);
 
-	// car B road H #4
+	// car B road H #3
 	Pushback(v, H1, H2, H1, H4, H1);
 
-	// bus A road H #5
+	// bus A road H #4
 	Pushback(v, H1, H5, H1, H3, H1);
 
-	// bus B road H #6
+	// bus B road H #5
 	Pushback(v, H1, H2, H1, H5, H1);
 
-	// bike A road H #7
+	// bike A road H #6
 	Pushback(v, H1, H6, H1, H3, H1);
 
-	// bike B road H #8
+	// bike B road H #7
 	Pushback(v, H1, H2, H1, H6, H1);
 
-	// car A car B road h #9
+	// car A car B road h #8
 	Pushback(v, H1, H4, H1, H4, H1);
 	 
-	// car A bus B road h #10
+	// car A bus B road h #9
 	Pushback(v, H1, H4, H1, H5, H1);
 
-	// car A bike B road h #11
+	// car A bike B road h #10
 	Pushback(v, H1, H4, H1, H6, H1);
 	
-	// bus A car B road h #12
+	// bus A car B road h #11
 	Pushback(v, H1, H5, H1, H4, H1);
 	
-	// bus A bus B road h #13
+	// bus A bus B road h #12
 	Pushback(v, H1, H5, H1, H6, H1);
 	
-	// Bus A bike B road h #14
+	// Bus A bike B road h #13
 	Pushback(v, H1, H5, H1, H6, H1);
 
-	// bike A Car B road h #15
+	// bike A Car B road h #14
 	Pushback(v, H1, H6, H1, H4, H1);
 
-	// Bike A bus B road h #16 
+	// Bike A bus B road h #15 
 	Pushback(v, H1, H6, H1, H5, H1);
 	
-	// Bike A bike B roah h #17 
+	// Bike A bike B roah h #16 
 	Pushback(v, H1, H6, H1, H6, H1);
 	
 	
@@ -164,52 +164,52 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string V50 = "|^|B|";
 	std::string V51 = "|||i|";
 	std::string V52 = "|||k|";
-	// Blank Road V #18
+	// Blank Road V #17
 	Pushback(v, V1, V2, V3, V4, V1);
 
-	// car A road v #19
+	// car A road v #18
 	Pushback(v, V1, V5, V6, V7, V1);
 
-	// car B road v #20
+	// car B road v #19
 	Pushback(v, V1, V44, V45, V46, V1);
 
-	//Bus A road v #21
+	//Bus A road v #20
 	Pushback(v, V1, V8, V9, V10, V1);
 	
-	//Bus B road v #22 
+	//Bus B road v #21 
 	Pushback(v, V1, V47, V48, V49, V1);
 	
-	//Bike A road v #23 
+	//Bike A road v #22 
 	Pushback(v, V1, V11, V12, V13, V14);
 	
-	//Bike B road v #24
+	//Bike B road v #23
 	Pushback(v, V1, V50, V51, V52, V15);
 	
-	// car A car B road v #25
+	// car A car B road v #24
 	Pushback(v, V1, V16, V17, V18, V1);
 	
-	// car a bus B road v #26
+	// car a bus B road v #25
 	Pushback(v, V1, V19, V20, V21, V1);
 	
-	// car A bike B road v #27
+	// car A bike B road v #26
 	Pushback(v, V1, V22, V23, V24, V15);
 	
-	// bus A car A road v #28
+	// bus A car A road v #27
 	Pushback(v, V1, V25, V26, V27, V1);
 	
-	// bus A bus B road v #29
+	// bus A bus B road v #28
 	Pushback(v, V1, V28, V29, V30, V1);
 	
-	// bus A bike B road v #30
+	// bus A bike B road v #29
 	Pushback(v, V1, V31, V32, V33, V15);
 	
-	//bike A Car B road v #31
+	//bike A Car B road v #30
 	Pushback(v, V1, V34, V35, V36, V14);
 	
-	//bike A bus road v #32
+	//bike A bus road v #31
 	Pushback(v, V1, V37, V38, V39, V14);
 	
-	//Bike A bike B road v #33
+	//Bike A bike B road v #32
 	Pushback(v, V1, V40, V41, V42, V43);
 
 	// Turns
@@ -240,17 +240,17 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string Turn17 = "----/";
 
 
-	// Turn when upcheck #34
+	// Turn when upcheck #33
 	
 	Pushback(v, Turn3, Turn4, Turn5, Turn6, Turn7);
 	
-	// Turn when downcheck #35
+	// Turn when downcheck #34
 	Pushback(v, Turn1, Turn2, Turn3, Turn4, Turn5);
 
-	// Turn when leftcheck #36
+	// Turn when leftcheck #35
 	Pushback(v, Turn13, Turn14, Turn15, Turn16, Turn17);
 
-	// Turn when rightcheck #37
+	// Turn when rightcheck #36
 	Pushback(v, Turn8, Turn9, Turn10, Turn11, Turn12);
 
 	// Corners
@@ -283,17 +283,17 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string CR19 = "| |/ ";
 	std::string CR20 = "| | /";
 
-	// Upcheck and leftcheck #38
+	// Upcheck and leftcheck #37
 	Pushback(v, CR1, CR2, CR3, CR4, CR5);
 
-	//upcheck and rightcheck #39
+	//upcheck and rightcheck #38
 	Pushback(v, CR6, CR7, CR8, CR9, CR10);
 
-	//downcheck and leftcheck #40
+	//downcheck and leftcheck #39
 
 	Pushback(v, CR5, CR4, CR3, CR2, CR1);
 
-	//downcheck and rightcheck #41
+	//downcheck and rightcheck #40
 
 	Pushback(v, CR10, CR9, CR8, CR7, CR6);
 
@@ -330,19 +330,19 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string T19 = "\\ |/ ";
 	std::string T20 = " \\| /";
 
-	//up,left,down #42
+	//up,left,down #41
 	Pushback(v, T1, T2, T3, T4, T5);
 
-	// //left,up,right #43
+	// //left,up,right #42
 	Pushback(v, T6, T7, T8, T9, T10);
 
-	//down,right,up #44
+	//down,right,up #43
 	Pushback(v, T11, T12, T13, T14, T15);
 
-	//right,down,left #45
+	//right,down,left #44
 	Pushback(v, T16, T17, T18, T19, T20);
 
-	//cross #46
+	//cross #45
 	std::string Cross1 = "/ | \\";
 	std::string Cross2 = " /|\\ ";
 	std::string Cross3 = "--+--";
@@ -366,7 +366,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 			for (int j = 0; j < Grids::grid_size; j = j + 1) {//each column in grid
 			
 				if (grid.getRoadsGrid(j, i).RoadA == nullptr) {
-					gridValues.push_back(0); // if no road is on grid, then the slot is empty
+					gridValues.push_back(0); // if no road is on grid, then the slot is empty as all other objects need road
 					
 
 				}
@@ -411,7 +411,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 									break;
 								}
 								case(bike): {
-									gridValues.push_back(22);
+									gridValues.push_back(23);
 									
 									break;
 								}
@@ -1095,7 +1095,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		std::cout << "Please enter filename to save simulation to: " << std::endl;
 		std::cin >> filename;
 		if (!Engine.save(filename)) {
-			std::cout << "Error opening file,save incomplete" << std::endl;
+			std::cout << "Error opening file, save incomplete" << std::endl;
 			return;
 		}
 	}
@@ -1112,7 +1112,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 	
 	void ui_pause() {
 			std::cout << "Press Enter to continue...";
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cin.get();
 		}
 
 	void ui_skip_to_number() {

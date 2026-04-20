@@ -24,7 +24,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				UpApproach->setCurrentSpeed(0);
 				UpApproach->setX(x_coordinate);
 				UpApproach->setY(y_coordinate - 1);
-				UpApproach->setVehicleDirection(grid, 0);
+				UpApproach->setVehicleDirection( 0);
 				UpApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate - 1, UpApproach, 0);
 				totalUses = totalUses + 1;
@@ -34,7 +34,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				LeftApproach->setCurrentSpeed(0);
 				LeftApproach->setX(x_coordinate);
 				LeftApproach->setY(y_coordinate + 1);
-				LeftApproach->setVehicleDirection(grid, 1);
+				LeftApproach->setVehicleDirection( 1);
 				LeftApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate + 1, LeftApproach, 1);
 				totalUses = totalUses + 1;
@@ -45,7 +45,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				DownApproach->setCurrentSpeed(0);
 				DownApproach->setX(x_coordinate - 1);
 				DownApproach->setY(y_coordinate);
-				DownApproach->setVehicleDirection(grid, 0);
+				DownApproach->setVehicleDirection( 0);
 				DownApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate - 1, y_coordinate, DownApproach, 0);
 				totalUses = totalUses + 1;
@@ -57,7 +57,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				UpApproach->setCurrentSpeed(0);
 				UpApproach->setX(x_coordinate-1);
 				UpApproach->setY(y_coordinate);
-				UpApproach->setVehicleDirection(grid, 0);
+				UpApproach->setVehicleDirection( 0);
 				UpApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate-1, y_coordinate, UpApproach, 0);
 				totalUses = totalUses + 1;
@@ -67,7 +67,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				LeftApproach->setCurrentSpeed(0); 
 				LeftApproach->setX(x_coordinate);
 				LeftApproach->setY(y_coordinate-1);
-				LeftApproach->setVehicleDirection(grid, 0);
+				LeftApproach->setVehicleDirection( 0);
 				LeftApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate -1, LeftApproach, 0);
 				totalUses = totalUses + 1;
@@ -78,7 +78,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				DownApproach->setCurrentSpeed(0);
 				DownApproach->setX(x_coordinate);
 				DownApproach->setY(y_coordinate+1);
-				DownApproach->setVehicleDirection(grid, 1);
+				DownApproach->setVehicleDirection( 1);
 				DownApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate+1, DownApproach, 1);
 				totalUses = totalUses + 1;
@@ -96,7 +96,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				RightApproach->setCurrentSpeed(0);
 				RightApproach->setX(x_coordinate - 1);
 				RightApproach->setY(y_coordinate);
-				RightApproach->setVehicleDirection(grid, 0);
+				RightApproach->setVehicleDirection( 0);
 				RightApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate - 1, y_coordinate, RightApproach, 0);
 				totalUses = totalUses + 1;
@@ -106,7 +106,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				UpApproach->setCurrentSpeed(0);
 				UpApproach->setX(x_coordinate + 1);
 				UpApproach->setY(y_coordinate);
-				UpApproach->setVehicleDirection(grid, 1);
+				UpApproach->setVehicleDirection( 1);
 				UpApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate + 1, y_coordinate, UpApproach, 1);
 				totalUses = totalUses + 1;
@@ -116,7 +116,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				LeftApproach->setCurrentSpeed(0);
 				LeftApproach->setX(x_coordinate);
 				LeftApproach->setY(y_coordinate + 1);
-				LeftApproach->setVehicleDirection(grid, 1);
+				LeftApproach->setVehicleDirection( 1);
 				LeftApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate + 1, LeftApproach, 1);
 				totalUses = totalUses + 1;
@@ -128,7 +128,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				RightApproach->setCurrentSpeed(0);
 				RightApproach->setX(x_coordinate );
 				RightApproach->setY(y_coordinate+1);
-				RightApproach->setVehicleDirection(grid, 1);
+				RightApproach->setVehicleDirection( 1);
 				RightApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate , y_coordinate+1, RightApproach, 1);
 				totalUses = totalUses + 1;
@@ -138,7 +138,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				UpApproach->setCurrentSpeed(0);
 				UpApproach->setX(x_coordinate - 1);
 				UpApproach->setY(y_coordinate);
-				UpApproach->setVehicleDirection(grid, 0);
+				UpApproach->setVehicleDirection(0);
 				UpApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate - 1, y_coordinate, UpApproach, 0);
 				totalUses = totalUses + 1;
@@ -148,7 +148,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				LeftApproach->setCurrentSpeed(0);
 				LeftApproach->setX(x_coordinate);
 				LeftApproach->setY(y_coordinate + 1);
-				LeftApproach->setVehicleDirection(grid, 1);
+				LeftApproach->setVehicleDirection( 1);
 				LeftApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate + 1, LeftApproach, 1);
 				totalUses = totalUses + 1;
@@ -167,7 +167,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				DownApproach->setCurrentSpeed(0);
 				DownApproach->setX(x_coordinate);
 				DownApproach->setY(y_coordinate + 1);
-				DownApproach->setVehicleDirection(grid, 1);
+				DownApproach->setVehicleDirection( 1);
 				DownApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate + 1, DownApproach, 1);
 				totalUses = totalUses + 1;
@@ -177,7 +177,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				RightApproach->setCurrentSpeed(0);
 				RightApproach->setX(x_coordinate);
 				RightApproach->setY(y_coordinate - 1);
-				RightApproach->setVehicleDirection(grid, 0);
+				RightApproach->setVehicleDirection(0);
 				RightApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate - 1, RightApproach, 0);
 				totalUses = totalUses + 1;
@@ -187,7 +187,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				UpApproach->setCurrentSpeed(0);
 				UpApproach->setX(x_coordinate + 1);
 				UpApproach->setY(y_coordinate);
-				UpApproach->setVehicleDirection(grid, 1);
+				UpApproach->setVehicleDirection( 1);
 				UpApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate + 1, y_coordinate, UpApproach, 1);
 				totalUses = totalUses + 1;
@@ -199,7 +199,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				DownApproach->setCurrentSpeed(0);
 				DownApproach->setX(x_coordinate+1);
 				DownApproach->setY(y_coordinate );
-				DownApproach->setVehicleDirection(grid, 1);
+				DownApproach->setVehicleDirection( 1);
 				DownApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate+1, y_coordinate , DownApproach, 1);
 				totalUses = totalUses + 1;
@@ -209,7 +209,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				RightApproach->setCurrentSpeed(0);
 				RightApproach->setX(x_coordinate);
 				RightApproach->setY(y_coordinate + 1);
-				RightApproach->setVehicleDirection(grid, 1);
+				RightApproach->setVehicleDirection( 1);
 				RightApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate + 1, RightApproach, 1);
 				totalUses = totalUses + 1;
@@ -219,7 +219,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				UpApproach->setCurrentSpeed(0);
 				UpApproach->setX(x_coordinate);
 				UpApproach->setY(y_coordinate-1);
-				UpApproach->setVehicleDirection(grid, 0);
+				UpApproach->setVehicleDirection( 0);
 				UpApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate , y_coordinate-1, UpApproach, 0);
 				totalUses = totalUses + 1;
@@ -236,7 +236,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				LeftApproach->setCurrentSpeed(0);
 				LeftApproach->setX(x_coordinate + 1);
 				LeftApproach->setY(y_coordinate);
-				LeftApproach->setVehicleDirection(grid, 1);
+				LeftApproach->setVehicleDirection( 1);
 				LeftApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate + 1, y_coordinate, LeftApproach, 1);
 				totalUses = totalUses + 1;
@@ -246,7 +246,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				DownApproach->setCurrentSpeed(0);
 				DownApproach->setX(x_coordinate - 1);
 				DownApproach->setY(y_coordinate);
-				DownApproach->setVehicleDirection(grid, 0);
+				DownApproach->setVehicleDirection( 0);
 				DownApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate - 1, y_coordinate, DownApproach, 0);
 				totalUses = totalUses + 1;
@@ -256,9 +256,9 @@ void TJunction::UpdateJunction(Grids& grid) {
 				RightApproach->setCurrentSpeed(0);
 				RightApproach->setX(x_coordinate);
 				RightApproach->setY(y_coordinate - 1);
-				RightApproach->setVehicleDirection(grid, 0);
+				RightApproach->setVehicleDirection( 0);
 				RightApproach->addDistance();
-				grid.setVehicleGrid(x_coordinate, y_coordinate + 1, RightApproach, 0);
+				grid.setVehicleGrid(x_coordinate, y_coordinate - 1, RightApproach, 0);
 				totalUses = totalUses + 1;
 			}
 		}
@@ -268,7 +268,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				LeftApproach->setCurrentSpeed(0);
 				LeftApproach->setX(x_coordinate);
 				LeftApproach->setY(y_coordinate-1);
-				LeftApproach->setVehicleDirection(grid, 0);
+				LeftApproach->setVehicleDirection( 0);
 				LeftApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate, y_coordinate-1, LeftApproach, 0);
 				totalUses = totalUses + 1;
@@ -278,7 +278,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				DownApproach->setCurrentSpeed(0);
 				DownApproach->setX(x_coordinate + 1);
 				DownApproach->setY(y_coordinate);
-				DownApproach->setVehicleDirection(grid, 1);
+				DownApproach->setVehicleDirection( 1);
 				DownApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate +1, y_coordinate, DownApproach, 1);
 				totalUses = totalUses + 1;
@@ -288,7 +288,7 @@ void TJunction::UpdateJunction(Grids& grid) {
 				RightApproach->setCurrentSpeed(0);
 				RightApproach->setX(x_coordinate-1);
 				RightApproach->setY(y_coordinate);
-				RightApproach->setVehicleDirection(grid, 0);
+				RightApproach->setVehicleDirection( 0);
 				RightApproach->addDistance();
 				grid.setVehicleGrid(x_coordinate-1, y_coordinate, RightApproach, 0);
 				totalUses = totalUses + 1;

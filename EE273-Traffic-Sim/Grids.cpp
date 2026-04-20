@@ -159,6 +159,13 @@ void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, i
 				std::cout << "cannot create a junction where a vehicle is, road creation terminated" << std::endl;
 				return;
 			}
+			for (Vehicle* v : vehicle_on_grid) {
+				if (v->getInitialX() == initial_x && v->getInitialY() == i) {
+					std::cout << "Positon resevred as Vehicle starting point, please Try another location, road creation terminated" << std::endl;
+					return;
+				}
+
+			}
 		} 
 			// in a seperate loop as we dont want part of a road to be built before termination, safety check.
 			// due to way that create vehicle works, if a vehicle is on a square we may assume a road is there
@@ -200,9 +207,17 @@ void Grids::CreateRoad(int initial_x, int initial_y, int final_x, int final_y, i
 			if (getVehicleGrid(i, initial_y).VehicleA != nullptr || getVehicleGrid(i, initial_y).VehicleB != nullptr) {
 				std::cout << "cannot create a junction where a vehicle is, road creation terminated" << std::endl;
 				return;
+			}
+				for (Vehicle* v : vehicle_on_grid) {
+					if (v->getInitialX() == i && v->getInitialY() == initial_y) {
+						std::cout << "Positon resevred as Vehicle starting point, please Try another location, road creation terminated" << std::endl;
+						return;
+					}
 
-			} // in a seperate loop as we dont want part of a road to be built before termination, safety check.
-			// due to way that create vehicle works, if a vehicle is on a square we may assume a road is there
+				}
+				// checks carried out in a seperate loop as we dont want part of a road to be built before termination, safety check.
+				  // due to way that create vehicle works, if a vehicle is on a square we may assume a road is there
+			
 		}
 		
 
@@ -302,6 +317,13 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 				std::cout << "cannot delete road with Vehicle on it, please delete Vehicles first" << std::endl;
 				return;
 			}
+			for (Vehicle* v : vehicle_on_grid) {
+				if (v->getInitialX() == initial_x && v->getInitialY() == i) {
+					std::cout << "Positon resevred as Vehicle starting point, please Try another location, road deletion terminated" << std::endl;
+					return;
+				}
+
+			}
 			if (this->getRoadsGrid(initial_x, i).RoadA != nullptr) {
 				Point.first = initial_x;
 				Point.second = i;
@@ -322,6 +344,13 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 				std::cout << "cannot delete road with Vehicle on it, please delete Vehicles first" << std::endl;
 				return;
 			}
+			for (Vehicle* v : vehicle_on_grid) {
+				if (v->getInitialX() == i && v->getInitialY() == initial_y) {
+					std::cout << "Positon resevred as Vehicle starting point, please Try another location, road creation terminated" << std::endl;
+					return;
+				}
+
+			}
 			if (this->getRoadsGrid(i, initial_y).RoadA != nullptr) {
 				Point.first = i;
 				Point.second = initial_y;
@@ -336,7 +365,17 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 		}
 
 	}
+	std::vector<std::tuple<int, int, int, int, int>>& roads = getRoads();
+	int Rsize = roads.size();
+	for (std::tuple<int, int, int, int, int> R : roads) {
+		int count = 0;
+		if (std::get<0>(R) == initial_x && std::get<1>(R) == initial_y && std::get<2>(R) == final_x && std::get<3>(R) == final_y) {
+			roads.erase(roads.begin() + count);
 
+		}
+		count = count + 1;
+
+	}
 	for (std::pair<int, int> i : RoadPoints) {
 		
 		delete Road_Grid[i.first][i.second].RoadA;
@@ -367,13 +406,13 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 
 }
 
-void Grids::CreateVehicle(int x, int y,type type_of_vehicle,bool A_or_B) {
+void Grids::CreateVehicle(int x, int y,type type_of_vehicle,bool AorB) {
 		
 	if (this->getRoadsGrid(x, y).RoadA != nullptr && !(this->getRoadsGrid(x, y).RoadA->isRoad())) {
-		std::cout << "cannot place car into junction" << std::endl;
+		std::cout << "cannot place Vehicle into junction" << std::endl;
 		return;
 	}
-	if (A_or_B) {
+	if (AorB) {
 
 		if (Road_Grid[x][y].RoadA == nullptr) {
 
@@ -424,26 +463,29 @@ void Grids::CreateVehicle(int x, int y,type type_of_vehicle,bool A_or_B) {
 	switch (type_of_vehicle) {
 
 		case car: {
-		v = new Car(x, y);
+		v = new Car(x, y, *this);
 		
-		v->setVehicleDirection(*this, A_or_B);
-		setVehicleGrid(x, y, v,A_or_B);
+		v->setVehicleDirection( AorB);
+		v->setInitialVehicleDirection(AorB);
+		setVehicleGrid(x, y, v,AorB);
 		vehicle_on_grid.push_back(v);
 		break;
 		}
 		case bus: {
-		v = new Bus(x, y);
+		v = new Bus(x, y, *this);
 		
-		v->setVehicleDirection(*this, A_or_B);
-		setVehicleGrid(x, y, v,A_or_B);
+		v->setVehicleDirection( AorB);
+		v->setInitialVehicleDirection(AorB);
+		setVehicleGrid(x, y, v,AorB);
 		vehicle_on_grid.push_back(v);
 		break;
 		}
 		case bike: {
-		v = new Bike(x, y);
+		v = new Bike(x, y,*this);
 		
-		v->setVehicleDirection(*this, A_or_B);
-		setVehicleGrid(x, y, v, A_or_B);
+		v->setVehicleDirection( AorB);
+		v->setInitialVehicleDirection(AorB);
+		setVehicleGrid(x, y, v, AorB);
 		vehicle_on_grid.push_back(v);
 		break;
 
@@ -477,8 +519,9 @@ void Grids::DeleteVehicle(int x, int y, bool AorB) {
 
 			}
 		}
-		this->setVehicleGrid(x, y, nullptr, AorB);
 		delete Vehicle_Grid[x][y].VehicleA;
+		this->setVehicleGrid(x, y, nullptr, AorB);
+		
 
 	}
 	else {
@@ -500,8 +543,9 @@ void Grids::DeleteVehicle(int x, int y, bool AorB) {
 
 			}
 		}
-		this->setVehicleGrid(x, y, nullptr, AorB);
 		delete Vehicle_Grid[x][y].VehicleB;
+		this->setVehicleGrid(x, y, nullptr, AorB);
+		
 	}
 }
 void Grids::CreateJunction(int x, int y, junction type_of_junction) {

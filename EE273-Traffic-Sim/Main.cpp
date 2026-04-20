@@ -14,7 +14,7 @@ int main()
 	SimulationEngine* Engine = new SimulationEngine(&Grid);
 	std::vector<std::vector<std::string>> GridDesigns;
 	SetDesigns(GridDesigns);
-	bool GridDisplay=true,DataDisplay=true;
+	bool GridDisplay=true,DataDisplay=true; // ensures when simulation starts, both displays are on
 	
 
 	while (true) {
@@ -24,7 +24,7 @@ int main()
 		switch (choice) {
 		case(0): { // Exit simulation, similar approach as Lab 7 Ex2
 			std::cout << "Exited";
-			delete Engine;
+			delete Engine; // free up previously allocated memory
 			return 0;
 
 		}

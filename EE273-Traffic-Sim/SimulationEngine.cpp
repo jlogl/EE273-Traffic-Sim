@@ -36,6 +36,7 @@ void SimulationEngine::setInitialTime(int time) {
 
 void SimulationEngine::step()
 
+
 {
 	current_time =current_time+timestep;
 	std::vector<Vehicle*>& v = Grid->getVehicles();
@@ -54,16 +55,17 @@ void SimulationEngine::step()
 
 
 	for (Vehicle* i : v) {
-		i->UpdateSpeed(*Grid, *this);
+		i->UpdateSpeed();
 
 	}
 	for (Vehicle* i : v) {
-		i->UpdateMovement(*Grid);
+		i->UpdateMovement();
 
 	}
+
 	
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(3000)); // simulate time delay for each timestep, the chrono library allows for the program to interact with real world time and the this_thread 
+	//std::this_thread::sleep_for(std::chrono::milliseconds(3000)); // simulate time delay for each timestep, the chrono library allows for the program to interact with real world time and the this_thread 
 	// namespace allows us to interact with this thread of code, found on C++ forum.
 	
 
@@ -81,7 +83,7 @@ void SimulationEngine::reset()
 
 	for (Vehicle* i : v) {
 
-		i->ResetVehicle(*Grid);
+		i->ResetVehicle();
 		
 	}
 	for (Junction* i : j) {
@@ -141,13 +143,15 @@ bool SimulationEngine::save(std::string filename)
 				break;
 			}
 		}
-		outFile << "V," << i->getX() << "," << i->getY() << "," << i->getVehicleType() <<"," << AorB << i->getDistance()<< std::endl;
+		outFile << "V," << i->getX() << "," << i->getY() << "," << i->getVehicleType() << "," << AorB << ',' << i->getDistance() << ',' << std::endl;
 			
 			
 	}
 		
 
 		outFile.close();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears stream of characters
+
 		return true;
 }
 bool SimulationEngine::load(std::string filename) {
@@ -178,6 +182,7 @@ bool SimulationEngine::load(std::string filename) {
 			}
 			// since the layout of the set and create functions are set, they can be hard wired from the elements of the data vector
 			this->setCurrentTime(number);
+			this->setInitialTime(number);
 			break;
 		
 		}
@@ -213,7 +218,7 @@ bool SimulationEngine::load(std::string filename) {
 					data.push_back(number); // could use array since number of elements is known but this is more convienent
 				}
 				count++;
-				std::cout << count << std::endl;
+				
 			}
 
 			type t;
@@ -256,6 +261,7 @@ bool SimulationEngine::load(std::string filename) {
 
 	}
 	inFile.close();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // clears stream of characters, 
 	return true;
 }
 

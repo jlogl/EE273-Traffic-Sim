@@ -1,6 +1,6 @@
 #include "Bike.h"
 #include "Grids.h"
-Bike::Bike(int x, int y) :Vehicle(x, y) {
+Bike::Bike(int x, int y,Grids& grid) :Vehicle(x, y,grid) {
 
 	max_speed = 2;
 	acceleration = 1;

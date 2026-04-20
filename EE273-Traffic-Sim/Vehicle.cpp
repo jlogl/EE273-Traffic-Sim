@@ -5,8 +5,8 @@
 #include "math.h"
 #include <cmath>
 #include <iostream>
-Vehicle::Vehicle(int x, int y)
-	:x(x), y(y), x_initial(x), y_initial(y), current_speed(0), speed_initial(0)
+Vehicle::Vehicle(int x, int y,Grids& grid)
+	:x(x), y(y),grid(grid), x_initial(x), y_initial(y), current_speed(0), speed_initial(0)
 	/* needed to use initialiser list since it involves setting value of constants for initial variables
 	The acceleration, deceleration and max speed will be set by the sub-classes as that is specific to the type of vehicle
 	The direction is set to None as that is associated with the road which the vehicle is placed onto and since a vehicle must be created on a road, it will always have a direction*/
@@ -17,52 +17,60 @@ Vehicle::~Vehicle() {};
 /* The function below were implemented to deal with a niche case that when the simualtion began for the first time and a vehicles distance from a junction is the same
 	 as the vehicles types accelration as the car would enter a jucntion which with the way we created them isnt inteneded. The solution involves creating a way to check if a
 	 simulation is on its first step, and if so then sort the vehicle by direction and then if the distance and current speed are the same, take 1 away from the speed.
-	 This worked because of the order of updates in the engine, as the speed updates before the movement, up to the integrration of junctions, this is the most difficult issue to
-	 solve so far - 08/04/2026*/
+	 This worked because of the order of updates in the engine, as the speed updates before the movement, up to the integration of junctions, this is the most difficult issue to
+	 solve so far as we looked to keep as much realism as possible - 08/04/2026*/
 
 	 /* Turns out this is just a issue if the distance to the junction is equal to current speed, meaning we always have to check if a vehicles's current speed is equal to the distance to jucntion and if so we intervene otherwise the charactersitcs of the vehicle
 	are used, but we then have to check again after the speed has been updated because if we only check after the speed may get set to zero then one which doesnt seem realistic. not ideal for sim realism but its either this or rework junctions and this is alot simpler -  09/04/26*/
 
 
-bool Vehicle::SafetyOverride(Grids& grid, SimulationEngine& engine) {
+bool Vehicle::SafetyOverride() {
 
 	switch (Direction) {
 	case(North): {
-		if (!grid.getRoadsGrid(x, y + current_speed).RoadA->isRoad()) {
+		if (grid.getRoadsGrid(x, y + current_speed).RoadA != nullptr) {
+			if (!grid.getRoadsGrid(x, y + current_speed).RoadA->isRoad()) {
 
-			current_speed = current_speed - 1;
+				current_speed = current_speed - 1;
 
-			return true;
+				return true;
+			}
+			break;
+
 		}
-		break;
-
 	}
 	case(East): {
-		if (!grid.getRoadsGrid(x + current_speed, y).RoadA->isRoad()) {
+		if (grid.getRoadsGrid(x + current_speed, y).RoadA != nullptr) {
+			if (!grid.getRoadsGrid(x + current_speed, y).RoadA->isRoad()) {
 
-			current_speed = current_speed - 1;
+				current_speed = current_speed - 1;
 
-			return true;
+				return true;
+			}
+			break;
+
 		}
-		break;
-
 	}
 	case(South): {
-		if (!grid.getRoadsGrid(x, y - current_speed).RoadA->isRoad()) {
+		if (grid.getRoadsGrid(x, y - current_speed).RoadA != nullptr) {
+			if (!grid.getRoadsGrid(x, y - current_speed).RoadA->isRoad()) {
 
-			current_speed = current_speed - 1;
+				current_speed = current_speed - 1;
 
-			return true;
+				return true;
+			}
+			break;
 		}
-		break;
 	}
 	case(West): {
-		if (!grid.getRoadsGrid(x - current_speed, y).RoadA->isRoad()) {
+		if (grid.getRoadsGrid(x- current_speed,y).RoadA != nullptr) {
+			if (!grid.getRoadsGrid(x - current_speed, y).RoadA->isRoad()) {
 
-			current_speed = current_speed - 1;
-			return true;
+				current_speed = current_speed - 1;
+				return true;
+			}
+			break;
 		}
-		break;
 	}
 		case(None): {
         break;
@@ -72,11 +80,11 @@ bool Vehicle::SafetyOverride(Grids& grid, SimulationEngine& engine) {
 	}
 	return false;
 };
-void Vehicle::UpdateSpeed(Grids& grid,SimulationEngine& engine) {
-	bool safety = isStoppingDistanceSafe(grid);
+void Vehicle::UpdateSpeed() {
+	bool safety = isStoppingDistanceSafe();
 	int SL = grid.getRoadsGrid(x, y).RoadA->getSpeedLimit();// doesnt matter what lane used since the speed limit of RoadA equals speed limit of RoadB
 	
-	if (SafetyOverride(grid, engine)) {
+	if (SafetyOverride()) {
 		return;
 	}
 	
@@ -98,7 +106,7 @@ void Vehicle::UpdateSpeed(Grids& grid,SimulationEngine& engine) {
 		}
 	}
 
-	SafetyOverride(grid, engine);
+	SafetyOverride();
 
 	}
 	
@@ -112,7 +120,7 @@ void Vehicle::UpdateSpeed(Grids& grid,SimulationEngine& engine) {
 	
 
 
-void Vehicle::UpdateMovement(Grids& grid) {
+void Vehicle::UpdateMovement() {
 		switch (this->Direction) {// need to use case as each direction of road will act differently
 
 
@@ -142,7 +150,7 @@ void Vehicle::UpdateMovement(Grids& grid) {
 
 }
 
-void Vehicle::ResetVehicle(Grids& grid) {
+void Vehicle::ResetVehicle() {
 	this->resetDistance();
 	bool InitialLane = (getInitialVehicleDirection() == North || getInitialVehicleDirection() == East);
 	bool CurrentLane = (getVehicleDirection() == North || getVehicleDirection() == East);
@@ -150,7 +158,7 @@ void Vehicle::ResetVehicle(Grids& grid) {
 	this->setX(x_initial);
 	this->setY(y_initial);
 	this->setCurrentSpeed(speed_initial);
-	this->setVehicleDirection(grid, InitialLane);
+	this->setVehicleDirection(InitialLane);
 	grid.setVehicleGrid(x, y,this, InitialLane);
 
 };
@@ -169,7 +177,7 @@ direction Vehicle::getInitialVehicleDirection() {
 
 
 
-void Vehicle::setVehicleDirection(Grids& grid, bool AorB) {
+void Vehicle::setVehicleDirection( bool AorB) {
 	
 	if (AorB) {
 		Roads* R = grid.getRoadsGrid(x, y).RoadA;
@@ -180,7 +188,7 @@ void Vehicle::setVehicleDirection(Grids& grid, bool AorB) {
 		Direction = R->getDirection();
 	}
 };
-void Vehicle::setInitialVehicleDirection(Grids& grid, bool AorB) {
+void Vehicle::setInitialVehicleDirection(bool AorB) {
 
 	if (AorB) {
 		Roads* R = grid.getRoadsGrid(x, y).RoadA;
@@ -224,11 +232,11 @@ int Vehicle::getInitialY() {
 	return y_initial;
 }
 void Vehicle::setX(int X) {
-	x = X; // should NEVER be used to in main, only used for load function
+	x = X;
 
 }
 void Vehicle::setY(int Y) {
-	y = Y; // should NEVER be used to in main, only used for load function
+	y = Y; 
 }
 int Vehicle::getDistance() {
 	return distance;
@@ -241,10 +249,11 @@ void Vehicle::resetDistance() {
 	distance = initialDistance;
 }
 double Vehicle::getAverageSpeed(SimulationEngine& engine) {
-	if (engine.getCurrentTime() - engine.getInitialTime() == 0) {
+	if (engine.getCurrentTime()== 0) {
 		return 0;
 	}
-	return distance / (engine.getCurrentTime() - engine.getInitialTime());
+	double result = double(distance) / (engine.getCurrentTime());
+	return result;
 }
 void Vehicle::setInitialDistance(int i) {
 
@@ -252,7 +261,7 @@ void Vehicle::setInitialDistance(int i) {
 }
 
 
-bool Vehicle::isStoppingDistanceSafe(Grids& grid) {
+bool Vehicle::isStoppingDistanceSafe() {
 	int StoppingDistance = getStoppingDistance();
 	switch (Direction) {
 	case(North): { // due to always having 2 lanes, and the way they are assigned, we know if a car is going north or east it is A and if its south or west its B

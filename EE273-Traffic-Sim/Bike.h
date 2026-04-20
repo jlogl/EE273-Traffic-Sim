@@ -2,7 +2,7 @@
 #include "Vehicle.h"
 class Bike :public Vehicle {
 public:
-	Bike(int x,int y);
+	Bike(int x,int y,Grids& grid);
 	~Bike();
 
 };
