@@ -35,9 +35,10 @@ bool Vehicle::SafetyOverride() {
 
 				return true;
 			}
-			break;
+			
 
 		}
+		break;
 	}
 	case(East): {
 		if (grid.getRoadsGrid(x + current_speed, y).RoadA != nullptr) {
@@ -47,9 +48,10 @@ bool Vehicle::SafetyOverride() {
 
 				return true;
 			}
-			break;
+			
 
 		}
+		break;
 	}
 	case(South): {
 		if (grid.getRoadsGrid(x, y - current_speed).RoadA != nullptr) {
@@ -59,8 +61,9 @@ bool Vehicle::SafetyOverride() {
 
 				return true;
 			}
-			break;
+			
 		}
+		break;
 	}
 	case(West): {
 		if (grid.getRoadsGrid(x- current_speed,y).RoadA != nullptr) {
@@ -69,8 +72,9 @@ bool Vehicle::SafetyOverride() {
 				current_speed = current_speed - 1;
 				return true;
 			}
-			break;
+			
 		}
+		break;
 	}
 		case(None): {
         break;
