@@ -110,7 +110,13 @@ int main()
 				break;
 		}
 		case(3): {//Add Traffic Signal
-			std::cout << "Work in Progress..." << std::endl;
+
+			if (Grid.getRoads().empty()) {
+
+				std::cout << "No roads in this system. Place a road then try again." << std::endl;
+				break;		// break out of ui switch, go to main menu
+
+			}
 
 			std::pair<int, int> p;
 			std::vector<bool> seqVector;
@@ -123,14 +129,13 @@ int main()
 
 				p = ui_ask_question("What X coordinate would you like to place a Signal at? Note that it must be on a road or junction which isn't a turn. ", "What Y coordinate would you like to place a Signal at? ", Grids::grid_size - 1, 0);
 
-				// get junction type, if space is a junction
+				// search vector of junctions on grid for coordinates matching the user's selection
 				for (int n = 0; n < Grid.getJunctions().size(); n++) {
-					if (p.first == (Grid.getJunctions().front() + n)->getX() && p.second == (Grid.getJunctions().front() + n)->getY()) {
-						
-						// DOESNT WORK!!! DONT KNOW WHY!!!
-
-						jt = (Grid.getJunctions().front() + n)->getJunctionType();
-						break;
+					if (p.first == Grid.getJunctions().at(n)->getX() && p.second == Grid.getJunctions().at(n)->getY()) {
+					
+						// executes if there is a junction at the selected grid space
+						jt = Grid.getJunctions().at(n)->getJunctionType();
+						break;		// break for loop
 					}
 					else
 						jt = roads;
@@ -139,10 +144,22 @@ int main()
 				// show error if there is a turn or no road at all
 				if (Grid.getRoadsGrid(p.first, p.second).RoadA == nullptr || jt == turn) {
 
-					std::cout << "No valid road/junction at this location, please try again, ";
+					std::cout << "No valid road/junction at this location, please try again." << std::endl;
 				}
 				else {
-					break;
+
+					if (!Grid.getRoadsGrid(p.first, p.second).signals.empty()) {	// if the grid space already has signals on it
+
+						std::cout << "Signal(s) already present at (" << p.first << ", " << p.second << ")." << std::endl;
+						if (ui_ask_question("What would you like to do about this?\n1. Overwrite existing signal(s)\n0. Return to main menu", 1, 0)) {
+							Grid.DeleteSignal(p.first, p.second);
+						}
+						else {
+							goto main_menu;
+						}
+					}
+
+					break;		// break out of input validation loop regardless of the outcome of the above if statement
 				}
 
 			}
@@ -152,7 +169,7 @@ int main()
 			case(roads):
 			case(corner):
 				qnty = 1;
-				break;
+				break;	// break out of junction type switch
 
 			case(t):
 				qnty = 3;
@@ -163,14 +180,10 @@ int main()
 				break;
 			}
 
-			if (! Grid.getRoadsGrid(p.first, p.second).signals.empty()) {	// if the grid space already has signals on it
-
-				// remove all elements of the vector so that they are overwritten by the new signal(s)
-				Grid.getRoadsGrid(p.first, p.second).signals.clear();
-			}
+			// get the length of the signal sequence; all signals in a junction must have the same sequence length to avoid complications
+			seqLength = ui_ask_question("How long will the light sequence be? (min. 2, max. 24) ", 24, 2);
 
 			for (int n = 0; n < qnty; n++) {
-				seqLength = ui_ask_question("How long will the light sequence be? (min. 2, max. 24) ", 24, 2);
 				for (int m = 0; m < seqLength; m++) {
 
 					std::cout << "Enter the light at step " << m + 1;
@@ -180,6 +193,9 @@ int main()
 				Grid.CreateSignal(p.first, p.second, seqVector);
 			}
 
+			main_menu: {
+			break;		// break out of ui switch, go to main menu
+			}
 
 			break;
 		}
