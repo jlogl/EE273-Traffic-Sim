@@ -1136,14 +1136,14 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 			std::cout << "." << std::endl;
 		}
 
-		int choice = ui_get_int_in_range(VofS.size(), 1);
+		int choice = ui_get_int_in_range(VofS.size(), 1) - 1;
 
 		x = VofS.at(choice)->getPos().first;
 		y = VofS.at(choice)->getPos().second;
 
 		grid.DeleteSignal(x, y);
-
 	}
+
 	void ui_save(SimulationEngine& Engine) {
 
 		std::string filename;

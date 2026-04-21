@@ -184,6 +184,8 @@ int main()
 			seqLength = ui_ask_question("How long will the light sequence be? (min. 2, max. 24) ", 24, 2);
 
 			for (int n = 0; n < qnty; n++) {
+				seqVector.clear();		//clears all data in the vector so it doesn't 
+
 				for (int m = 0; m < seqLength; m++) {
 
 					std::cout << "Enter the light at step " << m + 1;

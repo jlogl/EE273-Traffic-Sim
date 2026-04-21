@@ -381,11 +381,13 @@ void Grids::CreateSignal(int x, int y, std::vector<bool> sequence) {
 
 void Grids::DeleteSignal(int x, int y) {
 
-	for (int n = 0; n < this->Road_Grid[x][y].signals.size(); n++) {	// deallocate all memory dedicated to signal(s) on the grid space
+	for (int n = 0; n < this->Road_Grid[x][y].signals.size(); n++) {
 		delete this->Road_Grid[x][y].signals.at(n);
 	}
-
+	
 	this->Road_Grid[x][y].signals.clear();
+
+	this->signal_on_grid.pop_back();
 }
 
 void Grids::CreateVehicle(int x, int y,type type_of_vehicle,bool A_or_B) {
