@@ -1032,19 +1032,20 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		}
 	}
 	int PrintUI() {
-		std::cout << "Traffic system simulation opertaions: " << std::endl
-			<< "1. Create Road... " << std::endl
-			<< "2. Create Vehicle... " << std::endl
+		std::cout << "Traffic system simulation opertaions:" << std::endl
+			<< "1. Create Road..." << std::endl
+			<< "2. Create Vehicle..." << std::endl
 			<< "3. Create Traffic Signal..." << std::endl
 			<< "4. Run Simulation..." << std::endl
 			<< "5. Step Simulation..." << std::endl
 			<< "6. Reset Simulation to Initial State..." << std::endl
-			<< "7. Delete Vehicle ... " << std::endl
-			<< "8. Delete Road..." << std::endl
-			<< "9. Save Current Simulation State..." << std::endl
-			<< "10. Load Simulation State..." << std::endl
-			<< "11. Hide/Show Grid ..." << std::endl
-			<< "12. Hide/Show Data..." << std::endl
+			<< "7. Delete Vehicle ..." << std::endl
+			<< "8. Delete Signal..." << std::endl
+			<< "9. Delete Road..." << std::endl
+			<< "10. Save Current Simulation State..." << std::endl
+			<< "11. Load Simulation State..." << std::endl
+			<< "12. Hide/Show Grid ..." << std::endl
+			<< "13. Hide/Show Data..." << std::endl
 			<< "0. Exit..." << std::endl;
 
 		return ui_get_int_in_range(12, 0);
@@ -1110,6 +1111,38 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		int choice = ui_get_int_in_range(VofR.size(), 1);
 		road = VofR[choice - 1];
 		Grid.DeleteRoad(std::get<1>(road), std::get<2>(road), std::get<3>(road), std::get<4>(road));
+	}
+	void ui_delete_Signal(Grids& grid) {
+		std::vector<Signal*> VofS = grid.getSignals();
+		int x, y, P;
+		bool green;
+
+		std::cout << "Please choose a signal from below to delete. Selecting a signal which shares a space with others will delete all signals on that space :" << std::endl;
+
+		for (int i = 0; i < VofS.size(); i++) {
+			x = VofS.at(i)->getPos().first;
+			y = VofS.at(i)->getPos().second;
+			P = VofS.at(i)->getSeqPeriod();
+			green = VofS.at(i)->isGreen();
+
+			std::cout << i + 1 << ". Signal at (" << x << ", " << y << ") with a period of " << P << ", currently showing ";
+
+			if (green) {
+				std::cout << "Green";
+			}
+			else {
+				std::cout << "Red";
+			}
+			std::cout << "." << std::endl;
+		}
+
+		int choice = ui_get_int_in_range(VofS.size(), 1);
+
+		x = VofS.at(choice)->getPos().first;
+		y = VofS.at(choice)->getPos().second;
+
+		grid.DeleteSignal(x, y);
+
 	}
 	void ui_save(SimulationEngine& Engine) {
 

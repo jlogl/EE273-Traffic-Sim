@@ -31,6 +31,7 @@ class Roads;
 	int ui_get_int();								// Taken from Lab 7 Ex2
 	void ui_delete_Vehicle(Grids& grid);
 	void ui_delete_Road(Grids& grid);
+	void ui_delete_Signal(Grids& grid);
 	void ui_save(SimulationEngine& Engine);
 	void ui_load(SimulationEngine& Engine);
 	void ui_pause(); //taken from Lab 7 Ex2

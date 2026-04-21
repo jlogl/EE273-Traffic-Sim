@@ -1,2 +1,11 @@
 ﻿  Main.cpp
+  UI.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1099,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1111,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1139,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(870,1): warning C4715: 'ui_Junction': not all control paths return a value
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(847,1): warning C4715: 'ui_Type': not all control paths return a value
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(892,1): warning C4715: 'ui_Direction': not all control paths return a value
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(914,1): warning C4715: 'ui_Direction': not all control paths return a value
   EE273-Traffic-Sim.vcxproj -> C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe

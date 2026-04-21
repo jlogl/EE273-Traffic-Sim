@@ -42,8 +42,9 @@ public:
     void DeleteRoad(int initial_x, int initial_y, int final_x, int final_y);
     void DeleteSignal(int x, int y);
     void DeleteVehicle(int x, int y, bool AorB);
-    std::vector<Vehicle*>& getVehicles(); // allows us to provide a refernce of the vector of vehicle pointers to simulation engine
-    std::vector<Junction*>& getJunctions(); // same as vehicles but for the junctions
+    std::vector<Signal*>& getSignals();     // allows us to provide a refernce of the vector of signal pointers to simulation engine
+    std::vector<Vehicle*>& getVehicles();   // same as getSignals but for vehicles
+    std::vector<Junction*>& getJunctions(); // same again for the junctions
     std::vector<std::tuple<int, int, int, int, int>>& getRoads();
 private:
     std::vector<std::tuple<int, int, int, int, int>> RoadsInputs;

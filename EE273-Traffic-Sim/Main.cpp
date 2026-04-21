@@ -219,27 +219,49 @@ int main()
 			break;
 		}
 		case(7): {//Delete Vehicle
-			ui_delete_Vehicle(Grid);
+			if (Grid.getVehicles().empty()) {
+				std::cout << "There are no vehicles to delete." << std::endl;
+			}
+			else {
+				ui_delete_Vehicle(Grid);
+			}
+
 			break;
 		}
-		case(8): {//Delete Road
-			ui_delete_Road(Grid);
+		case(8): {//Delete Signal
+			if (Grid.getSignals().empty()) {
+				std::cout << "There are no signals to delete." << std::endl;
+			}
+			else {
+				ui_delete_Signal(Grid);
+			}
+			
 			break;
 		}
-		case(9): {//Save
+		case(9): {//Delete Road
+			if (Grid.getRoads().empty()) {
+				std::cout << "There are no roads to delete." << std::endl;
+			}
+			else {
+				ui_delete_Road(Grid);
+			}
+			
+			break;
+		}
+		case(10): {//Save
 			ui_save(*Engine);
 			break;
 		}
-		case(10): {//Load
+		case(11): {//Load
 			ui_load(*Engine);
 			break;
 		}
-		case(11): {//Grid Toggle
+		case(12): {//Grid Toggle
 			GridDisplay = !GridDisplay;
 			std::cout << "Toggle Complete"<<std::endl;
 			break;
 		}
-		case(12): {//Data Toggle
+		case(13): {//Data Toggle
 			DataDisplay = !DataDisplay;
 			std::cout << "Toggle Complete" << std::endl;
 			break;
