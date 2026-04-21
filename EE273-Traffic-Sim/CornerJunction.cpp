@@ -99,7 +99,7 @@ void CornerJunction::UpdateJunction(Grids& grid) {
 			DownApproach->setCurrentSpeed(0);
 			DownApproach->setX(x_coordinate + 1);
 			DownApproach->setY(y_coordinate);
-			DownApproach->setVehicleDirection( 1);
+			DownApproach->setVehicleDirection(1);
 			DownApproach->addDistance();
 			grid.setVehicleGrid(x_coordinate + 1, y_coordinate, DownApproach, 1);
 			totalUses = totalUses + 1;

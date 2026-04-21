@@ -129,22 +129,30 @@ void Vehicle::UpdateMovement() {
 
 
 	case(North):
-		grid.setVehicleGrid(x, y, nullptr,1);// sets the previous location of car to null since car is no longer there
+		if (grid.getVehicleGrid(x, y).VehicleA == this) {
+			grid.setVehicleGrid(x, y, nullptr, 1);
+		}// sets the previous location of car to null since car is no longer there
 		y = y + current_speed; // updates y coordinate
 		grid.setVehicleGrid(x, y, this,1);// updates THIS instance of Vehicles position
 		break;
 	case (East):
-		grid.setVehicleGrid(x, y, nullptr,1);
+		if (grid.getVehicleGrid(x, y).VehicleA == this) {
+			grid.setVehicleGrid(x, y, nullptr, 1);
+		}
 		x = x + current_speed;
 		grid.setVehicleGrid(x, y, this,1);
 		break;
 	case(South):
-		grid.setVehicleGrid(x, y, nullptr,0);
+		if (grid.getVehicleGrid(x, y).VehicleB == this) {
+			grid.setVehicleGrid(x, y, nullptr, 0);
+		}
 		y = y - current_speed;
 		grid.setVehicleGrid(x, y, this,0);
 		break;
 	case(West):
-		grid.setVehicleGrid(x, y, nullptr,0);
+		if (grid.getVehicleGrid(x, y).VehicleB == this) {
+			grid.setVehicleGrid(x, y, nullptr, 0);
+		}
 		x = x - current_speed;
 		grid.setVehicleGrid(x, y, this,0);
 		break;
@@ -158,7 +166,17 @@ void Vehicle::ResetVehicle() {
 	this->resetDistance();
 	bool InitialLane = (getInitialVehicleDirection() == North || getInitialVehicleDirection() == East);
 	bool CurrentLane = (getVehicleDirection() == North || getVehicleDirection() == East);
-	grid.setVehicleGrid(x, y, nullptr, CurrentLane);
+	if (CurrentLane) {
+		if (grid.getVehicleGrid(x, y).VehicleA == this) {
+			grid.setVehicleGrid(x, y, nullptr, CurrentLane);
+		}
+	}
+	else {
+		if(grid.getVehicleGrid(x,y).VehicleB == this){
+			grid.setVehicleGrid(x, y, nullptr, CurrentLane);
+
+		}
+	}
 	this->setX(x_initial);
 	this->setY(y_initial);
 	this->setCurrentSpeed(speed_initial);

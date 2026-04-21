@@ -33,7 +33,7 @@ void CrossJunction::UpdateJunction(Grids& grid) {
 			LeftApproach->setCurrentSpeed(0);			
 			LeftApproach->setX(x_coordinate);
 			LeftApproach->setY(y_coordinate + 1);
-			LeftApproach->setVehicleDirection( 1);
+			LeftApproach->setVehicleDirection(1);
 			LeftApproach->addDistance();
 			grid.setVehicleGrid(x_coordinate, y_coordinate + 1, LeftApproach, 1);
 			totalUses = totalUses + 1;
@@ -66,7 +66,7 @@ void CrossJunction::UpdateJunction(Grids& grid) {
 			grid.setVehicleGrid(x_coordinate, y_coordinate + 1, nullptr, 0); //up to down
 			UpApproach->setCurrentSpeed(0);
 			UpApproach->setX(x_coordinate );
-			UpApproach->setY(y_coordinate);
+			UpApproach->setY(y_coordinate-1);
 			UpApproach->setVehicleDirection( 0);
 			grid.setVehicleGrid(x_coordinate, y_coordinate-1, UpApproach, 0);
 			UpApproach->addDistance();
