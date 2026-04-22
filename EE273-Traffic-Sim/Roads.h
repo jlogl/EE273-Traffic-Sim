@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Direction_enum.h"
+#include "Signal.h"
+#include <vector>
 
 class Roads {
 

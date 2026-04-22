@@ -113,6 +113,9 @@ void Grids::setVehicleGrid(int x, int y, Vehicle* value,bool AorB) {
 		Vehicle_Grid[x][y].VehicleB = value;
 	}
 };
+std::vector<Signal*>& Grids::getSignals() {
+	return signal_on_grid;
+}
 std::vector<Vehicle*>& Grids::getVehicles() {
 	return vehicle_on_grid;
 }
@@ -404,6 +407,26 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 		this->CreateJunction(i.first, i.second, Type);
 	}
 
+}
+
+void Grids::CreateSignal(int x, int y, std::vector<bool> sequence) {
+	
+	Signal* s = new Signal(sequence, std::make_pair(x, y));		// instantiate the signal with the specified sequence
+
+	this->Road_Grid[x][y].signals.push_back(s);		// push back the pointer
+	
+	this->signal_on_grid.push_back(s);		// push back pointer to the new signal on to the vector
+}
+
+void Grids::DeleteSignal(int x, int y) {
+
+	for (int n = 0; n < this->Road_Grid[x][y].signals.size(); n++) {
+		delete this->Road_Grid[x][y].signals.at(n);
+	}
+	
+	this->Road_Grid[x][y].signals.clear();
+
+	this->signal_on_grid.pop_back();
 }
 
 void Grids::CreateVehicle(int x, int y,type type_of_vehicle,bool AorB) {

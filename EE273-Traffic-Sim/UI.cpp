@@ -10,6 +10,8 @@
 #include <sstream>
 #include <iostream>
 #include <tuple>
+#include <cstdio>
+#include <limits>
 
 
 
@@ -990,6 +992,31 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		}
 	}
 
+	int ui_get_int() {
+		int number;
+		while (true) {
+			if (std::cin >> number) {
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				return number;
+			}
+			std::cout << "Invalid input, Please try again.\n";
+			ui_skip_to_number();
+		}
+	}
+	void ui_skip_to_number() {
+		if (std::cin.fail()) {
+			std::cin.clear();
+			for (char ch; std::cin >> ch;) {
+				if (('0' <= ch && ch <= '9') || ch == '-') {
+					std::cin.unget();
+					return;
+				}
+			}
+			std::cout << "The stream is at eof or bad"
+				<< "\n";
+		}
+	}
+
 	int ui_get_int_in_range(int max, int min) {
 		while (true) {
 			int number = ui_get_int();
@@ -1002,21 +1029,23 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		
 	}
 	int PrintUI() {
-		std::cout << "Traffic system simulation opertaions: " << std::endl
-			<< "1. Create Road... " << std::endl
-			<< "2. Create Vehicle... " << std::endl
-			<< "3. Run Simulation..." << std::endl
-			<< "4. Step Simulation..." << std::endl
-			<< "5. Reset Simulation to Initial State..." << std::endl
-			<< "6. Delete Vehicle ... " << std::endl
-			<< "7. Delete Road..." << std::endl
-			<< "8. Save Current Simulation State..." << std::endl
-			<< "9. Load Simulation State..." << std::endl
-			<< "10. Hide/Show Grid ..." << std::endl
-			<< "11. Hide/Show Data..." << std::endl
+		std::cout << "Traffic system simulation opertaions:" << std::endl
+			<< "1. Create Road..." << std::endl
+			<< "2. Create Vehicle..." << std::endl
+			<< "3. Create Traffic Signal..." << std::endl
+			<< "4. Run Simulation..." << std::endl
+			<< "5. Step Simulation..." << std::endl
+			<< "6. Reset Simulation to Initial State..." << std::endl
+			<< "7. Delete Vehicle ..." << std::endl
+			<< "8. Delete Signal..." << std::endl
+			<< "9. Delete Road..." << std::endl
+			<< "10. Save Current Simulation State..." << std::endl
+			<< "11. Load Simulation State..." << std::endl
+			<< "12. Hide/Show Grid ..." << std::endl
+			<< "13. Hide/Show Data..." << std::endl
 			<< "0. Exit..." << std::endl;
 
-		return ui_get_int_in_range(11, 0);
+		return ui_get_int_in_range(12, 0);
 
 	}
 	int ui_ask_question(std::string question, int max, int min) {
@@ -1089,6 +1118,38 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		
 		Grid.DeleteRoad(std::get<0>(road), std::get<1>(road), std::get<2>(road), std::get<3>(road));
 	}
+	void ui_delete_Signal(Grids& grid) {
+		std::vector<Signal*> VofS = grid.getSignals();
+		int x, y, P;
+		bool green;
+
+		std::cout << "Please choose a signal from below to delete. Selecting a signal which shares a space with others will delete all signals on that space :" << std::endl;
+
+		for (int i = 0; i < VofS.size(); i++) {
+			x = VofS.at(i)->getPos().first;
+			y = VofS.at(i)->getPos().second;
+			P = VofS.at(i)->getSeqPeriod();
+			green = VofS.at(i)->isGreen();
+
+			std::cout << i + 1 << ". Signal at (" << x << ", " << y << ") with a period of " << P << ", currently showing ";
+
+			if (green) {
+				std::cout << "Green";
+			}
+			else {
+				std::cout << "Red";
+			}
+			std::cout << "." << std::endl;
+		}
+
+		int choice = ui_get_int_in_range(VofS.size(), 1) - 1;
+
+		x = VofS.at(choice)->getPos().first;
+		y = VofS.at(choice)->getPos().second;
+
+		grid.DeleteSignal(x, y);
+	}
+
 	void ui_save(SimulationEngine& Engine) {
 
 		std::string filename;

@@ -5,6 +5,9 @@
 #include "SimulationEngine.h"
 #include "Grids.h"
 #include "Vehicle.h"
+#include "Roads.h"
+#include "Junction.h"
+#include "Signal.h"
 
 #include "UI.h"
 
@@ -105,9 +108,101 @@ int main()
 				}
 				Grid.CreateVehicle(p.first, p.second, t, AorB);
 				break;
-		}	
-		case(3): {//Run Simulation
-			int steps = ui_ask_question("How Many steps would you like the simulation to take?", 100, 1); // 100 steps isn't significant however i feel like that is a fair limit
+		}
+		case(3): {//Add Traffic Signal
+
+			if (Grid.getRoads().empty()) {
+
+				std::cout << "No roads in this system. Place a road then try again." << std::endl;
+				break;		// break out of ui switch, go to main menu
+
+			}
+
+			std::pair<int, int> p;
+			std::vector<bool> seqVector;
+			int seqLength = 0;
+			junction jt = unassigned;
+			int qnty = 1;
+	
+			// x and y input validation
+			while (true) {
+
+				p = ui_ask_question("What X coordinate would you like to place a Signal at? Note that it must be on a road or junction which isn't a turn. ", "What Y coordinate would you like to place a Signal at? ", Grids::grid_size - 1, 0);
+
+				// search vector of junctions on grid for coordinates matching the user's selection
+				for (int n = 0; n < Grid.getJunctions().size(); n++) {
+					if (p.first == Grid.getJunctions().at(n)->getX() && p.second == Grid.getJunctions().at(n)->getY()) {
+					
+						// executes if there is a junction at the selected grid space
+						jt = Grid.getJunctions().at(n)->getJunctionType();
+						break;		// break for loop
+					}
+					else
+						jt = roads;
+				}
+
+				// show error if there is a turn or no road at all
+				if (Grid.getRoadsGrid(p.first, p.second).RoadA == nullptr || jt == turn) {
+
+					std::cout << "No valid road/junction at this location, please try again." << std::endl;
+				}
+				else {
+
+					if (!Grid.getRoadsGrid(p.first, p.second).signals.empty()) {	// if the grid space already has signals on it
+
+						std::cout << "Signal(s) already present at (" << p.first << ", " << p.second << ")." << std::endl;
+						if (ui_ask_question("What would you like to do about this?\n1. Overwrite existing signal(s)\n0. Return to main menu", 1, 0)) {
+							Grid.DeleteSignal(p.first, p.second);
+						}
+						else {
+							goto main_menu;
+						}
+					}
+
+					break;		// break out of input validation loop regardless of the outcome of the above if statement
+				}
+
+			}
+
+			switch (jt) {
+
+			case(roads):
+			case(corner):
+				qnty = 1;
+				break;	// break out of junction type switch
+
+			case(t):
+				qnty = 3;
+				break;
+
+			case(cross):
+				qnty = 4;
+				break;
+			}
+
+			// get the length of the signal sequence; all signals in a junction must have the same sequence length to avoid complications
+			seqLength = ui_ask_question("How long will the light sequence be? (min. 2, max. 24) ", 24, 2);
+
+			for (int n = 0; n < qnty; n++) {
+				seqVector.clear();		//clears all data in the vector so it doesn't 
+
+				for (int m = 0; m < seqLength; m++) {
+
+					std::cout << "Enter the light at step " << m + 1;
+					seqVector.push_back(bool(ui_ask_question(" in the sequence (0 for red, 1 for green): ", 1, 0)));
+				}
+
+				Grid.CreateSignal(p.first, p.second, seqVector);
+			}
+
+			main_menu: {
+			break;		// break out of ui switch, go to main menu
+			}
+
+			break;
+		}
+		case(4): {//Run Simulation
+			int steps = ui_ask_question("How Many steps would you like the simulation to take?", 100, 1); // 100 steps isnt significant however i feel like thats a fair limit  
 			for (int i = 1; i <= steps; i = i + 1) {
 				Engine->step();
 				SimPrint(Grid, *Engine, GridDesigns, GridDisplay, DataDisplay);
@@ -115,38 +210,60 @@ int main()
 			std::cout << "Simulation for " << steps << " steps complete" << std::endl;
 			break;
 		}
-		case(4): {//Step Simulation
+		case(5): {//Step Simulation
 			Engine->step();
 			std::cout << "Step complete" << std::endl;
 			break;
 		}
-		case(5): {//Reset Simulation
+		case(6): {//Reset Simulation
 			Engine->reset();
 			std::cout << "Reset complete" << std::endl;
 			break;
 		}
-		case(6): {//Delete Vehicle
-			ui_delete_Vehicle(Grid);
+		case(7): {//Delete Vehicle
+			if (Grid.getVehicles().empty()) {
+				std::cout << "There are no vehicles to delete." << std::endl;
+			}
+			else {
+				ui_delete_Vehicle(Grid);
+			}
+
 			break;
 		}
-		case(7): {//Delete Road
-			ui_delete_Road(Grid);
+		case(8): {//Delete Signal
+			if (Grid.getSignals().empty()) {
+				std::cout << "There are no signals to delete." << std::endl;
+			}
+			else {
+				ui_delete_Signal(Grid);
+			}
+			
 			break;
 		}
-		case(8): {//Save
+		case(9): {//Delete Road
+			if (Grid.getRoads().empty()) {
+				std::cout << "There are no roads to delete." << std::endl;
+			}
+			else {
+				ui_delete_Road(Grid);
+			}
+			
+			break;
+		}
+		case(10): {//Save
 			ui_save(*Engine);
 			break;
 		}
-		case(9): {//Load
+		case(11): {//Load
 			ui_load(*Engine);
 			break;
 		}
-		case(10): {//Grid Toggle
+		case(12): {//Grid Toggle
 			GridDisplay = !GridDisplay;
 			std::cout << "Toggle Complete"<<std::endl;
 			break;
 		}
-		case(11): {//Data Toggle
+		case(13): {//Data Toggle
 			DataDisplay = !DataDisplay;
 			std::cout << "Toggle Complete" << std::endl;
 			break;

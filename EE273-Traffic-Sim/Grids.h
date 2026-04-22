@@ -6,17 +6,15 @@
 #include <tuple>
 #include "Direction_enum.h"
 #include "Type_enum.h"
-
-//foward decleratons to prevent circular inclusions
+#include "Signal.h"
 class Vehicle;
 class Roads;
 class Junction;
 class SimulationEngine;
-
-
-struct Roads_Grid_Slot { // object containing two road objects, solution we determined would be suitable to deal with multiple lanes in same grid slot
-    Roads* RoadA = nullptr;
-    Roads* RoadB = nullptr;
+struct Roads_Grid_Slot {
+    Roads* RoadA = nullptr;         // lane going either up or right
+    Roads* RoadB = nullptr;         // lane going either down or left; opposite to A
+    std::vector<Signal*> signals;   // pointer to signal on this slot
 
 };
 struct Vehicle_Grid_Slot {           // similar appraoch for roads, allowing for multiple vehicles to be in same grid slot, a Road must be in the 
@@ -151,9 +149,9 @@ public:
     std::vector<std::tuple<int, int, int, int, int>>& getRoads();
 private:
     std::vector<std::tuple<int, int, int, int, int>> RoadsInputs;
+    std::vector<Signal*> signal_on_grid;
     std::vector<Vehicle*> vehicle_on_grid;
     std::vector<Junction*> junction_on_grid;
     Roads_Grid_Slot Road_Grid[grid_size][grid_size];
     Vehicle_Grid_Slot Vehicle_Grid[grid_size][grid_size];
-  
 };
