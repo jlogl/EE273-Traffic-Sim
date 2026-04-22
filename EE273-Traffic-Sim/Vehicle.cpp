@@ -30,10 +30,18 @@ bool Vehicle::SafetyOverride() {
 	case(North): {
 		if(y+current_speed < Grids::grid_size-1 && y+current_speed >= 0){
 			if (grid.getRoadsGrid(x, y + current_speed).RoadA != nullptr) {
-				if (!grid.getRoadsGrid(x, y + current_speed).RoadA->isRoad()) {
+				if (!(grid.getRoadsGrid(x, y + current_speed).RoadA->isRoad())) {
 
 					current_speed = current_speed - 1;
 					called = true;
+				}
+
+				if (!(grid.getRoadsGrid(x, y + current_speed).signals.empty())) {
+					if (!(grid.getRoadsGrid(x, y + current_speed).signals.front()->isGreen())) { // nested if statement used to avoid error from referencing empty vector
+
+						current_speed = current_speed - 1;
+						called = true;
+					}
 				}
 					
 				}
@@ -56,10 +64,18 @@ bool Vehicle::SafetyOverride() {
 	case(East): {
 		if (x + current_speed < Grids::grid_size && x + current_speed >= 0) {
 			if (grid.getRoadsGrid(x + current_speed, y).RoadA != nullptr) {
-				if (!grid.getRoadsGrid(x + current_speed, y).RoadA->isRoad()) {
+				if (!(grid.getRoadsGrid(x + current_speed, y).RoadA->isRoad())) {
 
 					current_speed = current_speed - 1;
 					called = true;
+				}
+
+				if (!(grid.getRoadsGrid(x + current_speed, y).signals.empty())) {
+					if (!(grid.getRoadsGrid(x + current_speed, y).signals.front()->isGreen())) { // nested if statement used to avoid error from referencing empty vector
+
+						current_speed = current_speed - 1;
+						called = true;
+					}
 				}
 			}
 		}
@@ -79,10 +95,18 @@ bool Vehicle::SafetyOverride() {
 	case(South): {
 		if (y - current_speed < Grids::grid_size  && y - current_speed >= 0) {
 			if (grid.getRoadsGrid(x, y - current_speed).RoadA != nullptr) {
-				if (!grid.getRoadsGrid(x, y - current_speed).RoadA->isRoad()) {
+				if (!(grid.getRoadsGrid(x, y - current_speed).RoadA->isRoad())) {
 
 					current_speed = current_speed - 1;
 					called = true;
+				}
+
+				if (!(grid.getRoadsGrid(x, y - current_speed).signals.empty())) {
+					if (!(grid.getRoadsGrid(x, y - current_speed).signals.front()->isGreen())) { // nested if statement used to avoid error from referencing empty vector
+
+						current_speed = current_speed - 1;
+						called = true;
+					}
 				}
 			}
 					bool check = true;
@@ -106,11 +130,18 @@ bool Vehicle::SafetyOverride() {
 	case(West): {
 		if (x - current_speed < Grids::grid_size  && x - current_speed >= 0) {
 			if (grid.getRoadsGrid(x - current_speed, y).RoadA != nullptr) {
-				if (!grid.getRoadsGrid(x - current_speed, y).RoadA->isRoad()) {
+				if (!(grid.getRoadsGrid(x - current_speed, y).RoadA->isRoad())) {
 					current_speed = current_speed - 1;
 					called = true;
 				}
 
+				if (!(grid.getRoadsGrid(x - current_speed, y).signals.empty())) {
+					if (!(grid.getRoadsGrid(x - current_speed, y).signals.front()->isGreen())) { // nested if statement used to avoid error from referencing empty vector
+
+						current_speed = current_speed - 1;
+						called = true;
+					}
+				}
 			}
 		}
 		bool check = true;
@@ -359,7 +390,12 @@ bool Vehicle::isStoppingDistanceSafe() {
 				return false; // checks if vehicle is already on path
 			}
 
-		
+			if (!grid.getRoadsGrid(x, i).signals.empty()) {
+				if (!grid.getRoadsGrid(x, i).signals.front()->isGreen()) {
+
+					return false; // checks if vehicle is approaching a red signal
+				}
+			}
 			
 		}
 		
@@ -390,7 +426,12 @@ bool Vehicle::isStoppingDistanceSafe() {
 				return false; // checks if vehicle is already on path
 			}
 			
-			// will need to add signals but cant at moment cuz we havent done that yet
+			if (!grid.getRoadsGrid(i, y).signals.empty()) {
+				if (!grid.getRoadsGrid(i, y).signals.front()->isGreen()) {
+
+					return false; // checks if vehicle is approaching a red signal
+				}
+			}
 		}
 		
 		return true;
@@ -418,7 +459,12 @@ bool Vehicle::isStoppingDistanceSafe() {
 				return false; // checks if vehicle is already on path
 			}
 			
-			// will need to add signals but cant at moment cuz we havent done that yet
+			if (!grid.getRoadsGrid(x, i).signals.empty()) {
+				if (!grid.getRoadsGrid(x, i).signals.front()->isGreen()) {
+
+					return false; // checks if vehicle is approaching a red signal
+				}
+			}
 		}
 	
 		return true;
@@ -446,7 +492,13 @@ bool Vehicle::isStoppingDistanceSafe() {
 				
 				return false; // checks if vehicle is already on path
 			}
-			// will need to add signals but cant at moment cuz we havent done that yet
+
+			if (!grid.getRoadsGrid(i, y).signals.empty()) {
+				if (!grid.getRoadsGrid(i, y).signals.front()->isGreen()) {
+
+					return false; // checks if vehicle is approaching a red signal
+				}
+			}
 		}
 	
 		return true;
