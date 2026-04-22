@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Grids">
+    <Position X="15" Y="7.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ggSoAAAAAAAAAQBAYQQAAAAIAgAAAAAgCAAAAAAgQwA=</HashCode>
+      <FileName>Grids.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Roads">
+    <Position X="1" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAhCAAAAAAAAAABAAAAAQYQAAIBAAAAAAGAAAAA=</HashCode>
+      <FileName>Roads.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Junction">
+    <Position X="3.75" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IAkAAAgAAAEJAARAAAAgABAACHAABAAAARAAAJgAIBA=</HashCode>
+      <FileName>Junction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Turn">
+    <Position X="6.75" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAADAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Turn.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrossJunction">
+    <Position X="6.75" Y="9.75" Width="2.25" />
+    <InheritanceLine Type="Junction" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="4.875" Y="9.25" />
+        <Point X="4.875" Y="9.375" />
+        <Point X="7.875" Y="9.375" />
+        <Point X="7.875" Y="9.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAQACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CrossJunction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CornerJunction">
+    <Position X="6.75" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAACAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>CornerJunction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TJunction">
+    <Position X="6.75" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAACAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>TJunction.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicle">
+    <Position X="9.5" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ARgQBAAAAAIgQASAAiAHABAEFEAAhkQABSJkSGAEEAE=</HashCode>
+      <FileName>Vehicle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Car">
+    <Position X="12.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Car.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bus">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bike">
+    <Position X="12.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Bike.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimulationEngine">
+    <Position X="15" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAAgAEAJCAAAAAAAAQIAAAAgAgAAAAAhAAAQAQAAA=</HashCode>
+      <FileName>SimulationEngine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Roads_Grid_Slot">
+    <Position X="12.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Grids.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Vehicle_Grid_Slot">
+    <Position X="12.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAA=</HashCode>
+      <FileName>Grids.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="direction" Collapsed="true">
+    <Position X="1.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAEBAAQ=</HashCode>
+      <FileName>Direction_enum.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="type" Collapsed="true">
+    <Position X="1.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAABAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Type_enum.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="junction" Collapsed="true">
+    <Position X="1.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAABAAAAAAAAAIgAAEQAAAAAAAA=</HashCode>
+      <FileName>Type_enum.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="10" />
+</ClassDiagram>

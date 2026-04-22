@@ -158,6 +158,9 @@
     <ClInclude Include="UI.h" />
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="UML.cd" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

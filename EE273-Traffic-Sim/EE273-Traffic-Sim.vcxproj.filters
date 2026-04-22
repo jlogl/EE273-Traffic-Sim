@@ -33,4 +33,7 @@
     <ClInclude Include="Turn.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="UML.cd" />
+  </ItemGroup>
 </Project>

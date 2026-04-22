@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\UML.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:UML.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\CornerJunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:CornerJunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Junction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -15,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:CrossJunction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Roads.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Vehicle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|solutionrelative:Junction.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAE23993-5D66-4741-AA14-70D42C0D8F8C}|EE273-Traffic-Sim.vcxproj|C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -74,11 +82,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 255,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Vehicle.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.h",
               "RelativeDocumentMoniker": "Vehicle.h",
@@ -92,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Roads.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Roads.h",
               "RelativeDocumentMoniker": "Roads.h",
@@ -106,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Grids.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.cpp",
               "RelativeDocumentMoniker": "Grids.cpp",
@@ -120,7 +128,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "CornerJunction.h",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\CornerJunction.h",
+              "RelativeDocumentMoniker": "CornerJunction.h",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\CornerJunction.h",
+              "RelativeToolTip": "CornerJunction.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-21T23:42:23.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UML.cd",
+              "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\UML.cd",
+              "RelativeDocumentMoniker": "UML.cd",
+              "ToolTip": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\UML.cd",
+              "RelativeToolTip": "UML.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2026-04-21T23:41:16.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Junction.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Junction.h",
               "RelativeDocumentMoniker": "Junction.h",
@@ -132,12 +169,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CrossJunction.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\CrossJunction.h",
               "RelativeDocumentMoniker": "CrossJunction.h",
@@ -150,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Main.cpp",
               "RelativeDocumentMoniker": "Main.cpp",
@@ -163,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Turn.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Turn.cpp",
               "RelativeDocumentMoniker": "Turn.cpp",
@@ -176,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "CrossJunction.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\CrossJunction.cpp",
               "RelativeDocumentMoniker": "CrossJunction.cpp",
@@ -189,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CornerJunction.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\CornerJunction.cpp",
               "RelativeDocumentMoniker": "CornerJunction.cpp",
@@ -202,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "UI.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\UI.cpp",
               "RelativeDocumentMoniker": "UI.cpp",
@@ -215,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "SimulationEngine.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.cpp",
               "RelativeDocumentMoniker": "SimulationEngine.cpp",
@@ -228,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Vehicle.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Vehicle.cpp",
               "RelativeDocumentMoniker": "Vehicle.cpp",
@@ -241,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Grids.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\Grids.h",
               "RelativeDocumentMoniker": "Grids.h",
@@ -249,11 +282,12 @@
               "RelativeToolTip": "Grids.h",
               "ViewState": "AgIAADwAAAAAAAAAAAAswGgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-04-20T14:08:13.516Z"
+              "WhenOpened": "2026-04-20T14:08:13.516Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "TJunction.cpp",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\TJunction.cpp",
               "RelativeDocumentMoniker": "TJunction.cpp",
@@ -266,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UI.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\UI.h",
               "RelativeDocumentMoniker": "UI.h",
@@ -279,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "SimulationEngine.h",
               "DocumentMoniker": "C:\\University_C_Drive\\Year_2_EE273_Project\\EE273-Traffic-Sim\\EE273-Traffic-Sim\\SimulationEngine.h",
               "RelativeDocumentMoniker": "SimulationEngine.h",
