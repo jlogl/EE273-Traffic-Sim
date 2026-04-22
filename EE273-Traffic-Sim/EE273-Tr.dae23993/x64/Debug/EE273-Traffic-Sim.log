@@ -1,3 +1,36 @@
-﻿  Signal.cpp
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Signal.cpp(7,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  EE273-Traffic-Sim.vcxproj -> C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe
+﻿  BIke.cpp
+  Bus.cpp
+  Car.cpp
+  CornerJunction.cpp
+  CrossJunction.cpp
+  Grids.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(350,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(484,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(560,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(573,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(596,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(621,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(647,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Junction.cpp
+  Main.cpp
+  Roads.cpp
+  Signal.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Signal.cpp(7,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  SimulationEngine.cpp
+  TJunction.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\TJunction.cpp(16,17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Turn.cpp
+  UI.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1099,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1111,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(1139,45): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Vehicle.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Vehicle.cpp(175,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\Vehicle.cpp(343,1): warning C4715: 'Vehicle::isStoppingDistanceSafe': not all control paths return a value
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(914,1): warning C4715: 'ui_Direction': not all control paths return a value
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(892,1): warning C4715: 'ui_Direction': not all control paths return a value
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(870,1): warning C4715: 'ui_Junction': not all control paths return a value
+C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\UI.cpp(847,1): warning C4715: 'ui_Type': not all control paths return a value
+  LINK : C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe not found or not built by the last incremental link; performing full link
+  EE273-Traffic-Sim.vcxproj -> C:\Users\jrlou\OneDrive\Documents\GitHub\New folder\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe
