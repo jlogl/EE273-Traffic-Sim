@@ -136,7 +136,8 @@ class Roads;
 	*delete. Asking user to pick from list rather than choosing where they would like to delete road as this prevents users deleting half of a road which may cause plenty 
 	*of issues and by defining the users choices prevents these issues.*/
 	void ui_delete_Road(Grids& grid);
-	
+
+	void ui_delete_Signal(Grids& grid);
 	/* @ brief - Prompts user to enter a filename which they would like the simulation to be saved under, prompting them if their is any issues with the creation of the 
 	file. */
 	void ui_save(SimulationEngine& Engine);

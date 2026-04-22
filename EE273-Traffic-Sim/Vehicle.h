@@ -18,7 +18,7 @@ public:
 	 * is so to allow them to function properly
 	 *
 	 *
-	 * @ return bool - True if it has been used, False if vehicles speed remains unaltered
+	 * 
 	 */
 	bool SafetyOverride();
 

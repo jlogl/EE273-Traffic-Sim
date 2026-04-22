@@ -25,54 +25,104 @@ Vehicle::~Vehicle() {};
 
 
 bool Vehicle::SafetyOverride() {
-
+	bool called = false;
 	switch (Direction) {
 	case(North): {
-		if (grid.getRoadsGrid(x, y + current_speed).RoadA != nullptr) {
-			if (!grid.getRoadsGrid(x, y + current_speed).RoadA->isRoad()) {
+		if(y+current_speed < Grids::grid_size-1 && y+current_speed >= 0){
+			if (grid.getRoadsGrid(x, y + current_speed).RoadA != nullptr) {
+				if (!grid.getRoadsGrid(x, y + current_speed).RoadA->isRoad()) {
+
+					current_speed = current_speed - 1;
+					called = true;
+				}
+					
+				}
+			}
+		bool check = true;
+		while (check) {
+			if (grid.getVehicleGrid(x, y + current_speed).VehicleA != nullptr && grid.getVehicleGrid(x, y + current_speed).VehicleA->getCurrentSpeed() == 0 && grid.getVehicleGrid(x, y + current_speed).VehicleA != this) {
 
 				current_speed = current_speed - 1;
-
-				return true;
+				called = true;
 			}
-			
-
+			else {
+				break;
+			}
 		}
+
+	
 		break;
 	}
 	case(East): {
-		if (grid.getRoadsGrid(x + current_speed, y).RoadA != nullptr) {
-			if (!grid.getRoadsGrid(x + current_speed, y).RoadA->isRoad()) {
+		if (x + current_speed < Grids::grid_size && x + current_speed >= 0) {
+			if (grid.getRoadsGrid(x + current_speed, y).RoadA != nullptr) {
+				if (!grid.getRoadsGrid(x + current_speed, y).RoadA->isRoad()) {
 
-				current_speed = current_speed - 1;
-
-				return true;
+					current_speed = current_speed - 1;
+					called = true;
+				}
 			}
-			
+		}
+		bool check = true;
+		while (check) {
+				if (grid.getVehicleGrid( x+ current_speed,y).VehicleA != nullptr && grid.getVehicleGrid( x + current_speed,y).VehicleA->getCurrentSpeed() == 0 && grid.getVehicleGrid( x + current_speed,y).VehicleA != this) {
 
+						current_speed = current_speed - 1;
+						called = true;
+					}
+				else {
+					break;
+				}
 		}
 		break;
 	}
 	case(South): {
-		if (grid.getRoadsGrid(x, y - current_speed).RoadA != nullptr) {
-			if (!grid.getRoadsGrid(x, y - current_speed).RoadA->isRoad()) {
+		if (y - current_speed < Grids::grid_size  && y - current_speed >= 0) {
+			if (grid.getRoadsGrid(x, y - current_speed).RoadA != nullptr) {
+				if (!grid.getRoadsGrid(x, y - current_speed).RoadA->isRoad()) {
 
-				current_speed = current_speed - 1;
-
-				return true;
+					current_speed = current_speed - 1;
+					called = true;
+				}
 			}
+					bool check = true;
+					while (check) {
+						if (grid.getVehicleGrid(x, y - current_speed).VehicleB != nullptr && grid.getVehicleGrid(x, y - current_speed).VehicleB->getCurrentSpeed() == 0 && grid.getVehicleGrid(x, y - current_speed).VehicleB != this) {
+
+							current_speed = current_speed - 1;
+							called = true;
+						}
+						else {
+							break;
+						}
+					}
+					
+				}
+
 			
-		}
+		
 		break;
 	}
 	case(West): {
-		if (grid.getRoadsGrid(x- current_speed,y).RoadA != nullptr) {
-			if (!grid.getRoadsGrid(x - current_speed, y).RoadA->isRoad()) {
+		if (x - current_speed < Grids::grid_size  && x - current_speed >= 0) {
+			if (grid.getRoadsGrid(x - current_speed, y).RoadA != nullptr) {
+				if (!grid.getRoadsGrid(x - current_speed, y).RoadA->isRoad()) {
+					current_speed = current_speed - 1;
+					called = true;
+				}
+
+			}
+		}
+		bool check = true;
+		while (check) {
+			if (grid.getVehicleGrid(x- current_speed,y).VehicleB != nullptr && grid.getVehicleGrid(x- current_speed,y).VehicleB->getCurrentSpeed() == 0 && grid.getVehicleGrid(x - current_speed ,y).VehicleB != this) {
 
 				current_speed = current_speed - 1;
-				return true;
+				called = true;
 			}
-			
+			else {
+				break;
+			}
 		}
 		break;
 	}
@@ -82,7 +132,7 @@ bool Vehicle::SafetyOverride() {
 	}
 
 	}
-	return false;
+	return called;
 };
 void Vehicle::UpdateSpeed() {
 	bool safety = isStoppingDistanceSafe();

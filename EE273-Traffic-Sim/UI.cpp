@@ -992,30 +992,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		}
 	}
 
-	int ui_get_int() {
-		int number;
-		while (true) {
-			if (std::cin >> number) {
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				return number;
-			}
-			std::cout << "Invalid input, Please try again.\n";
-			ui_skip_to_number();
-		}
-	}
-	void ui_skip_to_number() {
-		if (std::cin.fail()) {
-			std::cin.clear();
-			for (char ch; std::cin >> ch;) {
-				if (('0' <= ch && ch <= '9') || ch == '-') {
-					std::cin.unget();
-					return;
-				}
-			}
-			std::cout << "The stream is at eof or bad"
-				<< "\n";
-		}
-	}
+
 
 	int ui_get_int_in_range(int max, int min) {
 		while (true) {
@@ -1045,7 +1022,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 			<< "13. Hide/Show Data..." << std::endl
 			<< "0. Exit..." << std::endl;
 
-		return ui_get_int_in_range(12, 0);
+		return ui_get_int_in_range(13, 0);
 
 	}
 	int ui_ask_question(std::string question, int max, int min) {

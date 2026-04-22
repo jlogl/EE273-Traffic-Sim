@@ -147,6 +147,9 @@ public:
     *  @ return - Reference to a Vector of tuples with 5 integers 5, we dont what is accsessing through function to change its contents
     */
     std::vector<std::tuple<int, int, int, int, int>>& getRoads();
+    void CreateSignal(int x, int y, std::vector<bool> sequence);
+    void DeleteSignal(int x, int y);
+    std::vector<Signal*>& getSignals();
 private:
     std::vector<std::tuple<int, int, int, int, int>> RoadsInputs;
     std::vector<Signal*> signal_on_grid;
