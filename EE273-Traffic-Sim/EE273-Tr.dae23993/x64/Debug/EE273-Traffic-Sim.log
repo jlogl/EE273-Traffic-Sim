@@ -1,9 +1,3 @@
-﻿  Grids.cpp
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(350,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(484,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(560,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(573,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(596,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(621,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Grids.cpp(647,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  Signal.cpp
+C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\Signal.cpp(7,25): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   EE273-Traffic-Sim.vcxproj -> C:\Users\jrlou\OneDrive\Documents\GitHub\EE273-Traffic-Sim\EE273-Traffic-Sim\x64\Debug\EE273-Traffic-Sim.exe

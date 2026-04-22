@@ -40,6 +40,13 @@ void SimulationEngine::step()
 	current_time =current_time+timestep;
 	std::vector<Vehicle*>& v = Grid->getVehicles();
 	std::vector<Junction*>& j = Grid->getJunctions();
+	std::vector<Signal*>& s = Grid->getSignals();
+
+	for (Signal* i : s) {
+		
+		i->nextStep();
+
+	}
 
 	for (Junction* i : j) {
 		i->SetJunctionPointers(*Grid);

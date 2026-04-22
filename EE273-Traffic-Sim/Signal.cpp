@@ -2,7 +2,7 @@
 #include <iostream>
 
 Signal::Signal(std::vector<bool> seq, std::pair<int, int> pos) {
-	this->go = 0;
+	this->go = seq.front();
 	this->sequence = seq;
 	this->period = seq.size();
 	this->seqTime = 0;
@@ -16,10 +16,17 @@ Signal::~Signal() {
 }
 
 void Signal::setGo() {
-	this->go = sequence.front()+seqTime;
+	this->go = sequence.at(seqTime);
 }
 void Signal::nextStep() {
-	this->seqTime++;
+	if ( this->seqTime >= this->period - 1) {
+		this->seqTime = 0;	// resets to start of sequence if at the end
+	}
+	else {
+		this->seqTime++;	// otherwise increments by 1 step
+	}
+
+	this->setGo();
 }
 
 bool Signal::isGreen() {
