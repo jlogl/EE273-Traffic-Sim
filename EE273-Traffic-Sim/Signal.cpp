@@ -8,8 +8,7 @@ Signal::Signal(std::vector<bool> seq, std::pair<int, int> pos) {
 	this->seqTime = 0;
 	this->position = pos;
 
-	//to test; remove before submisssion
-	std::cout << "Signal successfully created" << std::endl;
+
 }
 Signal::~Signal() {
 
@@ -39,3 +38,9 @@ std::pair<int, int> Signal::getPos() {
 int Signal::getSeqPeriod() {
 	return(this->period);
 }
+
+std::vector<bool> Signal::getSequence() {
+
+	return (this->sequence);
+}
+;

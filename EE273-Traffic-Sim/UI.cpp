@@ -4,6 +4,7 @@
 #include "Roads.h"
 #include "Vehicle.h"
 #include "Junction.h"
+#include "Signal.h"
 
 #include <vector>
 #include <string>
@@ -29,13 +30,13 @@ void Pushback(std::vector<std::vector<std::string>>& v, std::string line1, std::
 
 }
 void SetDesigns(std::vector<std::vector<std::string>>& v) {
-	
-	
+
+
 
 	// blank lines
 	std::string B1 = "     ";
 	std::string B2 = "  X  ";
-	
+
 
 	// blank design #0
 	Pushback(v, B1, B1, B2, B1, B1);
@@ -48,6 +49,7 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string H4 = " Car ";
 	std::string H5 = " Bus ";
 	std::string H6 = "Bike ";
+
 
 	//empty road H #1
 	Pushback(v, H1, H2, H1, H3, H1);
@@ -72,19 +74,19 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 
 	// car A car B road h #8
 	Pushback(v, H1, H4, H1, H4, H1);
-	 
+
 	// car A bus B road h #9
 	Pushback(v, H1, H4, H1, H5, H1);
 
 	// car A bike B road h #10
 	Pushback(v, H1, H4, H1, H6, H1);
-	
+
 	// bus A car B road h #11
 	Pushback(v, H1, H5, H1, H4, H1);
-	
+
 	// bus A bus B road h #12
 	Pushback(v, H1, H5, H1, H6, H1);
-	
+
 	// Bus A bike B road h #13
 	Pushback(v, H1, H5, H1, H6, H1);
 
@@ -93,11 +95,11 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 
 	// Bike A bus B road h #15 
 	Pushback(v, H1, H6, H1, H5, H1);
-	
+
 	// Bike A bike B roah h #16 
 	Pushback(v, H1, H6, H1, H6, H1);
-	
-	
+
+
 	// vertical road lines 
 	std::string V1 = "| | |";
 	std::string V2 = "|^|||";
@@ -110,7 +112,7 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 
 	std::string V8 = "|B|||";
 	std::string V9 = "|u|||";
-	std::string V10 ="|s|V|";
+	std::string V10 = "|s|V|";
 
 	std::string V11 = "|B|||";
 	std::string V12 = "|i|||";
@@ -177,40 +179,40 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 
 	//Bus A road v #20
 	Pushback(v, V1, V8, V9, V10, V1);
-	
+
 	//Bus B road v #21 
 	Pushback(v, V1, V47, V48, V49, V1);
-	
+
 	//Bike A road v #22 
 	Pushback(v, V1, V11, V12, V13, V14);
-	
+
 	//Bike B road v #23
 	Pushback(v, V1, V50, V51, V52, V15);
-	
+
 	// car A car B road v #24
 	Pushback(v, V1, V16, V17, V18, V1);
-	
+
 	// car a bus B road v #25
 	Pushback(v, V1, V19, V20, V21, V1);
-	
+
 	// car A bike B road v #26
 	Pushback(v, V1, V22, V23, V24, V15);
-	
+
 	// bus A car A road v #27
 	Pushback(v, V1, V25, V26, V27, V1);
-	
+
 	// bus A bus B road v #28
 	Pushback(v, V1, V28, V29, V30, V1);
-	
+
 	// bus A bike B road v #29
 	Pushback(v, V1, V31, V32, V33, V15);
-	
+
 	//bike A Car B road v #30
 	Pushback(v, V1, V34, V35, V36, V14);
-	
+
 	//bike A bus road v #31
 	Pushback(v, V1, V37, V38, V39, V14);
-	
+
 	//Bike A bike B road v #32
 	Pushback(v, V1, V40, V41, V42, V43);
 
@@ -226,13 +228,13 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 
 	std::string Turn6 = "\\   /";
 	std::string Turn7 = " --- ";
-	
+
 	//left
-	std::string Turn8 =  "/----";
-	std::string Turn9 =  "| -->";
+	std::string Turn8 = "/----";
+	std::string Turn9 = "| -->";
 	std::string Turn10 = "|  --";
-	std::string Turn11=  "| <--";
-	std::string Turn12= "\\----";
+	std::string Turn11 = "| <--";
+	std::string Turn12 = "\\----";
 
 	//right 
 	std::string Turn13 = "----\\";
@@ -243,9 +245,9 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 
 
 	// Turn when upcheck #33
-	
+
 	Pushback(v, Turn3, Turn4, Turn5, Turn6, Turn7);
-	
+
 	// Turn when downcheck #34
 	Pushback(v, Turn1, Turn2, Turn3, Turn4, Turn5);
 
@@ -265,17 +267,17 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string CR5 = "---  ";
 
 	// up and right
-	std::string CR6  = "| | \\";
-	std::string CR7  = "| |\\ ";
-	std::string CR8  = "| \\==";
-	std::string CR9  = " \\   ";
+	std::string CR6 = "| | \\";
+	std::string CR7 = "| |\\ ";
+	std::string CR8 = "| \\==";
+	std::string CR9 = " \\   ";
 	std::string CR10 = "  ---";
 
 	//down and left
-	std::string CR11 ="___  ";
-	std::string CR12= "   \\ ";
-	std::string CR13= "==\\ |";
-	std::string CR14= " \\| |";
+	std::string CR11 = "___  ";
+	std::string CR12 = "   \\ ";
+	std::string CR13 = "==\\ |";
+	std::string CR14 = " \\| |";
 	std::string CR15 = "\\ | |";
 
 	//down and right
@@ -306,20 +308,20 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string T1 = "/ | |";
 	std::string T2 = " /|||";
 	std::string T3 = "--|||";
-	std::string T4 =" \\|v|";
-	std::string T5 ="\\ | |";
+	std::string T4 = " \\|v|";
+	std::string T5 = "\\ | |";
 
 	//left,up,right
 	std::string T6 = "/ | \\";
 	std::string T7 = " /|\\ ";
 	std::string T8 = "-----";
 	std::string T9 = " <-- ";
-	std::string T10= "-----";
+	std::string T10 = "-----";
 
 	//down,right,up
 
 	std::string T11 = "| | \\";
-	std::string T12 = "|^|\\ " ;
+	std::string T12 = "|^|\\ ";
 	std::string T13 = "|||--";
 	std::string T14 = "|||/ ";
 	std::string T15 = "||| /";
@@ -352,7 +354,193 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string Cross5 = "\\ | /";
 
 	Pushback(v, Cross1, Cross2, Cross3, Cross4, Cross5);
+
+	//Signals 
+
+	std::string H7 = "\033[32mO\033[0m==> ";  //green East
+	std::string H8 = "\033[31mO\033[0m==> ";  //red East
+	std::string H9 = " <==\033[32mO\033[0m";  // green west
+	std::string H10 = " <==\033[31mO\033[0m"; // red west
+
+	std::string V53 = "|\033[32mO\033[0m| |"; // South green
+	std::string V54 = "|\033[31mO\033[0m| |"; // South red
+	std::string V55 = "| |\033[32mO\033[0m|"; // North green
+	std::string V56 = "| |\033[31mO\033[0m|"; // North red
+	//std::string V57 = "|\033[32me\033[0m| |"; 
+	std::string V58 = "| |\033[32me\033[0m|"; 
+	std::string V59 = "|e|\033[32mO\033[0m|"; 
+	std::string V60 = "|e|\033[32me\033[0m|"; 
+	std::string V61 = "| |\033[31me\033[0m|"; 
+	std::string V62 = "|e|\033[31mO\033[0m|"; 
+	std::string V63 = "|e|\033[31me\033[0m|"; 
+
+
+	// Horizontal Red #46
+	Pushback(v, H1, H8, H1, H10, H1);
+	//vertical red #47
+	Pushback(v, V56, V2, V3, V4, V54);
+	// Horizontal green #48
+	Pushback(v, H1, H7, H1, H9, H1);
+	//Vertical Green #49
+	Pushback(v, V55, V2, V3, V4, V53);
+
+	std::string H11 = " Car\033[32mO\033[0m";  // green west with car
+	std::string H12 = "\033[32mO\033[0,Car ";  //green East with car
+	std::string H13 = " Bus\033[32mO\033[0m";  // green west with bus
+	std::string H14 = "\033[32mO\033[0mBus ";  //green East wirh Bus
+	std::string H15 = "Bike\033[32mO\033[0m";  // green west with bike
+	std::string H16 = "\033[32mO\033[0mBike";  //green East bike
+
+	std::string H17 = " Car\033[31mO\033[0m";  // red west with car
+	std::string H18 = "\033[31mO\033[0,Car ";  //red East with car
+	std::string H19 = " Bus\033[31mO\033[0m";  // red west with bus
+	std::string H20 = "\033[31mO\033[0mBus ";  //red East wirh Bus
+	std::string H21 = "Bike\033[31mO\033[0m";  // red west with bike
+	std::string H22 = "\033[31mO\033[0mBike";  //red East bike
+
+	// green Car East #50
+	Pushback(v, H1, H12, H1, H9, H1);
+
+	// green Bus East #51
+	Pushback(v, H1, H14, H1, H9, H1);
+
+	// green Bike East #52
+	Pushback(v, H1, H16, H1, H9, H1);
+
+	// green Car West #53
+	Pushback(v, H1, H7, H1, H11, H1);
+
+	// green Bus West #54
+	Pushback(v, H1, H7, H1, H13, H1);
+
+	// green Bike West #55
+	Pushback(v, H1, H7, H1, H15, H1);
+
+	// Green Car Car  #56
+	Pushback(v, H1, H12, H1, H11, H1);
+	// green Car Bus  #57 
+	Pushback(v, H1, H12, H1, H13, H1);
+	// Green Car Bike #58 
+	Pushback(v, H1, H12, H1, H15, H1);
+	// Green Bus Car  #59
+	Pushback(v, H1, H14, H1, H11, H1);
+	// Green Bus Bus  #60
+	Pushback(v, H1, H14, H1, H13, H1);
+	// Green Bus Bike #61 
+	Pushback(v, H1, H14, H1, H15, H1);
+	// Green Bike Car #62 
+	Pushback(v, H1, H16, H1, H15, H1);
+	// Green Bike Bus #63
+	Pushback(v, H1, H16, H1, H13, H1);
+	// Green Bike bike #64
+	Pushback(v, H1, H16, H1, H15, H1);
+
+
+	//Green car North #65
+	Pushback(v, V55, V5, V6, V7, V53);
+	//Green Car South #66 	
+	Pushback(v, V55, V44, V45, V46, V53);
+	//Green Bus North #67 
+	Pushback(v, V55, V8, V9, V10, V53);
+	//Green Bus South #68 
+	Pushback(v, V55, V47, V48, V49, V53);
+	//Green Bike North #69 
+	Pushback(v, V55, V11, V12, V13, V59);
+	//Green Bike South #70
+	Pushback(v, V55, V50, V51, V52, V58);
+	//Green car car #71
+	Pushback(v, V55, V16, V17, V18, V53);
+	// green Car Bus  #72
+	Pushback(v, V55, V19, V20, V21, V53);
+	// Green Car Bike #73 
+	Pushback(v, V55, V22, V23, V24, V58);
+	// Green Bus Car  #74
+	Pushback(v, V55, V25, V26, V27, V53);
+	// Green Bus Bus  #75
+	Pushback(v, V55, V28, V29, V30, V53);
+	// Green Bus Bike #76
+	Pushback(v, V55, V31, V32, V33, V58);
+	// Green Bike Car #77 
+	Pushback(v, V55, V34, V35, V36, V59);
+	// Green Bike Bus #78
+	Pushback(v, V55, V37, V38, V39, V59);
+	// Green Bike bike #79
+	Pushback(v, V55, V40, V41, V42, V60);
+	
+	
+	// red Car East #80
+	Pushback(v, H1, H18, H1, H9, H1);
+
+	// red Bus East #81
+	Pushback(v, H1, H20, H1, H9, H1);
+
+	// red Bike East #82
+	Pushback(v, H1, H22, H1, H9, H1);
+
+	// red Car West #83
+	Pushback(v, H1, H7, H1, H17, H1);
+
+	// red Bus West #84
+	Pushback(v, H1, H7, H1, H19, H1);
+
+	// red Bike West #85
+	Pushback(v, H1, H7, H1, H21, H1);
+
+	// red Car Car  #86
+	Pushback(v, H1, H18, H1, H17, H1);
+	// red Car Bus  #87 
+	Pushback(v, H1, H18, H1, H19, H1);
+	// red Car Bike #88 
+	Pushback(v, H1, H18, H1, H21, H1);
+	// red Bus Car  #89
+	Pushback(v, H1, H20, H1, H17, H1);
+	// red Bus Bus  #90
+	Pushback(v, H1, H20, H1, H19, H1);
+	// red Bus Bike #91 
+	Pushback(v, H1, H20, H1, H21, H1);
+	// red Bike Car #92 
+	Pushback(v, H1, H22, H1, H17, H1);
+	// red Bike Bus #93
+	Pushback(v, H1, H22, H1, H19, H1);
+	// red Bike bike #94
+	Pushback(v, H1, H22, H1, H21, H1);
+
+	//red car North #95
+	Pushback(v, V56, V5, V6, V7, V54);
+	//red Car South #96 	
+	Pushback(v, V56, V44, V45, V46, V54);
+	//red Bus North #97 
+	Pushback(v, V56, V8, V9, V10, V54);
+	//red Bus South #98 
+	Pushback(v, V56, V47, V48, V49, V54);
+	//red Bike North #99 
+	Pushback(v, V56, V11, V12, V13, V62);
+	//red Bike South #100
+	Pushback(v, V56, V50, V51, V52, V61);
+	//red car car #101
+	Pushback(v, V56, V16, V17, V18, V54);
+	// red Car Bus  #102
+	Pushback(v, V56, V19, V20, V21, V54);
+	// red Car Bike #103 
+	Pushback(v, V56, V22, V23, V24, V61);
+	// red Bus Car  #104
+	Pushback(v, V56, V25, V26, V27, V54);
+	// red Bus Bus  #105
+	Pushback(v, V56, V28, V29, V30, V54);
+	// red Bus Bike #106
+	Pushback(v, V56, V31, V32, V33, V61);
+	// red Bike Car #107 
+	Pushback(v, V55, V34, V35, V36, V62);
+	// red Bike Bus #108
+	Pushback(v, V55, V37, V38, V39, V62);
+	// red Bike bike #109
+	Pushback(v, V55, V40, V41, V42, V63);
+
 }
+
+	
+	
+
 
 void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues, bool ON) {
 	// Need to define what each segment of the grid is, this is done by iterating through the grid 
@@ -366,35 +554,76 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 	if (ON) {
 		for (int i = 0; i < Grids::grid_size; i = i + 1) { // each row in grid.
 			for (int j = 0; j < Grids::grid_size; j = j + 1) {//each column in grid
-			
+
 				if (grid.getRoadsGrid(j, i).RoadA == nullptr) {
 					gridValues.push_back(0); // if no road is on grid, then the slot is empty as all other objects need road
-					
+				
 
 				}
 				else {
 					if (grid.getRoadsGrid(j, i).RoadA->isRoad()) {// Tells us that this slot is a road 
 						if (grid.getRoadsGrid(j, i).RoadA->getDirection() == North) { //vertical road
 							if (grid.getVehicleGrid(j, i).VehicleA == nullptr && grid.getVehicleGrid(j, i).VehicleB == nullptr) {
-								gridValues.push_back(17); // is a vertical road with nothing on it
-								
+								if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+									gridValues.push_back(17); // is a vertical road with nothing on it
+									
+								}
+								else {
+									if (grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+										gridValues.push_back(49);
+										
+									}
+									else {
+										gridValues.push_back(47);
+										
+									}
+
+
+								}
 							}
 							if (grid.getVehicleGrid(j, i).VehicleA != nullptr && grid.getVehicleGrid(j, i).VehicleB == nullptr) { //Vehicle in North Lane
 								type vType = grid.getVehicleGrid(j, i).VehicleA->getVehicleType();
 								switch (vType) {
 								case(car): {
-									gridValues.push_back(18);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(18);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(95);
+										}
+										else {
+											gridValues.push_back(65);
+										}
+									}
 									break;
 								}
 								case(bus): {
-									gridValues.push_back(20);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(20);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(97);
+										}
+										else {
+											gridValues.push_back(67);
+										}
+									}
 									break;
 								}
 								case(bike): {
-									gridValues.push_back(22);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(20);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(99);
+										}
+										else {
+											gridValues.push_back(69);
+										}
+									}
 									break;
 								}
 								}
@@ -403,18 +632,45 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								type vType = grid.getVehicleGrid(j, i).VehicleB->getVehicleType();
 								switch (vType) {
 								case(car): {
-									gridValues.push_back(19);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(19);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(96);
+										}
+										else {
+											gridValues.push_back(66);
+										}
+									}
 									break;
 								}
 								case(bus): {
-									gridValues.push_back(21);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(21);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(98);
+										}
+										else {
+											gridValues.push_back(68);
+										}
+									}
 									break;
 								}
 								case(bike): {
-									gridValues.push_back(23);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(23);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(100);
+										}
+										else {
+											gridValues.push_back(70);
+										}
+									}
 									break;
 								}
 								}
@@ -428,38 +684,94 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								case(car): {
 									switch (vTypeB) {
 									case(car): {
-										gridValues.push_back(24);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(24);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(101);
+											}
+											else {
+												gridValues.push_back(71);
+											}
+										}
 										break;
 									}
 									case(bus): {
-										gridValues.push_back(25);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(25);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(102);
+											}
+											else {
+												gridValues.push_back(72);
+											}
+										}
 										break;
 									}
 									case(bike): {
-										gridValues.push_back(26);
-										
-										break;
-									}
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(26);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(103);
+											}
+											else {
+												gridValues.push_back(73);
+											}
+										}
+											break;
+										}
+							
 									}
 									break;
 								}
 								case(bus): {
 									switch (vTypeB) {
 									case(car): {
-										gridValues.push_back(27);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(27);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(104);
+											}
+											else {
+												gridValues.push_back(74);
+											}
+											
+										}
 										break;
 									}
 									case(bus): {
-										gridValues.push_back(28);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(28);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(105);
+											}
+											else {
+												gridValues.push_back(75);
+											}
+										}
 										break;
 									}
 									case(bike): {
-										gridValues.push_back(29);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(29);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(106);
+											}
+											else {
+												gridValues.push_back(76);
+											}
+										}
 										break;
 									}
 									}
@@ -468,18 +780,45 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								case(bike): {
 									switch (vTypeB) {
 									case(car): {
-										gridValues.push_back(30);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(30);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(107);
+											}
+											else {
+												gridValues.push_back(77);
+											}
+										}
 										break;
 									}
 									case(bus): {
-										gridValues.push_back(31);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(31);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(108);
+											}
+											else {
+												gridValues.push_back(78);
+											}
+										}
 										break;
 									}
 									case(bike): {
-										gridValues.push_back(32);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(32);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(109);
+											}
+											else {
+												gridValues.push_back(79);
+											}
+										}
 										break;
 									}
 									}
@@ -490,25 +829,63 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 						}
 						else {//horizontal road
 							if (grid.getVehicleGrid(j, i).VehicleA == nullptr && grid.getVehicleGrid(j, i).VehicleB == nullptr) {
-								gridValues.push_back(1); // is a vertical road with nothing on it
+								if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+									gridValues.push_back(1); // is a vertical road with nothing on it
+									
+								}
+								else {
+									if (grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+										gridValues.push_back(48);
 
+									}
+									else {
+										gridValues.push_back(46);
+									}
+								}
 							}
 							if (grid.getVehicleGrid(j, i).VehicleA != nullptr && grid.getVehicleGrid(j, i).VehicleB == nullptr) { //Vehicle in East Lane
 								type vType = grid.getVehicleGrid(j, i).VehicleA->getVehicleType();
 								switch (vType) {
 								case(car): {
-									gridValues.push_back(2);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(2);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(80);
+										}
+										else {
+											gridValues.push_back(50);
+										}
+									}
 									break;
 								}
 								case(bus): {
-									gridValues.push_back(4);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(4);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(81);
+										}
+										else {
+											gridValues.push_back(51);
+										}
+									}
 									break;
 								}
 								case(bike): {
-									gridValues.push_back(6);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(6);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(82);
+										}
+										else {
+											gridValues.push_back(52);
+										}
+									}
 									break;
 								}
 								}
@@ -517,18 +894,46 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								type vType = grid.getVehicleGrid(j, i).VehicleB->getVehicleType();
 								switch (vType) {
 								case(car): {
-									gridValues.push_back(3);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(3);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(83);
+										}
+										else {
+											gridValues.push_back(53);
+										}
+									}
 									break;
 								}
 								case(bus): {
-									gridValues.push_back(5);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(5);
+									}
+									else {
+
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(84);
+										}
+										else {
+											gridValues.push_back(54);
+										}
+									}
 									break;
 								}
 								case(bike): {
-									gridValues.push_back(7);
-									
+									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+										gridValues.push_back(7);
+									}
+									else {
+										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+											gridValues.push_back(85);
+										}
+										else {
+											gridValues.push_back(55);
+										}
+									}
 									break;
 								}
 								}
@@ -542,18 +947,45 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								case(car): {
 									switch (vTypeB) {
 									case(car): {
-										gridValues.push_back(8);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(8);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(86);
+											}
+											else {
+												gridValues.push_back(56);
+											}
+										}
 										break;
 									}
 									case(bus): {
-										gridValues.push_back(9);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(9);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(87);
+											}
+											else {
+												gridValues.push_back(57);
+											}
+										}
 										break;
 									}
 									case(bike): {
-										gridValues.push_back(10);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(10);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(88);
+											}
+											else {
+												gridValues.push_back(58);
+											}
+										}
 										break;
 									}
 									}
@@ -562,18 +994,45 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								case(bus): {
 									switch (vTypeB) {
 									case(car): {
-										gridValues.push_back(11);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(11);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(89);
+											}
+											else {
+												gridValues.push_back(59);
+											}
+										}
 										break;
 									}
 									case(bus): {
-										gridValues.push_back(12);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(12);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(90);
+											}
+											else {
+												gridValues.push_back(60);
+											}
+										}
 										break;
 									}
 									case(bike): {
-										gridValues.push_back(13);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(13);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(91);
+											}
+											else {
+												gridValues.push_back(61);
+											}
+										}
 										break;
 									}
 									}
@@ -582,18 +1041,45 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								case(bike): {
 									switch (vTypeB) {
 									case(car): {
-										gridValues.push_back(14);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(14);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(92);
+											}
+											else {
+												gridValues.push_back(62);
+											}
+										}
 										break;
 									}
 									case(bus): {
-										gridValues.push_back(15);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(15);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(93);
+											}
+											else {
+												gridValues.push_back(63);
+											}
+										}
 										break;
 									}
 									case(bike): {
-										gridValues.push_back(16);
-										
+										if (grid.getRoadsGrid(j, i).signals.size() == 0) {
+											gridValues.push_back(16);
+										}
+										else {
+											if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
+												gridValues.push_back(94);
+											}
+											else {
+												gridValues.push_back(64);
+											}
+										}
 										break;
 									}
 									}
@@ -616,95 +1102,95 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 
 						case(unassigned): {
 							gridValues.push_back(0);
-							
+
 
 						}
 						case(turn): {
-							if (CheckValues[0] && !CheckValues[1] && !CheckValues[2] && !CheckValues[3] ) {
+							if (CheckValues[0] && !CheckValues[1] && !CheckValues[2] && !CheckValues[3]) {
 
 								gridValues.push_back(33);
-								
+
 								break;
 
 							}
-							if (!CheckValues[0] && !CheckValues[1] && CheckValues[2] && !CheckValues[3] ) {
+							if (!CheckValues[0] && !CheckValues[1] && CheckValues[2] && !CheckValues[3]) {
 
 								gridValues.push_back(34);
-								
+
 								break;
 							}
-							if (!CheckValues[0] && CheckValues[1] && !CheckValues[2] && !CheckValues[3] ) {
+							if (!CheckValues[0] && CheckValues[1] && !CheckValues[2] && !CheckValues[3]) {
 
 								gridValues.push_back(35);
-								
+
 								break;
 							}
-							if (!CheckValues[0] && !CheckValues[1] && !CheckValues[2] && CheckValues[3] ) {
+							if (!CheckValues[0] && !CheckValues[1] && !CheckValues[2] && CheckValues[3]) {
 
 								gridValues.push_back(36);
-								
+
 								break;
 							}
 						}
 						case(corner): {
-							if (CheckValues[0] && CheckValues[1] && !CheckValues[2] && !CheckValues[3] ) {
+							if (CheckValues[0] && CheckValues[1] && !CheckValues[2] && !CheckValues[3]) {
 
 								gridValues.push_back(37);
-								
+
 								break;
 							}
-							if (CheckValues[0] && !CheckValues[1] && !CheckValues[2] && CheckValues[3] ) {
+							if (CheckValues[0] && !CheckValues[1] && !CheckValues[2] && CheckValues[3]) {
 
 								gridValues.push_back(38);
-								
+
 								break;
 							}
-							if (!CheckValues[0] && CheckValues[1] && CheckValues[2] && !CheckValues[3] ) {
+							if (!CheckValues[0] && CheckValues[1] && CheckValues[2] && !CheckValues[3]) {
 
 								gridValues.push_back(39);
-								
+
 								break;
 							}
-							if (!CheckValues[0] && !CheckValues[1] && CheckValues[2] && CheckValues[3] ) {
+							if (!CheckValues[0] && !CheckValues[1] && CheckValues[2] && CheckValues[3]) {
 
 								gridValues.push_back(40);
-								
+
 								break;
 							}
 
 						}
 						case(t): {
-							if (CheckValues[0] && CheckValues[1] && CheckValues[2] && !CheckValues[3] ) {
+							if (CheckValues[0] && CheckValues[1] && CheckValues[2] && !CheckValues[3]) {
 
 								gridValues.push_back(41);
-								
+
 								break;
 
 							}
-							if (CheckValues[0] && CheckValues[1] && !CheckValues[2] && CheckValues[3] ) {
+							if (CheckValues[0] && CheckValues[1] && !CheckValues[2] && CheckValues[3]) {
 
 								gridValues.push_back(42);
-								
+
 								break;
 							}
-							if (CheckValues[0] && !CheckValues[1] && CheckValues[2] && CheckValues[3] ) {
+							if (CheckValues[0] && !CheckValues[1] && CheckValues[2] && CheckValues[3]) {
 
 								gridValues.push_back(43);
-								
+
 								break;
 							}
-							if (!CheckValues[0] && CheckValues[1] && CheckValues[2] && CheckValues[3] ) {
+							if (!CheckValues[0] && CheckValues[1] && CheckValues[2] && CheckValues[3]) {
 
 								gridValues.push_back(44);
-								
+
 								break;
 							}
 						}
 
 						case(cross): {
-							if (CheckValues[0] && CheckValues[1] && CheckValues[2] && CheckValues[3] ) {
+							if (CheckValues[0] && CheckValues[1] && CheckValues[2] && CheckValues[3]) {
 								gridValues.push_back(45);
-								
+
 								break;
 
 							}
@@ -721,9 +1207,9 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 
 
 
-			}
+			
 
-
+		}
 		}
 
 
@@ -920,6 +1406,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 		std::vector<Junction*> JunctionPoints=grid.getJunctions();
 		std::vector<Vehicle*> VehiclesVector = grid.getVehicles();
 		std::vector<std::tuple<int, int, int, int, int>> RoadsPoints = grid.getRoads();
+		std::vector<Signal*> SignalsVector = grid.getSignals();
 		if (ON) {
 			std::cout << "Current Simulation Time: " << engine.getCurrentTime() << std::endl << std::endl
 				<< "Vehicles: " << std::endl
@@ -988,8 +1475,24 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 					<< "Total Uses: " << J->getUses() << std::endl << std::endl;
 				count = count + 1;
 			}
-			std::cout << std::endl;
+			
+
+			count = 1;
+			std::cout << "Signals: " << std::endl;
+			for (Signal* S : SignalsVector) {
+				std::cout << "Signal " << count << "data: " << std::endl
+					<< "Signal Point: " << S->getPos().first << "," << S->getPos().second << std::endl;
+				std::string colour;
+				if (S->isGreen()) {
+					colour = "Green - GO";
+				}
+				else {
+					colour = "Red - STOP";
+				}
+				std::cout << "Signal Status: " << colour << std::endl << std::endl;
+			}
 		}
+
 	}
 
 

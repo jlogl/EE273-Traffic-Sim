@@ -72,7 +72,7 @@ void SimulationEngine::step()
 
 	
 
-	//std::this_thread::sleep_for(std::chrono::milliseconds(3000)); // simulate time delay for each timestep, the chrono library allows for the program to interact with real world time and the this_thread 
+	std::this_thread::sleep_for(std::chrono::milliseconds(3000)); // simulate time delay for each timestep, the chrono library allows for the program to interact with real world time and the this_thread 
 	// namespace allows us to interact with this thread of code, found on C++ forum.
 	
 
@@ -109,7 +109,7 @@ bool SimulationEngine::save(std::string filename)
 
 	std::vector<Vehicle*>& v = Grid->getVehicles();
 	std::vector<std::tuple<int, int, int, int, int>>& R=Grid->getRoads();
-	
+	std::vector<Signal*>& s = Grid->getSignals();
 	std::ofstream outFile(filename);
 	if (!outFile) {
 		
@@ -127,6 +127,18 @@ bool SimulationEngine::save(std::string filename)
 			<< std::get<3>(i) << "," << std::get<4>(i) << "," << std::endl;
 
 
+	}
+
+	for (Signal* i : s) {
+
+
+		outFile << "S," << i->getPos().first << "," << i->getPos().second <<"," << i->getSeqPeriod() << ",";
+
+		for (bool j : i->getSequence()) {
+
+			outFile << j << ",";
+		}
+		outFile<<std::endl;
 	}
 	for (Vehicle* i : v) {
 			
@@ -192,6 +204,30 @@ bool SimulationEngine::load(std::string filename) {
 			this->setInitialTime(number);
 			break;
 		
+		}
+		case('S'): {
+			int count = 0;
+			int number = 0;
+			std::vector<int> data;
+			std::vector<bool> seq;
+			while (getline(ss, num, ',')) {
+
+				if (count > 0) {
+					number = stoi(num);
+					data.push_back(number);
+
+				}
+				count++;
+			}
+			
+		    for (int i = 3; i<3+data[2]; i = i + 1) {
+				bool green = data[i];
+				seq.push_back(green);
+				
+			}
+			
+			Grid->CreateSignal(data[0], data[1], seq);
+			break;
 		}
 		case('R'): {
 			int count = 0;

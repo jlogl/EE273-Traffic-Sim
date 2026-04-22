@@ -326,6 +326,15 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 					return;
 				}
 
+				for (Signal* s : signal_on_grid) {
+
+					if (s->getPos().first == initial_x && s->getPos().second == i) {
+
+						std::cout << " Signal on road at " << initial_x << "," << i << " Delete Signal First" << std::endl;
+						return;
+					}
+			}
+
 			}
 			if (this->getRoadsGrid(initial_x, i).RoadA != nullptr) {
 				Point.first = initial_x;
@@ -411,12 +420,15 @@ void Grids::DeleteRoad(int initial_x, int initial_y, int final_x, int final_y) {
 
 void Grids::CreateSignal(int x, int y, std::vector<bool> sequence) {
 	
-	Signal* s = new Signal(sequence, std::make_pair(x, y));		// instantiate the signal with the specified sequence
-
-	this->Road_Grid[x][y].signals.push_back(s);		// push back the pointer
 	
-	this->signal_on_grid.push_back(s);		// push back pointer to the new signal on to the vector
-}
+
+			  Signal* s = new Signal(sequence, std::make_pair(x, y));		// instantiate the signal with the specified sequence
+
+			  this->Road_Grid[x][y].signals.push_back(s);		// push back the pointer
+
+			  this->signal_on_grid.push_back(s);		// push back pointer to the new signal on to the vector
+	}
+
 
 void Grids::DeleteSignal(int x, int y) {
 

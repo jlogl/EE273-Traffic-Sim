@@ -12,7 +12,7 @@ public:
 	bool isGreen();
 	std::pair<int, int> getPos();
 	int getSeqPeriod();
-
+	std::vector<bool> getSequence();
 private:
 	bool go;			// True for green, false for red
 

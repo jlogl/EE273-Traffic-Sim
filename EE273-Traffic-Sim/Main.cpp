@@ -129,6 +129,7 @@ int main()
 
 				p = ui_ask_question("What X coordinate would you like to place a Signal at? Note that it must be on a road or junction which isn't a turn. ", "What Y coordinate would you like to place a Signal at? ", Grids::grid_size - 1, 0);
 
+
 				// search vector of junctions on grid for coordinates matching the user's selection
 				for (int n = 0; n < Grid.getJunctions().size(); n++) {
 					if (p.first == Grid.getJunctions().at(n)->getX() && p.second == Grid.getJunctions().at(n)->getY()) {
@@ -140,7 +141,29 @@ int main()
 					else
 						jt = roads;
 				}
+				bool quit = false;
+				switch (Grid.getRoadsGrid(p.first, p.second).RoadA->getDirection()) {
+				case(North): {
+					if (!Grid.getRoadsGrid(p.first, p.second + 1).RoadA->isRoad() || !Grid.getRoadsGrid(p.first, p.second - 1).RoadA->isRoad()) {
+						
+						std::cout << "Please leave a gap between signals and Juncitons, Signal Not Created" << std::endl;
+						goto main_menu;
+					
 
+					}
+					break;
+				}
+				case(East): {
+					if (!Grid.getRoadsGrid(p.first + 1, p.second).RoadA->isRoad() || !Grid.getRoadsGrid(p.first - 1, p.second).RoadA->isRoad()) {
+						std::cout << "Please leave a gap between signals and Juncitons, Signal Not Created" << std::endl;
+						goto main_menu;
+						
+
+					}
+					break;
+				}
+				}
+				
 				// show error if there is a turn or no road at all
 				if (Grid.getRoadsGrid(p.first, p.second).RoadA == nullptr || jt == turn) {
 
