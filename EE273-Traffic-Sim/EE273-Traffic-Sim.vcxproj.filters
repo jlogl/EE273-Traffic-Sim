@@ -36,9 +36,6 @@
     <ClInclude Include="Signal.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Overall.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="UML.cd" />
   </ItemGroup>
 </Project>
