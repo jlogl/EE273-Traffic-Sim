@@ -1,0 +1,23 @@
+# Visual Studio build artifacts
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output directories
+x64/
+x86/
+Debug/
+Release/
+*.obj
+*.ilk
+*.log
+*.pdb
+*.idb
+*.tlog
+
+# Compiled files
+*.exe
+*.dll
+*.lib
