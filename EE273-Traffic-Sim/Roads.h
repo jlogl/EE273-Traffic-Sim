@@ -31,7 +31,7 @@ public:
 
 	/* @ brief - returns the direction of a road's lane
 	* 
-	* @ return direction - Is a user defined Enum for the Direction a vehicle is travelling or the direciton a road points in
+	* @ param direction - Is a user defined Enum for the Direction a vehicle is travelling or the direciton a road points in
 	*/
 	void setDirection(direction D);
 
