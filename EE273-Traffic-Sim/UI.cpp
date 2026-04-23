@@ -385,14 +385,14 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	Pushback(v, V55, V2, V3, V4, V53);
 
 	std::string H11 = " Car\033[32mO\033[0m";  // green west with car
-	std::string H12 = "\033[32mO\033[0,Car ";  //green East with car
+	std::string H12 = "\033[32mO\033[0mCar ";  //green East with car
 	std::string H13 = " Bus\033[32mO\033[0m";  // green west with bus
 	std::string H14 = "\033[32mO\033[0mBus ";  //green East wirh Bus
 	std::string H15 = "Bike\033[32mO\033[0m";  // green west with bike
 	std::string H16 = "\033[32mO\033[0mBike";  //green East bike
 
 	std::string H17 = " Car\033[31mO\033[0m";  // red west with car
-	std::string H18 = "\033[31mO\033[0,Car ";  //red East with car
+	std::string H18 = "\033[31mO\033[0mCar ";  //red East with car
 	std::string H19 = " Bus\033[31mO\033[0m";  // red west with bus
 	std::string H20 = "\033[31mO\033[0mBus ";  //red East wirh Bus
 	std::string H21 = "Bike\033[31mO\033[0m";  // red west with bike
@@ -469,13 +469,13 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	
 	
 	// red Car East #80
-	Pushback(v, H1, H18, H1, H9, H1);
+	Pushback(v, H1, H18, H1, H10, H1);
 
 	// red Bus East #81
-	Pushback(v, H1, H20, H1, H9, H1);
+	Pushback(v, H1, H20, H1, H10, H1);
 
 	// red Bike East #82
-	Pushback(v, H1, H22, H1, H9, H1);
+	Pushback(v, H1, H22, H1, H10, H1);
 
 	// red Car West #83
 	Pushback(v, H1, H7, H1, H17, H1);
@@ -1480,7 +1480,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 			count = 1;
 			std::cout << "Signals: " << std::endl;
 			for (Signal* S : SignalsVector) {
-				std::cout << "Signal " << count << "data: " << std::endl
+				std::cout << "Signal " << count << " data: " << std::endl
 					<< "Signal Point: " << S->getPos().first << "," << S->getPos().second << std::endl;
 				std::string colour;
 				if (S->isGreen()) {
@@ -1490,6 +1490,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 					colour = "Red - STOP";
 				}
 				std::cout << "Signal Status: " << colour << std::endl << std::endl;
+				count =count +1;
 			}
 		}
 
