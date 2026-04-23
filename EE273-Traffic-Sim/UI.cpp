@@ -366,13 +366,13 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	std::string V54 = "|\033[31mO\033[0m| |"; // South red
 	std::string V55 = "| |\033[32mO\033[0m|"; // North green
 	std::string V56 = "| |\033[31mO\033[0m|"; // North red
-	//std::string V57 = "|\033[32me\033[0m| |"; 
+	std::string V57 = "|\033[32me\033[0m| |";
 	std::string V58 = "| |\033[32me\033[0m|"; 
-	std::string V59 = "|e|\033[32mO\033[0m|"; 
-	std::string V60 = "|e|\033[32me\033[0m|"; 
-	std::string V61 = "| |\033[31me\033[0m|"; 
-	std::string V62 = "|e|\033[31mO\033[0m|"; 
-	std::string V63 = "|e|\033[31me\033[0m|"; 
+	std::string V59 = "|\033[32mO\033[0m|e|";
+	std::string V60 = "|\033[32me\033[0m|e|";
+	std::string V61 = "|\033[31mO\033[0m|e|";
+	std::string V62 = "|\033[31me\033[0m| |";
+	std::string V63 = "|\033[31me\033[0m|e|";
 
 
 	// Horizontal Red #46
@@ -445,25 +445,25 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	//Green Bus South #68 
 	Pushback(v, V55, V47, V48, V49, V53);
 	//Green Bike North #69 
-	Pushback(v, V55, V11, V12, V13, V59);
+	Pushback(v, V55, V11, V12, V13, V57);
 	//Green Bike South #70
-	Pushback(v, V55, V50, V51, V52, V58);
+	Pushback(v, V55, V50, V51, V52, V59);
 	//Green car car #71
 	Pushback(v, V55, V16, V17, V18, V53);
 	// green Car Bus  #72
 	Pushback(v, V55, V19, V20, V21, V53);
 	// Green Car Bike #73 
-	Pushback(v, V55, V22, V23, V24, V58);
+	Pushback(v, V55, V22, V23, V24, V59);
 	// Green Bus Car  #74
 	Pushback(v, V55, V25, V26, V27, V53);
 	// Green Bus Bus  #75
 	Pushback(v, V55, V28, V29, V30, V53);
 	// Green Bus Bike #76
-	Pushback(v, V55, V31, V32, V33, V58);
+	Pushback(v, V55, V31, V32, V33, V59);
 	// Green Bike Car #77 
-	Pushback(v, V55, V34, V35, V36, V59);
+	Pushback(v, V55, V34, V35, V36, V57);
 	// Green Bike Bus #78
-	Pushback(v, V55, V37, V38, V39, V59);
+	Pushback(v, V55, V37, V38, V39, V57);
 	// Green Bike bike #79
 	Pushback(v, V55, V40, V41, V42, V60);
 	
@@ -478,13 +478,13 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	Pushback(v, H1, H22, H1, H10, H1);
 
 	// red Car West #83
-	Pushback(v, H1, H7, H1, H17, H1);
+	Pushback(v, H1, H8, H1, H17, H1);
 
 	// red Bus West #84
-	Pushback(v, H1, H7, H1, H19, H1);
+	Pushback(v, H1, H8, H1, H19, H1);
 
 	// red Bike West #85
-	Pushback(v, H1, H7, H1, H21, H1);
+	Pushback(v, H1, H8, H1, H21, H1);
 
 	// red Car Car  #86
 	Pushback(v, H1, H18, H1, H17, H1);
@@ -530,11 +530,11 @@ void SetDesigns(std::vector<std::vector<std::string>>& v) {
 	// red Bus Bike #106
 	Pushback(v, V56, V31, V32, V33, V61);
 	// red Bike Car #107 
-	Pushback(v, V55, V34, V35, V36, V62);
+	Pushback(v, V56, V34, V35, V36, V62);
 	// red Bike Bus #108
-	Pushback(v, V55, V37, V38, V39, V62);
+	Pushback(v, V56, V37, V38, V39, V62);
 	// red Bike bike #109
-	Pushback(v, V55, V40, V41, V42, V63);
+	Pushback(v, V56, V40, V41, V42, V63);
 
 }
 
@@ -614,7 +614,7 @@ void PrintGrids(Grids& grid, std::vector<std::vector<std::string>> DesignValues,
 								}
 								case(bike): {
 									if (grid.getRoadsGrid(j, i).signals.size() == 0) {
-										gridValues.push_back(20);
+										gridValues.push_back(22);
 									}
 									else {
 										if (!grid.getRoadsGrid(j, i).signals[0]->isGreen()) {
