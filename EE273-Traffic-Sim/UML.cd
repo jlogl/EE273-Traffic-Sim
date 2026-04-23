@@ -3,7 +3,7 @@
   <Class Name="Grids">
     <Position X="15" Y="7.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>ggSoAAAAAAAAAQBAYQQAAAAIAgAAAAAgCAAAAAAgQwA=</HashCode>
+      <HashCode>ggSoAAAAAAAAAQBAYQQAACAIAgAABAAgCAASAAAgQwA=</HashCode>
       <FileName>Grids.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -92,10 +92,17 @@
       <FileName>SimulationEngine.h</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Signal">
+    <Position X="1" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAABEAAAAAAAAAAAAQIAAAAgIIIAAAAQAAAgARAAA=</HashCode>
+      <FileName>Signal.h</FileName>
+    </TypeIdentifier>
+  </Class>
   <Struct Name="Roads_Grid_Slot">
     <Position X="12.5" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Grids.h</FileName>
     </TypeIdentifier>
   </Struct>
@@ -107,21 +114,21 @@
     </TypeIdentifier>
   </Struct>
   <Enum Name="direction" Collapsed="true">
-    <Position X="1.25" Y="7.5" Width="1.5" />
+    <Position X="3.75" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AACAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAEBAAQ=</HashCode>
       <FileName>Direction_enum.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="type" Collapsed="true">
-    <Position X="1.25" Y="8.25" Width="1.5" />
+    <Position X="3.75" Y="11" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAABAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Type_enum.h</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="junction" Collapsed="true">
-    <Position X="1.25" Y="9" Width="1.5" />
+    <Position X="3.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAABAAAAAAAAAIgAAEQAAAAAAAA=</HashCode>
       <FileName>Type_enum.h</FileName>

@@ -147,8 +147,23 @@ public:
     *  @ return - Reference to a Vector of tuples with 5 integers 5, we dont what is accsessing through function to change its contents
     */
     std::vector<std::tuple<int, int, int, int, int>>& getRoads();
+
+    /* @ brief - creates a Signal object at the specified location with the specified sequence
+    * 
+    *  @ param - x, y represent coordinates; sequence is a series of boolean values representing the light shown by the signal
+    */
     void CreateSignal(int x, int y, std::vector<bool> sequence);
+
+    /* @ brief - delete the signal(s) at the specified location
+    *
+    *  @ param - x, y represent coordinates
+    */
     void DeleteSignal(int x, int y);
+
+    /* @ brief - Returns the vector of all signals in the system
+    *
+    *  @ return - Reference to a Vector of signals
+    */
     std::vector<Signal*>& getSignals();
 private:
     std::vector<std::tuple<int, int, int, int, int>> RoadsInputs;
